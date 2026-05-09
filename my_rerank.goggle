@@ -66,7 +66,7 @@ $boost,site=x.com
 $boost,site=yuri-project.net
 
 ! ==========================================================================
-! Discarded domains (681)
+! Discarded domains (685)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -159,6 +159,7 @@ $discard,site=betterwaifu.com
 $discard,site=bigbear.ai
 $discard,site=birminghambreastgroup.com
 $discard,site=bitcoinethereumnews.com
+$discard,site=bitget.com
 $discard,site=bitrue.com
 $discard,site=blackcoffeepoet.com
 $discard,site=blog.barrack.ai
@@ -235,7 +236,9 @@ $discard,site=deepdreamgenerator.com
 $discard,site=deepinfra.com
 $discard,site=deepseek-v4.io
 $discard,site=deepseek4.hk
+$discard,site=deepseeksr1.com
 $discard,site=deepseekv3.net
+$discard,site=deepseekv4.network
 $discard,site=deepseekv4.space
 $discard,site=deepseekv4pro.com
 $discard,site=degrouptest.com
@@ -716,6 +719,7 @@ $discard,site=wavespeed.ai
 $discard,site=wearview.co
 $discard,site=webcatalog.io
 $discard,site=webmasterworld.com
+$discard,site=webscraft.org
 $discard,site=websiteoutlook.com
 $discard,site=websniffer.com
 $discard,site=weshop.ai
