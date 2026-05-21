@@ -5,7 +5,7 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (99)
+! Raised domains (100)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -90,6 +90,7 @@ $boost=6,site=red.anthropic.com
 $boost=4,site=saucenao.com
 $boost,site=spacex.com
 $boost=3,site=sukebei.nyaa.si
+$boost=4,site=teenhealthsource.com
 $boost,site=translate.google.com
 $boost,site=translate.kagi.com
 $boost=6,site=tvtropes.org
@@ -110,57 +111,63 @@ $boost=8,site=yorhel.nl
 $boost=6,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (22)
+! Downranked domains (23)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
 $downrank=10,site=apps.apple.com
-$downrank,site=asrm.org
+$downrank=4,site=asrm.org
 $downrank,site=dictionary.cambridge.org
 $downrank,site=en.m.wiktionary.org
 $downrank=10,site=facebook.com
+$downrank=4,site=familylife.com
 $downrank=3,site=fandom.com
 $downrank,site=fr.m.wiktionary.org
 $downrank=3,site=medium.com
 $downrank=10,site=music.apple.com
 $downrank=6,site=open.spotify.com
-$downrank,site=plannedparenthood.org
+$downrank=4,site=plannedparenthood.org
 $downrank=10,site=play.google.com
-$downrank,site=psychologytoday.com
+$downrank=4,site=psychologytoday.com
 $downrank=3,site=reddit.com
 $downrank,site=statnews.com
 $downrank=3,site=substack.com
 $downrank,site=teenhealthsource.com
 $downrank,site=twentyeighthealth.com
 $downrank=10,site=uptodown.com
-$downrank,site=webmd.com
+$downrank=4,site=webmd.com
 $downrank=2,site=yourtango.com
 $downrank=6,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (2)
+! TLD-level rules (4)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
 |https://*.edu^$downrank=1
+|https://*.edu^$downrank=4
+|https://*.health^$discard
 |https://*.health^$downrank=1
 
 ! ==========================================================================
-! Discarded domains (3)
+! Discarded domains (5)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
 $discard,site=pluralsight.com
 $discard,site=pornhub.com
+$discard,site=twentyeighthealth.com
 $discard,site=xvideos.com
+$discard,site=yourtango.com
 
 ! ==========================================================================
-! Path-specific rules (9)
+! Path-specific rules (10)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
 /engineering$boost=6,site=anthropic.com
 /forum/$downrank=3,site=myanimelist.net
+/forum/$downrank=6,site=myanimelist.net
 /forums.htm$boost=3,site=jeuxvideo.com
 /forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm$boost=3,site=jeuxvideo.com
 /images$boost=2,site=yandex.com
