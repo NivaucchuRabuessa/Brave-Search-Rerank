@@ -111,13 +111,15 @@ $boost=8,site=yorhel.nl
 $boost=6,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (23)
+! Downranked domains (27)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
 $downrank=10,site=apps.apple.com
 $downrank=4,site=asrm.org
+$downrank,site=collinsdictionary.com
 $downrank,site=dictionary.cambridge.org
+$downrank,site=dictionary.com
 $downrank,site=en.m.wiktionary.org
 $downrank=10,site=facebook.com
 $downrank=4,site=familylife.com
@@ -129,6 +131,7 @@ $downrank=6,site=open.spotify.com
 $downrank=4,site=plannedparenthood.org
 $downrank=10,site=play.google.com
 $downrank=4,site=psychologytoday.com
+$downrank=10,site=quora.com
 $downrank=3,site=reddit.com
 $downrank,site=statnews.com
 $downrank=3,site=substack.com
@@ -136,6 +139,7 @@ $downrank,site=teenhealthsource.com
 $downrank,site=twentyeighthealth.com
 $downrank=10,site=uptodown.com
 $downrank=4,site=webmd.com
+$downrank,site=yourdictionary.com
 $downrank=2,site=yourtango.com
 $downrank=6,site=youtube.com
 
@@ -150,14 +154,33 @@ $downrank=6,site=youtube.com
 |https://*.health^$downrank=1
 
 ! ==========================================================================
-! Discarded domains (5)
+! Discarded domains (24)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
+$discard,site=alohatube.com
+$discard,site=beeg.com
+$discard,site=darknessporn.com
+$discard,site=eporner.com
+$discard,site=fuq.com
+$discard,site=gangbangcreampie.com
+$discard,site=hqporn.xxx
 $discard,site=pluralsight.com
+$discard,site=porn00.org
+$discard,site=pornhat.com
 $discard,site=pornhub.com
+$discard,site=pornone.com
+$discard,site=pornpics.com
+$discard,site=punishworld.com
+$discard,site=redtube.com
+$discard,site=tnaflix.com
+$discard,site=tubegalore.com
 $discard,site=twentyeighthealth.com
+$discard,site=xhaccess.com
+$discard,site=xhamster.com
+$discard,site=xnxx.com
 $discard,site=xvideos.com
+$discard,site=youporn.com
 $discard,site=yourtango.com
 
 ! ==========================================================================
