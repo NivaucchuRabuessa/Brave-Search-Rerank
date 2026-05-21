@@ -1,20 +1,40 @@
 """
-Merge new domains from goggles_boost.txt and goggles_discard.txt into
-my_rerank.goggle. Each .txt file contains a single URL-encoded,
-pipe-delimited value field (the raw cookie value). New domains are added
-to the existing lists; nothing is removed.
+Merge Goggle instructions into my_rerank.goggle from three possible sources:
+
+  1. pending_instructions.txt  -- raw instruction lines exported from the
+     userscript (contains full action, strength, level, and path data)
+  2. goggles_boost.txt   -- legacy cookie export (domain-only, strength 1)
+  3. goggles_discard.txt -- legacy cookie export (domain-only)
+
+The goggle file organizes instructions into five sections:
+  1. Metadata header
+  2. Raised instructions   (boost / boost=N)
+  3. Downranked instructions (downrank / downrank=N)
+  4. TLD-level instructions  (|https://*.tld^ patterns)
+  5. Discarded instructions  (discard)
+  6. Path-specific instructions  (URL-pattern + action)
 """
 
 from pathlib import Path
 from urllib.parse import unquote
+import re
 
 GOGGLE = Path(__file__).parent / "my_rerank.goggle"
+PENDING_TXT = Path(__file__).parent / "pending_instructions.txt"
 BOOST_TXT = Path(__file__).parent / "goggles_boost.txt"
 DISCARD_TXT = Path(__file__).parent / "goggles_discard.txt"
 
-# Lines that count as metadata (kept verbatim at the top of the file).
-METADATA_KEYS = {"name", "description", "public", "author", "avatar",
-                 "homepage", "issues", "transferred_to", "license"}
+METADATA_KEYS = {
+    "name", "description", "public", "author", "avatar",
+    "homepage", "issues", "transferred_to", "license",
+}
+
+# Patterns used to classify goggle instructions.
+BOOST_PATTERN = re.compile(r"^\$boost(?:=(\d+))?,site=(.+)$")
+DOWNRANK_PATTERN = re.compile(r"^\$downrank(?:=(\d+))?,site=(.+)$")
+DISCARD_SITE_PATTERN = re.compile(r"^\$discard,site=(.+)$")
+TLD_PATTERN = re.compile(r"^\|https://\*\.(.+)\^(.+)$")
+PATH_PATTERN = re.compile(r"^(/[^\$]+)\$(.+),site=(.+)$")
 
 
 def parse_cookie_file(path: Path) -> set[str]:
@@ -28,89 +48,243 @@ def parse_cookie_file(path: Path) -> set[str]:
     return {d.strip() for d in decoded.split("|") if d.strip()}
 
 
-def parse_goggle(path: Path) -> tuple[list[str], set[str], set[str]]:
+def parse_pending_file(path: Path) -> list[str]:
+    """Read the pending instructions file.
+
+    Accepts two formats:
+      - A JSON array on a single line (raw localStorage dump)
+      - Plain text with one instruction per line
     """
-    Parse the goggle file. Returns:
-      - metadata lines (the '! key: value' block at the top)
-      - set of currently boosted domains
-      - set of currently discarded domains
+    if not path.exists():
+        return []
+    raw = path.read_text(encoding="utf-8").strip()
+    if not raw:
+        return []
+
+    # Detect JSON array format (raw localStorage copy-paste).
+    if raw.startswith("["):
+        import json
+        try:
+            entries = json.loads(raw)
+            return [e.strip() for e in entries if isinstance(e, str) and e.strip()]
+        except json.JSONDecodeError:
+            pass
+
+    # Fall back to newline-separated plain text.
+    return [
+        line.strip()
+        for line in raw.splitlines()
+        if line.strip() and not line.strip().startswith("!")
+    ]
+
+
+def classify_instruction(line: str, data: dict) -> bool:
     """
-    metadata: list[str] = []
-    boosts: set[str] = set()
-    discards: set[str] = set()
+    Classify a single instruction line and merge it into `data`.
+    Returns True if the line matched a known pattern.
+    """
+    match_boost = BOOST_PATTERN.match(line)
+    if match_boost:
+        strength = int(match_boost.group(1)) if match_boost.group(1) else 1
+        domain = match_boost.group(2)
+        # Last-write-wins: the most recent entry overrides earlier ones.
+        data["boosts"][domain] = strength
+        return True
+
+    match_downrank = DOWNRANK_PATTERN.match(line)
+    if match_downrank:
+        strength = int(match_downrank.group(1)) if match_downrank.group(1) else 1
+        domain = match_downrank.group(2)
+        data["downranks"][domain] = strength
+        return True
+
+    match_discard = DISCARD_SITE_PATTERN.match(line)
+    if match_discard:
+        data["discards"].add(match_discard.group(1))
+        return True
+
+    match_tld = TLD_PATTERN.match(line)
+    if match_tld:
+        data["tld_rules"].add(line)
+        return True
+
+    match_path = PATH_PATTERN.match(line)
+    if match_path:
+        data["path_rules"].add(line)
+        return True
+
+    return False
+
+
+def parse_goggle(path: Path) -> dict:
+    """Parse the goggle file into structured sections."""
+    data = {
+        "metadata": [],
+        "boosts": {},
+        "downranks": {},
+        "discards": set(),
+        "tld_rules": set(),
+        "path_rules": set(),
+    }
 
     for line in path.read_text(encoding="utf-8").splitlines():
         stripped = line.strip()
 
-        # Metadata: '! key: value' lines at the very top.
-        if stripped.startswith("! ") and ":" in stripped:
-            key = stripped[2:].split(":", 1)[0].strip()
-            if key in METADATA_KEYS:
-                metadata.append(line)
-                continue
+        if not stripped:
+            continue
 
-        if stripped.startswith("$boost,site="):
-            boosts.add(stripped.removeprefix("$boost,site="))
-        elif stripped.startswith("$discard,site="):
-            discards.add(stripped.removeprefix("$discard,site="))
+        # Metadata: '! key: value' lines.
+        if stripped.startswith("!"):
+            if ":" in stripped:
+                key = stripped[2:].split(":", 1)[0].strip()
+                if key in METADATA_KEYS:
+                    data["metadata"].append(line)
+            continue
 
-    return metadata, boosts, discards
+        classify_instruction(stripped, data)
+
+    return data
 
 
-def write_goggle(
-    path: Path,
-    metadata: list[str],
-    boosts: set[str],
-    discards: set[str],
-) -> None:
-    lines = list(metadata)
+def write_goggle(path: Path, data: dict) -> None:
+    lines = list(data["metadata"])
 
-    lines.append("")
-    lines.append(f"! {'=' * 74}")
-    lines.append(f"! Raised domains ({len(boosts)})")
-    lines.append("! Domains that appear higher in search results.")
-    lines.append(f"! {'=' * 74}")
-    lines.append("")
-    for domain in sorted(boosts):
-        lines.append(f"$boost,site={domain}")
+    boosts = data["boosts"]
+    downranks = data["downranks"]
+    discards = data["discards"]
+    tld_rules = data["tld_rules"]
+    path_rules = data["path_rules"]
 
-    lines.append("")
-    lines.append(f"! {'=' * 74}")
-    lines.append(f"! Discarded domains ({len(discards)})")
-    lines.append("! Domains that never appear in search results.")
-    lines.append(f"! {'=' * 74}")
-    lines.append("")
-    for domain in sorted(discards):
-        lines.append(f"$discard,site={domain}")
+    if boosts:
+        lines.append("")
+        lines.append(f"! {'=' * 74}")
+        lines.append(f"! Raised domains ({len(boosts)})")
+        lines.append("! Domains that appear higher in search results.")
+        lines.append(f"! {'=' * 74}")
+        lines.append("")
+        for domain in sorted(boosts):
+            strength = boosts[domain]
+            if strength == 1:
+                lines.append(f"$boost,site={domain}")
+            else:
+                lines.append(f"$boost={strength},site={domain}")
+
+    if downranks:
+        lines.append("")
+        lines.append(f"! {'=' * 74}")
+        lines.append(f"! Downranked domains ({len(downranks)})")
+        lines.append("! Domains that appear lower in search results.")
+        lines.append(f"! {'=' * 74}")
+        lines.append("")
+        for domain in sorted(downranks):
+            strength = downranks[domain]
+            if strength == 1:
+                lines.append(f"$downrank,site={domain}")
+            else:
+                lines.append(f"$downrank={strength},site={domain}")
+
+    if tld_rules:
+        lines.append("")
+        lines.append(f"! {'=' * 74}")
+        lines.append(f"! TLD-level rules ({len(tld_rules)})")
+        lines.append("! Blanket rules targeting entire top-level domains.")
+        lines.append(f"! {'=' * 74}")
+        lines.append("")
+        for rule in sorted(tld_rules):
+            lines.append(rule)
+
+    if discards:
+        lines.append("")
+        lines.append(f"! {'=' * 74}")
+        lines.append(f"! Discarded domains ({len(discards)})")
+        lines.append("! Domains that never appear in search results.")
+        lines.append(f"! {'=' * 74}")
+        lines.append("")
+        for domain in sorted(discards):
+            lines.append(f"$discard,site={domain}")
+
+    if path_rules:
+        lines.append("")
+        lines.append(f"! {'=' * 74}")
+        lines.append(f"! Path-specific rules ({len(path_rules)})")
+        lines.append("! Rules targeting specific URL paths within a domain.")
+        lines.append(f"! {'=' * 74}")
+        lines.append("")
+        for rule in sorted(path_rules):
+            lines.append(rule)
 
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
-    metadata, existing_boosts, existing_discards = parse_goggle(GOGGLE)
+    data = parse_goggle(GOGGLE)
 
-    new_boosts = parse_cookie_file(BOOST_TXT)
-    new_discards = parse_cookie_file(DISCARD_TXT)
+    before_boosts = dict(data["boosts"])
+    before_downranks = dict(data["downranks"])
+    before_discards = set(data["discards"])
+    before_tld = set(data["tld_rules"])
+    before_path = set(data["path_rules"])
 
-    added_boosts = new_boosts - existing_boosts
-    added_discards = new_discards - existing_discards
+    # --- Source 1: pending_instructions.txt (full instructions) ---
+    pending_lines = parse_pending_file(PENDING_TXT)
+    pending_unrecognized = []
+    for line in pending_lines:
+        if not classify_instruction(line, data):
+            pending_unrecognized.append(line)
 
-    merged_boosts = existing_boosts | new_boosts
-    merged_discards = existing_discards | new_discards
+    # --- Source 2+3: legacy cookie files (domain-only) ---
+    for domain in parse_cookie_file(BOOST_TXT):
+        if domain not in data["boosts"]:
+            data["boosts"][domain] = 1
 
-    write_goggle(GOGGLE, metadata, merged_boosts, merged_discards)
+    data["discards"] |= parse_cookie_file(DISCARD_TXT)
 
-    print(f"Boost:   {len(existing_boosts)} existing + {len(added_boosts)} new = {len(merged_boosts)}")
-    if added_boosts:
-        for d in sorted(added_boosts):
-            print(f"  + {d}")
+    # --- Write ---
+    write_goggle(GOGGLE, data)
 
-    print(f"Discard: {len(existing_discards)} existing + {len(added_discards)} new = {len(merged_discards)}")
-    if added_discards:
-        for d in sorted(added_discards):
-            print(f"  + {d}")
+    # --- Report ---
+    new_boosts = set(data["boosts"]) - set(before_boosts)
+    changed_boosts = {
+        d for d in set(data["boosts"]) & set(before_boosts)
+        if data["boosts"][d] != before_boosts[d]
+    }
+    new_downranks = set(data["downranks"]) - set(before_downranks)
+    new_discards = data["discards"] - before_discards
+    new_tld = data["tld_rules"] - before_tld
+    new_path = data["path_rules"] - before_path
 
-    if not added_boosts and not added_discards:
+    print(f"Boost:    {len(before_boosts)} existing + {len(new_boosts)} new = {len(data['boosts'])}")
+    for domain in sorted(new_boosts):
+        print(f"  + {domain} (strength {data['boosts'][domain]})")
+    for domain in sorted(changed_boosts):
+        print(f"  ~ {domain}: {before_boosts[domain]} -> {data['boosts'][domain]}")
+
+    if data["downranks"] or new_downranks:
+        print(f"Downrank: {len(before_downranks)} existing + {len(new_downranks)} new = {len(data['downranks'])}")
+        for domain in sorted(new_downranks):
+            print(f"  + {domain} (strength {data['downranks'][domain]})")
+
+    print(f"Discard:  {len(before_discards)} existing + {len(new_discards)} new = {len(data['discards'])}")
+    for domain in sorted(new_discards):
+        print(f"  + {domain}")
+
+    if new_tld:
+        print(f"TLD:      {len(before_tld)} existing + {len(new_tld)} new = {len(data['tld_rules'])}")
+        for rule in sorted(new_tld):
+            print(f"  + {rule}")
+
+    if new_path:
+        print(f"Path:     {len(before_path)} existing + {len(new_path)} new = {len(data['path_rules'])}")
+        for rule in sorted(new_path):
+            print(f"  + {rule}")
+
+    if pending_unrecognized:
+        print(f"\nWarning: {len(pending_unrecognized)} unrecognized instruction(s):")
+        for line in pending_unrecognized:
+            print(f"  ? {line}")
+
+    total_new = len(new_boosts) + len(new_downranks) + len(new_discards) + len(new_tld) + len(new_path) + len(changed_boosts)
+    if total_new == 0:
         print("Nothing new to add.")
 
 

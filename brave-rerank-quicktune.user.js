@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Brave Rerank Quick Tune (Goggle Mode)
 // @namespace    master-rerank
-// @version      1.2
-// @description  Adds boost/discard buttons to Brave Search results even when a Goggle is active. Clicks POST to /settings just like the native Quick Tune UI.
+// @version      2.1
+// @description  Adds boost/downrank/discard controls to Brave Search results with strength and targeting-level prompts. Persists full Goggle instructions in localStorage for export.
 // @match        https://search.brave.com/goggles?q=*
 // @match        https://search.brave.com/search?q=*
 // @grant        none
@@ -13,12 +13,43 @@
   "use strict";
 
   // ---------------------------------------------------------------------------
-  // SVG icons -- taken straight from the native Quick Tune markup
+  // localStorage key for accumulated instruction lines
+  // ---------------------------------------------------------------------------
+
+  const STORAGE_KEY = "rr_pending_instructions";
+
+  function loadPendingInstructions() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function savePendingInstructions(instructions) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(instructions));
+    updateBadge();
+  }
+
+  function appendInstruction(line) {
+    const instructions = loadPendingInstructions();
+    // Avoid exact duplicates.
+    if (!instructions.includes(line)) {
+      instructions.push(line);
+    }
+    savePendingInstructions(instructions);
+  }
+
+  // ---------------------------------------------------------------------------
+  // SVG icons
   // ---------------------------------------------------------------------------
 
   const BOOST_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>`;
 
   const DISCARD_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>`;
+
+  const TUNE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/></svg>`;
 
   // ---------------------------------------------------------------------------
   // Stylesheet
@@ -52,15 +83,16 @@
       opacity: 1;
       background: var(--color-bg-tertiary, rgba(128,128,128,0.15));
     }
-    .rr-btn.rr-boost:hover  { color: #22c55e; }
-    .rr-btn.rr-discard:hover { color: #ef4444; }
+    .rr-btn.rr-tune:hover { color: #a78bfa; }
 
     .rr-btn.rr-done {
       opacity: 1;
     }
     .rr-btn.rr-done.rr-boost   { color: #22c55e; }
     .rr-btn.rr-done.rr-discard { color: #ef4444; }
+    .rr-btn.rr-done.rr-downrank { color: #f59e0b; }
 
+    /* ---- Toast ---- */
     .rr-toast {
       position: fixed;
       bottom: 24px;
@@ -81,6 +113,283 @@
     }
     .rr-toast.rr-boost-toast   { background: #16a34a; }
     .rr-toast.rr-discard-toast { background: #dc2626; }
+    .rr-toast.rr-downrank-toast { background: #d97706; }
+
+    /* ---- Floating badge ---- */
+    .rr-badge {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 99980;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: var(--color-bg-primary, #1e1e2e);
+      border: 1px solid var(--color-border-primary, #333);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      font: 12px/1.4 system-ui, sans-serif;
+      color: var(--color-text-secondary, #ccc);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .rr-badge:hover {
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.15));
+    }
+    .rr-badge-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 10px;
+      background: #a78bfa;
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      font-variant-numeric: tabular-nums;
+    }
+    .rr-badge.rr-badge-empty {
+      opacity: 0.4;
+    }
+
+    /* ---- Export panel ---- */
+    .rr-export-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99984;
+    }
+    .rr-export-panel {
+      position: fixed;
+      bottom: 60px;
+      left: 20px;
+      z-index: 99985;
+      background: var(--color-bg-primary, #1e1e2e);
+      border: 1px solid var(--color-border-primary, #333);
+      border-radius: 10px;
+      padding: 14px 16px;
+      min-width: 340px;
+      max-width: 520px;
+      max-height: 60vh;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      font: 13px/1.5 system-ui, sans-serif;
+      color: var(--color-text-primary, #e0e0e0);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rr-export-panel h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .rr-export-panel textarea {
+      width: 100%;
+      min-height: 120px;
+      max-height: 40vh;
+      padding: 8px;
+      border: 1px solid var(--color-border-primary, #444);
+      border-radius: 6px;
+      background: var(--color-bg-tertiary, #111);
+      color: var(--color-text-primary, #ddd);
+      font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 11px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .rr-export-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .rr-export-actions button {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .rr-export-actions .rr-copy-btn {
+      background: #a78bfa;
+      color: #fff;
+    }
+    .rr-export-actions .rr-copy-btn:hover {
+      background: #8b5cf6;
+    }
+    .rr-export-actions .rr-download-btn {
+      background: #22c55e;
+      color: #fff;
+    }
+    .rr-export-actions .rr-download-btn:hover {
+      background: #16a34a;
+    }
+    .rr-export-actions .rr-clear-btn {
+      background: #ef4444;
+      color: #fff;
+    }
+    .rr-export-actions .rr-clear-btn:hover {
+      background: #dc2626;
+    }
+    .rr-export-actions .rr-close-export-btn {
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.15));
+      color: var(--color-text-secondary, #ccc);
+    }
+
+    /* ---- Popup panel (tune dialog) ---- */
+    .rr-popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99990;
+    }
+    .rr-popup {
+      position: fixed;
+      z-index: 99991;
+      background: var(--color-bg-primary, #1e1e2e);
+      border: 1px solid var(--color-border-primary, #333);
+      border-radius: 10px;
+      padding: 14px 16px;
+      min-width: 310px;
+      max-width: 420px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      font: 13px/1.5 system-ui, -apple-system, sans-serif;
+      color: var(--color-text-primary, #e0e0e0);
+    }
+    .rr-popup h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-primary, #fff);
+    }
+    .rr-popup .rr-url-preview {
+      margin: 0 0 12px;
+      padding: 6px 8px;
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.1));
+      border-radius: 6px;
+      font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 11px;
+      word-break: break-all;
+      color: var(--color-text-secondary, #aaa);
+      max-height: 40px;
+      overflow: hidden;
+    }
+
+    .rr-popup fieldset {
+      border: none;
+      margin: 0 0 10px;
+      padding: 0;
+    }
+    .rr-popup legend {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-tertiary, #888);
+      margin-bottom: 6px;
+    }
+
+    .rr-radio-group {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .rr-radio-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.1));
+      border: 1px solid transparent;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .rr-radio-group label:hover {
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.2));
+    }
+    .rr-radio-group input[type="radio"] {
+      display: none;
+    }
+    .rr-radio-group input[type="radio"]:checked + span {
+      font-weight: 600;
+    }
+    .rr-radio-group label:has(input:checked) {
+      border-color: #a78bfa;
+      background: rgba(167,139,250,0.12);
+    }
+    .rr-radio-group label.rr-action-boost:has(input:checked) {
+      border-color: #22c55e;
+      background: rgba(34,197,94,0.12);
+    }
+    .rr-radio-group label.rr-action-downrank:has(input:checked) {
+      border-color: #f59e0b;
+      background: rgba(245,158,11,0.12);
+    }
+    .rr-radio-group label.rr-action-discard:has(input:checked) {
+      border-color: #ef4444;
+      background: rgba(239,68,68,0.12);
+    }
+
+    .rr-strength-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rr-strength-row input[type="range"] {
+      flex: 1;
+      accent-color: #a78bfa;
+    }
+    .rr-strength-row .rr-strength-value {
+      min-width: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rr-target-preview {
+      margin: 8px 0 12px;
+      padding: 6px 8px;
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.1));
+      border-radius: 6px;
+      font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 11px;
+      word-break: break-all;
+      color: #a78bfa;
+    }
+
+    .rr-popup-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .rr-popup-actions button {
+      padding: 6px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+    }
+    .rr-popup-actions .rr-cancel-btn {
+      background: var(--color-bg-tertiary, rgba(128,128,128,0.15));
+      color: var(--color-text-secondary, #ccc);
+    }
+    .rr-popup-actions .rr-cancel-btn:hover {
+      background: rgba(128,128,128,0.3);
+    }
+    .rr-popup-actions .rr-apply-btn {
+      background: #a78bfa;
+      color: #fff;
+    }
+    .rr-popup-actions .rr-apply-btn:hover {
+      background: #8b5cf6;
+    }
   `;
   document.head.appendChild(style);
 
@@ -88,178 +397,446 @@
   // Toast notification
   // ---------------------------------------------------------------------------
 
-  let toastEl = null;
+  let toastElement = null;
   let toastTimer = null;
 
   function toast(message, type) {
-    if (toastEl) toastEl.remove();
-    toastEl = document.createElement("div");
-    toastEl.className = `rr-toast rr-${type}-toast`;
-    toastEl.textContent = message;
-    document.body.appendChild(toastEl);
-    requestAnimationFrame(() => toastEl.classList.add("rr-show"));
+    if (toastElement) toastElement.remove();
+    toastElement = document.createElement("div");
+    toastElement.className = `rr-toast rr-${type}-toast`;
+    toastElement.textContent = message;
+    document.body.appendChild(toastElement);
+    requestAnimationFrame(() => toastElement.classList.add("rr-show"));
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
-      toastEl.classList.remove("rr-show");
-      setTimeout(() => toastEl?.remove(), 300);
-    }, 2200);
+      toastElement.classList.remove("rr-show");
+      setTimeout(() => toastElement?.remove(), 300);
+    }, 2800);
   }
 
   // ---------------------------------------------------------------------------
-  // POST to /settings -- same mechanism the native Quick Tune forms use
+  // URL decomposition helpers
   // ---------------------------------------------------------------------------
 
-  async function postSetting(action, domain, type) {
-    const body = new URLSearchParams();
-    body.set("name", action);
-    body.set("value", domain);
-    if (type) body.set("type", type);  // needed for "quick-goggles-remove"
-
+  function decomposeUrl(href) {
     try {
-      const res = await fetch("/settings", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-        credentials: "same-origin",
-        redirect: "manual",
-      });
-      return res.status < 400 || res.type === "opaqueredirect";
-    } catch {
-      return false;
-    }
-  }
+      const urlObject = new URL(href);
+      const hostname = urlObject.hostname.replace(/^www\./, "");
+      const parts = hostname.split(".");
+      const twoPartSuffixes = [
+        "co.uk", "co.jp", "co.kr", "co.in", "com.au", "com.br",
+        "com.mx", "com.cn", "com.tw", "com.hk", "com.sg", "com.tr",
+        "com.ua", "com.de", "org.uk", "net.au", "ac.uk", "ac.in",
+        "ac.jp", "gov.uk", "gov.in", "edu.in", "edu.au",
+      ];
+      let effectiveTld = parts.slice(-1).join(".");
+      if (parts.length >= 3) {
+        const candidateCcTld = parts.slice(-2).join(".");
+        if (twoPartSuffixes.includes(candidateCcTld)) {
+          effectiveTld = candidateCcTld;
+        }
+      }
 
-  // ---------------------------------------------------------------------------
-  // Extract hostname from a URL string, stripping "www."
-  // ---------------------------------------------------------------------------
+      const tldParts = effectiveTld.split(".");
+      const domainParts = parts.slice(-(tldParts.length + 1));
+      const domain = domainParts.join(".");
 
-  function extractDomain(href) {
-    try {
-      const u = new URL(href);
-      return u.hostname.replace(/^www\./, "");
+      const subdomain = hostname !== domain ? hostname : null;
+      const path = urlObject.pathname;
+
+      return { hostname, tld: effectiveTld, domain, subdomain, path, full: href };
     } catch {
       return null;
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // Read goggles_boost / goggles_discard cookies to restore button state
-  // ---------------------------------------------------------------------------
+  function buildInstruction(action, strength, level, urlParts, customPath) {
+    let actionFragment;
+    if (action === "discard") {
+      actionFragment = "$discard";
+    } else {
+      actionFragment = `$${action}=${strength}`;
+    }
 
-  function parseCookieDomains(cookieName) {
-    const match = document.cookie.match(
-      new RegExp(`(?:^|;\\s*)${cookieName}=([^;]*)`)
-    );
-    if (!match) return new Set();
-    const decoded = decodeURIComponent(match[1]);
-    return new Set(decoded.split("|").map((d) => d.trim()).filter(Boolean));
+    switch (level) {
+      case "tld":
+        return `|https://*.${urlParts.tld}^${actionFragment}`;
+
+      case "domain":
+        return `${actionFragment},site=${urlParts.domain}`;
+
+      case "subdomain": {
+        const target = urlParts.subdomain || urlParts.domain;
+        return `${actionFragment},site=${target}`;
+      }
+
+      case "path": {
+        const pathValue = customPath || urlParts.path;
+        if (pathValue && pathValue !== "/") {
+          return `${pathValue}${actionFragment},site=${urlParts.subdomain || urlParts.domain}`;
+        }
+        return `${actionFragment},site=${urlParts.subdomain || urlParts.domain}`;
+      }
+
+      default:
+        return `${actionFragment},site=${urlParts.domain}`;
+    }
   }
 
-  const boostedDomains = parseCookieDomains("goggles_boost");
-  const discardedDomains = parseCookieDomains("goggles_discard");
+  // ---------------------------------------------------------------------------
+  // Floating badge + export panel
+  // ---------------------------------------------------------------------------
 
-  // Check whether a domain matches any entry in a set.  Handles the case where
-  // the cookie stores "wikipedia.org" but the result domain is
-  // "en.wikipedia.org", or vice versa.
-  function domainMatchesSet(domain, domainSet) {
-    if (domainSet.has(domain)) return true;
-    for (const entry of domainSet) {
-      if (domain.endsWith("." + entry) || entry.endsWith("." + domain)) {
-        return true;
-      }
+  const badge = document.createElement("div");
+  badge.className = "rr-badge";
+  badge.innerHTML = `<span class="rr-badge-count">0</span> pending`;
+  document.body.appendChild(badge);
+
+  function updateBadge() {
+    const count = loadPendingInstructions().length;
+    const countSpan = badge.querySelector(".rr-badge-count");
+    countSpan.textContent = count;
+    badge.classList.toggle("rr-badge-empty", count === 0);
+  }
+  updateBadge();
+
+  let exportPanelOpen = false;
+
+  function closeExportPanel() {
+    const overlay = document.querySelector(".rr-export-overlay");
+    const panel = document.querySelector(".rr-export-panel");
+    if (overlay) overlay.remove();
+    if (panel) panel.remove();
+    exportPanelOpen = false;
+  }
+
+  function openExportPanel() {
+    if (exportPanelOpen) {
+      closeExportPanel();
+      return;
     }
-    return false;
+
+    const instructions = loadPendingInstructions();
+
+    const overlay = document.createElement("div");
+    overlay.className = "rr-export-overlay";
+    overlay.addEventListener("click", closeExportPanel);
+
+    const panel = document.createElement("div");
+    panel.className = "rr-export-panel";
+
+    const heading = document.createElement("h3");
+    heading.textContent = `Pending instructions (${instructions.length})`;
+    panel.appendChild(heading);
+
+    const textarea = document.createElement("textarea");
+    textarea.value = instructions.join("\n");
+    textarea.readOnly = true;
+    panel.appendChild(textarea);
+
+    const actionsRow = document.createElement("div");
+    actionsRow.className = "rr-export-actions";
+
+    const copyButton = document.createElement("button");
+    copyButton.className = "rr-copy-btn";
+    copyButton.textContent = "Copy all";
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+        toast("Copied to clipboard", "boost");
+      } catch {
+        textarea.select();
+        document.execCommand("copy");
+        toast("Copied to clipboard", "boost");
+      }
+    });
+
+    const downloadButton = document.createElement("button");
+    downloadButton.className = "rr-download-btn";
+    downloadButton.textContent = "Download .txt";
+    downloadButton.addEventListener("click", () => {
+      const blob = new Blob([textarea.value + "\n"], { type: "text/plain" });
+      const anchor = document.createElement("a");
+      anchor.href = URL.createObjectURL(blob);
+      anchor.download = "pending_instructions.txt";
+      anchor.click();
+      URL.revokeObjectURL(anchor.href);
+      toast("Downloaded pending_instructions.txt", "boost");
+    });
+
+    const clearButton = document.createElement("button");
+    clearButton.className = "rr-clear-btn";
+    clearButton.textContent = "Clear all";
+    clearButton.addEventListener("click", () => {
+      savePendingInstructions([]);
+      textarea.value = "";
+      heading.textContent = "Pending instructions (0)";
+      toast("Cleared all pending instructions", "discard");
+    });
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "rr-close-export-btn";
+    closeButton.textContent = "Close";
+    closeButton.addEventListener("click", closeExportPanel);
+
+    actionsRow.appendChild(copyButton);
+    actionsRow.appendChild(downloadButton);
+    actionsRow.appendChild(clearButton);
+    actionsRow.appendChild(closeButton);
+    panel.appendChild(actionsRow);
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(panel);
+    exportPanelOpen = true;
+  }
+
+  badge.addEventListener("click", openExportPanel);
+
+  // ---------------------------------------------------------------------------
+  // Popup: prompt for action, strength, and targeting level
+  // ---------------------------------------------------------------------------
+
+  let activePopup = null;
+
+  function closePopup() {
+    if (activePopup) {
+      activePopup.overlay.remove();
+      activePopup.panel.remove();
+      activePopup = null;
+    }
+  }
+
+  function openPopup(anchorElement, urlParts) {
+    closePopup();
+
+    const overlay = document.createElement("div");
+    overlay.className = "rr-popup-overlay";
+    overlay.addEventListener("click", closePopup);
+
+    const panel = document.createElement("div");
+    panel.className = "rr-popup";
+
+    const anchorRect = anchorElement.getBoundingClientRect();
+    panel.style.top = `${anchorRect.bottom + 6}px`;
+    panel.style.left = `${Math.max(8, anchorRect.left - 120)}px`;
+
+    // --- Header ---
+    const heading = document.createElement("h3");
+    heading.textContent = "Quick Tune";
+    panel.appendChild(heading);
+
+    // --- URL preview ---
+    const urlPreview = document.createElement("div");
+    urlPreview.className = "rr-url-preview";
+    urlPreview.textContent = urlParts.full;
+    panel.appendChild(urlPreview);
+
+    // --- Action selection ---
+    const actionFieldset = document.createElement("fieldset");
+    const actionLegend = document.createElement("legend");
+    actionLegend.textContent = "Action";
+    actionFieldset.appendChild(actionLegend);
+
+    const actionGroup = document.createElement("div");
+    actionGroup.className = "rr-radio-group";
+
+    const actions = [
+      { value: "boost", label: "Boost", cssClass: "rr-action-boost" },
+      { value: "downrank", label: "Downrank", cssClass: "rr-action-downrank" },
+      { value: "discard", label: "Discard", cssClass: "rr-action-discard" },
+    ];
+
+    for (const actionOption of actions) {
+      const label = document.createElement("label");
+      label.className = actionOption.cssClass;
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "rr-action";
+      radio.value = actionOption.value;
+      if (actionOption.value === "boost") radio.checked = true;
+      const span = document.createElement("span");
+      span.textContent = actionOption.label;
+      label.appendChild(radio);
+      label.appendChild(span);
+      actionGroup.appendChild(label);
+      radio.addEventListener("change", updatePreview);
+    }
+    actionFieldset.appendChild(actionGroup);
+    panel.appendChild(actionFieldset);
+
+    // --- Strength slider ---
+    const strengthFieldset = document.createElement("fieldset");
+    strengthFieldset.className = "rr-strength-fieldset";
+    const strengthLegend = document.createElement("legend");
+    strengthLegend.textContent = "Strength";
+    strengthFieldset.appendChild(strengthLegend);
+
+    const strengthRow = document.createElement("div");
+    strengthRow.className = "rr-strength-row";
+    const strengthSlider = document.createElement("input");
+    strengthSlider.type = "range";
+    strengthSlider.min = "1";
+    strengthSlider.max = "10";
+    strengthSlider.value = "3";
+    const strengthLabel = document.createElement("span");
+    strengthLabel.className = "rr-strength-value";
+    strengthLabel.textContent = "3";
+    strengthSlider.addEventListener("input", () => {
+      strengthLabel.textContent = strengthSlider.value;
+      updatePreview();
+    });
+    strengthRow.appendChild(strengthSlider);
+    strengthRow.appendChild(strengthLabel);
+    strengthFieldset.appendChild(strengthRow);
+    panel.appendChild(strengthFieldset);
+
+    // --- Level selection ---
+    const levelFieldset = document.createElement("fieldset");
+    const levelLegend = document.createElement("legend");
+    levelLegend.textContent = "Target level";
+    levelFieldset.appendChild(levelLegend);
+
+    const levelGroup = document.createElement("div");
+    levelGroup.className = "rr-radio-group";
+
+    const levels = [
+      { value: "domain", label: urlParts.domain },
+      ...(urlParts.subdomain
+        ? [{ value: "subdomain", label: urlParts.subdomain }]
+        : []),
+      { value: "tld", label: `*.${urlParts.tld}` },
+      ...(urlParts.path && urlParts.path !== "/"
+        ? [{ value: "path", label: urlParts.path }]
+        : []),
+    ];
+
+    for (const levelOption of levels) {
+      const label = document.createElement("label");
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "rr-level";
+      radio.value = levelOption.value;
+      if (levelOption.value === (urlParts.subdomain ? "subdomain" : "domain")) {
+        radio.checked = true;
+      }
+      const span = document.createElement("span");
+      span.textContent = levelOption.label;
+      label.appendChild(radio);
+      label.appendChild(span);
+      levelGroup.appendChild(label);
+      radio.addEventListener("change", updatePreview);
+    }
+    levelFieldset.appendChild(levelGroup);
+    panel.appendChild(levelFieldset);
+
+    // --- Instruction preview ---
+    const previewBox = document.createElement("div");
+    previewBox.className = "rr-target-preview";
+    panel.appendChild(previewBox);
+
+    function getSelectedRadio(name) {
+      return panel.querySelector(`input[name="${name}"]:checked`)?.value;
+    }
+
+    function updatePreview() {
+      const selectedAction = getSelectedRadio("rr-action");
+      const selectedLevel = getSelectedRadio("rr-level");
+      const selectedStrength = parseInt(strengthSlider.value, 10);
+
+      strengthFieldset.style.display =
+        selectedAction === "discard" ? "none" : "";
+
+      const instruction = buildInstruction(
+        selectedAction,
+        selectedStrength,
+        selectedLevel,
+        urlParts
+      );
+      previewBox.textContent = instruction;
+    }
+
+    updatePreview();
+
+    // --- Action buttons ---
+    const actionsRow = document.createElement("div");
+    actionsRow.className = "rr-popup-actions";
+
+    const cancelButton = document.createElement("button");
+    cancelButton.className = "rr-cancel-btn";
+    cancelButton.textContent = "Cancel";
+    cancelButton.addEventListener("click", closePopup);
+
+    const applyButton = document.createElement("button");
+    applyButton.className = "rr-apply-btn";
+    applyButton.textContent = "Apply";
+    applyButton.addEventListener("click", () => {
+      const selectedAction = getSelectedRadio("rr-action");
+      const selectedLevel = getSelectedRadio("rr-level");
+      const selectedStrength = parseInt(strengthSlider.value, 10);
+      const instruction = buildInstruction(
+        selectedAction,
+        selectedStrength,
+        selectedLevel,
+        urlParts
+      );
+
+      // Persist the full instruction line in localStorage.
+      appendInstruction(instruction);
+
+      toast(`Saved: ${instruction}`, selectedAction);
+      closePopup();
+    });
+
+    actionsRow.appendChild(cancelButton);
+    actionsRow.appendChild(applyButton);
+    panel.appendChild(actionsRow);
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(panel);
+
+    requestAnimationFrame(() => {
+      const panelRect = panel.getBoundingClientRect();
+      if (panelRect.right > window.innerWidth - 8) {
+        panel.style.left = `${window.innerWidth - panelRect.width - 8}px`;
+      }
+      if (panelRect.bottom > window.innerHeight - 8) {
+        panel.style.top = `${anchorRect.top - panelRect.height - 6}px`;
+      }
+    });
+
+    activePopup = { overlay, panel };
   }
 
   // ---------------------------------------------------------------------------
   // Inject controls into a result element
   // ---------------------------------------------------------------------------
 
-  function injectControls(resultEl, domain) {
-    if (resultEl.querySelector(".rr-controls")) return; // already done
+  function injectControls(resultElement, href) {
+    if (resultElement.querySelector(".rr-controls")) return;
+
+    const urlParts = decomposeUrl(href);
+    if (!urlParts) return;
 
     const wrapper = document.createElement("span");
     wrapper.className = "rr-controls";
 
-    // Check if this domain is already in a cookie list. The cookies store
-    // exact values from previous Quick Tune clicks, which may be subdomains
-    // (e.g. "en.wikipedia.org") or bare domains ("wikipedia.org"). We check
-    // whether the result domain ends with any stored entry, or vice versa.
-    const isBoosted = domainMatchesSet(domain, boostedDomains);
-    const isDiscarded = domainMatchesSet(domain, discardedDomains);
-
-    const boostBtn = document.createElement("button");
-    boostBtn.className = "rr-btn rr-boost" + (isBoosted ? " rr-done" : "");
-    boostBtn.title = `Raise ${domain}`;
-    boostBtn.innerHTML = BOOST_SVG;
-
-    const discardBtn = document.createElement("button");
-    discardBtn.className = "rr-btn rr-discard" + (isDiscarded ? " rr-done" : "");
-    discardBtn.title = `Discard ${domain}`;
-    discardBtn.innerHTML = DISCARD_SVG;
-
-    boostBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const wasActive = boostBtn.classList.contains("rr-done");
-
-      if (wasActive) {
-        // Remove boost
-        const ok = await postSetting("quick-goggles-remove", domain, "boost");
-        if (ok) {
-          boostBtn.classList.remove("rr-done");
-          boostedDomains.delete(domain);
-          toast(`Removed raise: ${domain}`, "discard");
-        }
-      } else {
-        // Add boost
-        const ok = await postSetting("quick-goggles-boost", domain);
-        if (ok) {
-          boostBtn.classList.add("rr-done");
-          discardBtn.classList.remove("rr-done");
-          boostedDomains.add(domain);
-          discardedDomains.delete(domain);
-          toast(`Raised: ${domain}`, "boost");
-        }
-      }
+    // Tune button that opens the popup
+    const tuneButton = document.createElement("button");
+    tuneButton.className = "rr-btn rr-tune";
+    tuneButton.title = `Tune ranking for ${urlParts.hostname}`;
+    tuneButton.innerHTML = TUNE_SVG;
+    tuneButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openPopup(tuneButton, urlParts);
     });
+    wrapper.appendChild(tuneButton);
 
-    discardBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const wasActive = discardBtn.classList.contains("rr-done");
-
-      if (wasActive) {
-        // Remove discard
-        const ok = await postSetting("quick-goggles-remove", domain, "discard");
-        if (ok) {
-          discardBtn.classList.remove("rr-done");
-          discardedDomains.delete(domain);
-          toast(`Removed discard: ${domain}`, "boost");
-        }
-      } else {
-        // Add discard
-        const ok = await postSetting("quick-goggles-discard", domain);
-        if (ok) {
-          discardBtn.classList.add("rr-done");
-          boostBtn.classList.remove("rr-done");
-          discardedDomains.add(domain);
-          boostedDomains.delete(domain);
-          toast(`Discarded: ${domain}`, "discard");
-        }
-      }
-    });
-
-    wrapper.appendChild(boostBtn);
-    wrapper.appendChild(discardBtn);
-
-    // Find best insertion point: the URL/cite line of the snippet, or fall back
-    // to the first child.
-    const cite = resultEl.querySelector("cite, .url, [data-testid='url']");
+    const cite = resultElement.querySelector("cite, .url, [data-testid='url']");
     if (cite) {
       cite.parentElement.appendChild(wrapper);
     } else {
-      resultEl.prepend(wrapper);
+      resultElement.prepend(wrapper);
     }
   }
 
@@ -268,39 +845,40 @@
   // ---------------------------------------------------------------------------
 
   function processResults() {
-    // Brave Search uses several possible selectors for web results.
-    // We look for the most common container patterns.
     const selectors = [
-      "#results .snippet",                 // standard web snippets
-      "#results .fdb",                     // featured / deep-blue results
-      "#results [data-type='web']",        // data-attribute variant
-      "#results .card",                    // card-style results
-      "#results .result",                  // generic result
+      "#results .snippet",
+      "#results .fdb",
+      "#results [data-type='web']",
+      "#results .card",
+      "#results .result",
     ];
 
     const seen = new Set();
 
-    for (const sel of selectors) {
-      for (const el of document.querySelectorAll(sel)) {
-        if (seen.has(el)) continue;
-        seen.add(el);
+    for (const selector of selectors) {
+      for (const element of document.querySelectorAll(selector)) {
+        if (seen.has(element)) continue;
+        seen.add(element);
 
-        // Find the outbound link
-        const link = el.querySelector("a[href^='http']");
+        const link = element.querySelector("a[href^='http']");
         if (!link) continue;
 
-        const domain = extractDomain(link.href);
-        if (!domain) continue;
+        const hostname = (() => {
+          try {
+            return new URL(link.href).hostname;
+          } catch {
+            return null;
+          }
+        })();
+        if (!hostname) continue;
+        if (hostname.endsWith("brave.com") || hostname.endsWith("brave.app"))
+          continue;
 
-        // Skip internal brave.com links
-        if (domain.endsWith("brave.com") || domain.endsWith("brave.app")) continue;
-
-        injectControls(el, domain);
+        injectControls(element, link.href);
       }
     }
   }
 
-  // Run once on load, then observe for dynamically appended results.
   processResults();
 
   const observer = new MutationObserver(() => processResults());
