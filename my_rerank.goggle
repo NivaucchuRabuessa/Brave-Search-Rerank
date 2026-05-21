@@ -3,8 +3,9 @@
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
+
 ! ==========================================================================
-! Raised domains (98)
+! Raised domains (99)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -43,20 +44,21 @@ $boost=4,site=cnil.fr
 $boost,site=codeberg.org
 $boost,site=crystal-lang.org
 $boost=2,site=culturezvous.com
-$boost=4,site=danbooru.donmai.us
+$boost=2,site=danbooru.donmai.us
 $boost,site=deepl.com
 $boost=4,site=deepmind.google
 $boost=4,site=defenseurdesdroits.fr
 $boost=8,site=dev.yorhel.nl
-$boost=8,site=dic.nicovideo.jp
-$boost=8,site=dic.pixiv.net
+$boost=4,site=dic.nicovideo.jp
+$boost=4,site=dic.pixiv.net
 $boost,site=druide.com
-$boost=4,site=e-hentai.org
+$boost=2,site=e-hentai.org
 $boost=4,site=ecnl.org
 $boost=4,site=edri.org
-$boost=4,site=en.wikipedia.org
+$boost=2,site=en.wikipedia.org
+$boost=2,site=en.wiktionary.org
 $boost=4,site=everythingmoe.com
-$boost=4,site=exhentai.org
+$boost=2,site=exhentai.org
 $boost=3,site=forum.hardware.fr
 $boost=3,site=forum.thiweb.com
 $boost=3,site=forums.fuwanovel.moe
@@ -64,7 +66,7 @@ $boost,site=free.fr
 $boost=4,site=fruitbatfactory.com
 $boost=8,site=g.blicky.net
 $boost=4,site=gallica.bnf.fr
-$boost=4,site=gelbooru.com
+$boost=2,site=gelbooru.com
 $boost,site=gitlab.com
 $boost,site=gunkies.org
 $boost=4,site=intfiction.org
@@ -108,11 +110,13 @@ $boost=8,site=yorhel.nl
 $boost=6,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (10)
+! Downranked domains (12)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
 $downrank=10,site=apps.apple.com
+$downrank,site=dictionary.cambridge.org
+$downrank,site=en.m.wiktionary.org
 $downrank=3,site=fandom.com
 $downrank=3,site=medium.com
 $downrank=10,site=music.apple.com
@@ -124,14 +128,16 @@ $downrank=10,site=uptodown.com
 $downrank=6,site=youtube.com
 
 ! ==========================================================================
-! Discarded domains (1)
+! Discarded domains (3)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
 $discard,site=pluralsight.com
+$discard,site=pornhub.com
+$discard,site=xvideos.com
 
 ! ==========================================================================
-! Path-specific rules (7)
+! Path-specific rules (8)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -141,4 +147,5 @@ $discard,site=pluralsight.com
 /images$boost=2,site=yandex.com
 /images/$boost=4,site=yandex.ru
 /images/search$boost=4,site=yandex.ru
+/pmwiki/posts.php$downrank=2,site=tvtropes.org
 /research/$boost=6,site=openai.com
