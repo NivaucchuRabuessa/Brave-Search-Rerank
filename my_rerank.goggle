@@ -150,7 +150,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (64)
+! TLD-level rules (60)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -301,7 +301,7 @@ $discard,site=yourtango.com
 $discard,site=zbporn.com
 
 ! ==========================================================================
-! Path-specific rules (10)
+! Path-specific rules (9)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
