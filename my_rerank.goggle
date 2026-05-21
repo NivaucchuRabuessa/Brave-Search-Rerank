@@ -1,4 +1,8 @@
-
+! name: Custom
+! description: Custom reranking.
+! public: false
+! author: NivaucchuRabuessa
+! avatar: #6e3aaf
 ! ==========================================================================
 ! Raised domains (98)
 ! Domains that appear higher in search results.
