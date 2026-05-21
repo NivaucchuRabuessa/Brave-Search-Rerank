@@ -5,7 +5,7 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (105)
+! Raised domains (106)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -32,7 +32,7 @@ $boost=6,site=assets.anthropic.com
 $boost,site=biorxiv.org
 $boost=6,site=blog.archive.org
 $boost=6,site=blog.fruitbatfactory.com
-$boost=4,site=blog.google
+$boost,site=blog.google
 $boost=6,site=blog.kagi.com
 $boost=2,site=blogs.mediapart.fr
 $boost=4,site=bnf.fr
@@ -58,7 +58,7 @@ $boost,site=druide.com
 $boost=2,site=e-hentai.org
 $boost=4,site=ecnl.org
 $boost=4,site=edri.org
-$boost=2,site=en.wikipedia.org
+$boost,site=en.wikipedia.org
 $boost=2,site=en.wiktionary.org
 $boost=4,site=everythingmoe.com
 $boost=2,site=exhentai.org
@@ -82,6 +82,7 @@ $boost=4,site=learn.microsoft.com
 $boost,site=merriam-webster.com
 $boost,site=modal.com
 $boost=4,site=myanimelist.net
+$boost,site=neurips.cc
 $boost=2,site=nextinpact.com
 $boost=2,site=nicovideo.jp
 $boost,site=oneuptime.com
@@ -158,29 +159,84 @@ $downrank=2,site=yourtango.com
 $downrank=6,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (10)
+! TLD-level rules (64)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
+|https://*.abc^$discard
+|https://*.ai^$downrank=10
+|https://*.art^$discard
 |https://*.au^$discard
+|https://*.biz^$discard
+|https://*.bm^$discard
+|https://*.book^$discard
+|https://*.bt^$discard
+|https://*.bw^$discard
+|https://*.ca^$discard
+|https://*.cc^$downrank=10
+|https://*.click^$discard
+|https://*.cloud^$discard
+|https://*.cw^$discard
+|https://*.data^$discard
+|https://*.dealer^$discard
+|https://*.dev^$discard
+|https://*.dev^$downrank=10
+|https://*.dot^$discard
 |https://*.edu^$discard
 |https://*.edu^$downrank=1
 |https://*.edu^$downrank=4
+|https://*.es^$downrank=10
+|https://*.fast^$discard
+|https://*.google^$discard
 |https://*.health^$discard
 |https://*.health^$downrank=1
+|https://*.hot^$discard
+|https://*.il^$discard
+|https://*.in^$discard
+|https://*.info^$downrank=10
+|https://*.kid^$discard
+|https://*.krd^$discard
+|https://*.led^$discard
 |https://*.life^$discard
+|https://*.link^$discard
+|https://*.living^$discard
 |https://*.ly^$discard
+|https://*.me^$discard
+|https://*.moi^$discard
+|https://*.mq^$discard
+|https://*.mv^$discard
+|https://*.nr^$discard
 |https://*.nz^$discard
+|https://*.online^$discard
+|https://*.pay^$discard
+|https://*.play^$discard
+|https://*.pro^$discard
+|https://*.prof^$discard
+|https://*.pw^$discard
+|https://*.py^$discard
+|https://*.rugby^$discard
+|https://*.select^$discard
+|https://*.shop^$discard
+|https://*.site^$discard
+|https://*.spot^$discard
+|https://*.tech^$discard
+|https://*.top^$discard
+|https://*.trust^$discard
 |https://*.tv^$downrank=10
+|https://*.us^$discard
+|https://*.work^$discard
+|https://*.xin^$discard
+|https://*.xyz^$discard
 
 ! ==========================================================================
-! Discarded domains (76)
+! Discarded domains (80)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
 $discard,site=1000cocks.com
 $discard,site=alohatube.com
 $discard,site=anyporn.com
+$discard,site=apps.apple.com
 $discard,site=beeg.com
 $discard,site=bigfuck.tv
 $discard,site=boyfriendtv.com
@@ -211,6 +267,7 @@ $discard,site=mywot.com
 $discard,site=nih.gov
 $discard,site=noodlemagazine.com
 $discard,site=nudevista.com
+$discard,site=open.spotify.com
 $discard,site=oprahdaily.com
 $discard,site=optionsforsexualhealth.org
 $discard,site=pcrisk.com
@@ -232,6 +289,8 @@ $discard,site=sex.com
 $discard,site=sexedrescue.com
 $discard,site=simple.wikipedia.org
 $discard,site=spankbang.com
+$discard,site=statnews.com
+$discard,site=teenhealthsource.com
 $discard,site=theporndude.com
 $discard,site=theyarehuge.com
 $discard,site=tnaflix.com
