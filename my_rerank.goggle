@@ -13,7 +13,7 @@ $boost=4,site=4chan.org
 $boost=4,site=52pojie.cn
 $boost,site=accessnow.org
 $boost,site=aistudio.google.com
-$boost=3,site=akiba-online.com
+$boost=2,site=akiba-online.com
 $boost=6,site=alignment.anthropic.com
 $boost=6,site=allthetropes.org
 $boost,site=alternate.fr
@@ -35,7 +35,7 @@ $boost=6,site=blog.kagi.com
 $boost=2,site=blogs.mediapart.fr
 $boost=4,site=bnf.fr
 $boost=4,site=bnfa.fr
-$boost=2,site=britannica.com
+$boost,site=britannica.com
 $boost=6,site=cairn.info
 $boost=2,site=canardpc.com
 $boost,site=canon.fr
@@ -110,22 +110,40 @@ $boost=8,site=yorhel.nl
 $boost=6,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (12)
+! Downranked domains (22)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
 $downrank=10,site=apps.apple.com
+$downrank,site=asrm.org
 $downrank,site=dictionary.cambridge.org
 $downrank,site=en.m.wiktionary.org
+$downrank=10,site=facebook.com
 $downrank=3,site=fandom.com
+$downrank,site=fr.m.wiktionary.org
 $downrank=3,site=medium.com
 $downrank=10,site=music.apple.com
 $downrank=6,site=open.spotify.com
+$downrank,site=plannedparenthood.org
 $downrank=10,site=play.google.com
+$downrank,site=psychologytoday.com
 $downrank=3,site=reddit.com
+$downrank,site=statnews.com
 $downrank=3,site=substack.com
+$downrank,site=teenhealthsource.com
+$downrank,site=twentyeighthealth.com
 $downrank=10,site=uptodown.com
+$downrank,site=webmd.com
+$downrank=2,site=yourtango.com
 $downrank=6,site=youtube.com
+
+! ==========================================================================
+! TLD-level rules (2)
+! Blanket rules targeting entire top-level domains.
+! ==========================================================================
+
+|https://*.edu^$downrank=1
+|https://*.health^$downrank=1
 
 ! ==========================================================================
 ! Discarded domains (3)
@@ -137,11 +155,12 @@ $discard,site=pornhub.com
 $discard,site=xvideos.com
 
 ! ==========================================================================
-! Path-specific rules (8)
+! Path-specific rules (9)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
 /engineering$boost=6,site=anthropic.com
+/forum/$downrank=3,site=myanimelist.net
 /forums.htm$boost=3,site=jeuxvideo.com
 /forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm$boost=3,site=jeuxvideo.com
 /images$boost=2,site=yandex.com
