@@ -5,13 +5,14 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (100)
+! Raised domains (105)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
 $boost=4,site=4chan.org
 $boost=4,site=52pojie.cn
 $boost,site=accessnow.org
+$boost=2,site=afesta.tv
 $boost,site=aistudio.google.com
 $boost=2,site=akiba-online.com
 $boost=6,site=alignment.anthropic.com
@@ -28,6 +29,7 @@ $boost=3,site=archlinux.org
 $boost=4,site=article19.org
 $boost=6,site=arxiv.org
 $boost=6,site=assets.anthropic.com
+$boost,site=biorxiv.org
 $boost=6,site=blog.archive.org
 $boost=6,site=blog.fruitbatfactory.com
 $boost=4,site=blog.google
@@ -42,6 +44,7 @@ $boost,site=canon.fr
 $boost=4,site=cgworld.jp
 $boost=4,site=cnil.fr
 $boost,site=codeberg.org
+$boost,site=crazyshit.com
 $boost,site=crystal-lang.org
 $boost=2,site=culturezvous.com
 $boost=2,site=danbooru.donmai.us
@@ -94,8 +97,10 @@ $boost=4,site=teenhealthsource.com
 $boost,site=translate.google.com
 $boost,site=translate.kagi.com
 $boost=6,site=tvtropes.org
+$boost,site=uncyclopedia.org
 $boost=6,site=vndb.org
 $boost,site=web.archive.org
+$boost=2,site=wiki.archiveteam.org
 $boost=3,site=wiki.old.yuri-project.net
 $boost=6,site=wiki.yuri-project.net
 $boost=4,site=wikimedia.org
@@ -111,13 +116,17 @@ $boost=8,site=yorhel.nl
 $boost=6,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (27)
+! Downranked domains (36)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
+$downrank,site=afesta.tv.siteindices.com
+$downrank,site=amazon.com
 $downrank=10,site=apps.apple.com
 $downrank=4,site=asrm.org
+$downrank=4,site=cambridge.org
 $downrank,site=collinsdictionary.com
+$downrank=10,site=deviantart.com
 $downrank,site=dictionary.cambridge.org
 $downrank,site=dictionary.com
 $downrank,site=en.m.wiktionary.org
@@ -125,17 +134,22 @@ $downrank=10,site=facebook.com
 $downrank=4,site=familylife.com
 $downrank=3,site=fandom.com
 $downrank,site=fr.m.wiktionary.org
-$downrank=3,site=medium.com
+$downrank,site=info.afesta.tv
+$downrank=10,site=medium.com
 $downrank=10,site=music.apple.com
 $downrank=6,site=open.spotify.com
 $downrank=4,site=plannedparenthood.org
 $downrank=10,site=play.google.com
 $downrank=4,site=psychologytoday.com
 $downrank=10,site=quora.com
+$downrank=10,site=rakuten.co.jp
 $downrank=3,site=reddit.com
+$downrank,site=semrush.com
+$downrank=10,site=shopping.yahoo.co.jp
 $downrank,site=statnews.com
 $downrank=3,site=substack.com
 $downrank,site=teenhealthsource.com
+$downrank=10,site=tiktok.com
 $downrank,site=twentyeighthealth.com
 $downrank=10,site=uptodown.com
 $downrank=4,site=webmd.com
@@ -144,44 +158,102 @@ $downrank=2,site=yourtango.com
 $downrank=6,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (4)
+! TLD-level rules (10)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
+|https://*.au^$discard
+|https://*.edu^$discard
 |https://*.edu^$downrank=1
 |https://*.edu^$downrank=4
 |https://*.health^$discard
 |https://*.health^$downrank=1
+|https://*.life^$discard
+|https://*.ly^$discard
+|https://*.nz^$discard
+|https://*.tv^$downrank=10
 
 ! ==========================================================================
-! Discarded domains (24)
+! Discarded domains (76)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
+$discard,site=1000cocks.com
 $discard,site=alohatube.com
+$discard,site=anyporn.com
 $discard,site=beeg.com
+$discard,site=bigfuck.tv
+$discard,site=boyfriendtv.com
+$discard,site=crazyshit.com
 $discard,site=darknessporn.com
+$discard,site=en.m.wikipedia.org
 $discard,site=eporner.com
+$discard,site=erome.com
+$discard,site=eveninsight.com
+$discard,site=fr.m.wiktionary.org
 $discard,site=fuq.com
 $discard,site=gangbangcreampie.com
+$discard,site=gay0day.com
+$discard,site=gaymaletube.com
+$discard,site=hdtube.porn
+$discard,site=heavy-r.com
+$discard,site=hopkinsmedicine.org
 $discard,site=hqporn.xxx
+$discard,site=ifstudies.org
+$discard,site=interracial.com
+$discard,site=iporntv.net
+$discard,site=japancodesupply.com
+$discard,site=kiddle.co
+$discard,site=markmanson.net
+$discard,site=mat6tube.com
+$discard,site=monsterwhitecock.com
+$discard,site=mywot.com
+$discard,site=nih.gov
+$discard,site=noodlemagazine.com
+$discard,site=nudevista.com
+$discard,site=oprahdaily.com
+$discard,site=optionsforsexualhealth.org
+$discard,site=pcrisk.com
 $discard,site=pluralsight.com
 $discard,site=porn00.org
 $discard,site=pornhat.com
 $discard,site=pornhub.com
+$discard,site=pornkai.com
 $discard,site=pornone.com
 $discard,site=pornpics.com
+$discard,site=pornzog.com
 $discard,site=punishworld.com
+$discard,site=pussyspace.net
+$discard,site=r18.com
 $discard,site=redtube.com
+$discard,site=scamadviser.com
+$discard,site=semrush.com
+$discard,site=sex.com
+$discard,site=sexedrescue.com
+$discard,site=simple.wikipedia.org
+$discard,site=spankbang.com
+$discard,site=theporndude.com
+$discard,site=theyarehuge.com
 $discard,site=tnaflix.com
 $discard,site=tubegalore.com
+$discard,site=tubesafari.com
 $discard,site=twentyeighthealth.com
+$discard,site=verywellmind.com
+$discard,site=vogueadria.com
+$discard,site=votted.net
+$discard,site=webcatalog.io
+$discard,site=xcafe.com
+$discard,site=xgroovy.com
 $discard,site=xhaccess.com
 $discard,site=xhamster.com
+$discard,site=xhopen.com
 $discard,site=xnxx.com
 $discard,site=xvideos.com
+$discard,site=youjizz.sex
 $discard,site=youporn.com
+$discard,site=youramateurporn.com
 $discard,site=yourtango.com
+$discard,site=zbporn.com
 
 ! ==========================================================================
 ! Path-specific rules (10)
