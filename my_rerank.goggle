@@ -5,7 +5,7 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (111)
+! Raised domains (112)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -64,6 +64,7 @@ $boost,site=en.wikipedia.org
 $boost=2,site=en.wiktionary.org
 $boost=2,site=everythingmoe.com
 $boost=2,site=exhentai.org
+$boost=2,site=filmsite.org
 $boost=2,site=forum.hardware.fr
 $boost=2,site=forum.thiweb.com
 $boost=2,site=forums.fuwanovel.moe
@@ -122,7 +123,7 @@ $boost=8,site=yorhel.nl
 $boost=4,site=yuri-project.net
 
 ! ==========================================================================
-! Downranked domains (28)
+! Downranked domains (29)
 ! Domains that appear lower in search results.
 ! ==========================================================================
 
@@ -137,6 +138,7 @@ $downrank=10,site=en.m.wiktionary.org
 $downrank=10,site=facebook.com
 $downrank=10,site=familylife.com
 $downrank=2,site=fandom.com
+$downrank,site=imdb.com
 $downrank=10,site=info.afesta.tv
 $downrank=10,site=medium.com
 $downrank=10,site=music.apple.com
@@ -156,7 +158,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (60)
+! TLD-level rules (62)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -176,6 +178,7 @@ $downrank=10,site=youtube.com
 |https://*.cw^$discard
 |https://*.data^$discard
 |https://*.dealer^$discard
+|https://*.desi^$discard
 |https://*.dev^$discard
 |https://*.dot^$discard
 |https://*.edu^$discard
@@ -219,10 +222,11 @@ $downrank=10,site=youtube.com
 |https://*.us^$discard
 |https://*.work^$discard
 |https://*.xin^$discard
+|https://*.xxx^$discard
 |https://*.xyz^$discard
 
 ! ==========================================================================
-! Discarded domains (99)
+! Discarded domains (109)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -232,6 +236,7 @@ $discard,site=alohatube.com
 $discard,site=anyporn.com
 $discard,site=apps.apple.com
 $discard,site=architjn.com
+$discard,site=banana1015.com
 $discard,site=beeg.com
 $discard,site=bigfuck.tv
 $discard,site=bitget.com
@@ -261,6 +266,7 @@ $discard,site=interracial.com
 $discard,site=iporntv.net
 $discard,site=japancodesupply.com
 $discard,site=kiddle.co
+$discard,site=kidzworld.com
 $discard,site=markmanson.net
 $discard,site=mat6tube.com
 $discard,site=media.io
@@ -274,6 +280,7 @@ $discard,site=oprahdaily.com
 $discard,site=optionsforsexualhealth.org
 $discard,site=pantiesless.com
 $discard,site=pcrisk.com
+$discard,site=pinterest.com
 $discard,site=pluralsight.com
 $discard,site=porn00.org
 $discard,site=pornhat.com
@@ -286,12 +293,17 @@ $discard,site=pornzog.com
 $discard,site=punishworld.com
 $discard,site=pussyspace.net
 $discard,site=r18.com
+$discard,site=reddxxx.com
 $discard,site=redtube.com
 $discard,site=redwap.sex
+$discard,site=redwap.tv
+$discard,site=rockstaracademy.com
 $discard,site=scamadviser.com
 $discard,site=semrush.com
 $discard,site=sex.com
 $discard,site=sexedrescue.com
+$discard,site=sexvid.xxx
+$discard,site=shutterstock.com
 $discard,site=siliconvalleytime.com
 $discard,site=simple.wikipedia.org
 $discard,site=softonic.com
@@ -300,12 +312,14 @@ $discard,site=statnews.com
 $discard,site=superagent.sh
 $discard,site=teenhealthsource.com
 $discard,site=teenxy.com
+$discard,site=tenor.com
 $discard,site=tenorshare.ai
 $discard,site=theporndude.com
 $discard,site=theyarehuge.com
 $discard,site=tiktok.com
 $discard,site=tnaflix.com
 $discard,site=tubegalore.com
+$discard,site=tubepornclassic.com
 $discard,site=tubesafari.com
 $discard,site=twentyeighthealth.com
 $discard,site=verywellmind.com
@@ -341,6 +355,6 @@ $discard,site=zbporn.com
 /images/search$boost,site=yandex.ru
 /michaelw9999/$discard,site=github.com
 /n57d30top/$discard,site=github.com
-/pmwiki/posts.php$downrank=2,site=tvtropes.org
 /pmwiki/conversations.php$downrank=2,site=tvtropes.org
+/pmwiki/posts.php$downrank=2,site=tvtropes.org
 /research/$boost=10,site=openai.com
