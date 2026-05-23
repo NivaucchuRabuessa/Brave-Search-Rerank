@@ -226,7 +226,7 @@ $downrank=10,site=youtube.com
 |https://*.xyz^$discard
 
 ! ==========================================================================
-! Discarded domains (109)
+! Discarded domains (122)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -241,6 +241,7 @@ $discard,site=beeg.com
 $discard,site=bigfuck.tv
 $discard,site=bitget.com
 $discard,site=boyfriendtv.com
+$discard,site=complex.com
 $discard,site=darknessporn.com
 $discard,site=en.m.wikipedia.org
 $discard,site=eporner.com
@@ -248,13 +249,16 @@ $discard,site=erome.com
 $discard,site=essayshark.com
 $discard,site=eveninsight.com
 $discard,site=faphouse.com
+$discard,site=faphouse.tv
 $discard,site=fr.m.wiktionary.org
 $discard,site=freakden.com
 $discard,site=fuq.com
+$discard,site=fux.com
 $discard,site=gangbangcreampie.com
 $discard,site=gay0day.com
 $discard,site=gaymaletube.com
 $discard,site=getyarn.io
+$discard,site=gosexpod.com
 $discard,site=hdtube.porn
 $discard,site=heavy-r.com
 $discard,site=hopkinsmedicine.org
@@ -267,10 +271,12 @@ $discard,site=iporntv.net
 $discard,site=japancodesupply.com
 $discard,site=kiddle.co
 $discard,site=kidzworld.com
+$discard,site=kompoz2.com
 $discard,site=markmanson.net
 $discard,site=mat6tube.com
 $discard,site=media.io
 $discard,site=monsterwhitecock.com
+$discard,site=mrskin.com
 $discard,site=mywot.com
 $discard,site=nih.gov
 $discard,site=noodlemagazine.com
@@ -283,6 +289,8 @@ $discard,site=pcrisk.com
 $discard,site=pinterest.com
 $discard,site=pluralsight.com
 $discard,site=porn00.org
+$discard,site=porn300.com
+$discard,site=porn40.com
 $discard,site=pornhat.com
 $discard,site=pornhub.com
 $discard,site=pornkai.com
@@ -292,6 +300,7 @@ $discard,site=pornrabbit.com
 $discard,site=pornzog.com
 $discard,site=punishworld.com
 $discard,site=pussyspace.net
+$discard,site=qorno.com
 $discard,site=r18.com
 $discard,site=reddxxx.com
 $discard,site=redtube.com
@@ -314,6 +323,7 @@ $discard,site=teenhealthsource.com
 $discard,site=teenxy.com
 $discard,site=tenor.com
 $discard,site=tenorshare.ai
+$discard,site=theclassicporn.com
 $discard,site=theporndude.com
 $discard,site=theyarehuge.com
 $discard,site=tiktok.com
@@ -328,12 +338,15 @@ $discard,site=votted.net
 $discard,site=voyeurhit.com
 $discard,site=webcatalog.io
 $discard,site=xcafe.com
+$discard,site=xecce.com
 $discard,site=xgroovy.com
 $discard,site=xhaccess.com
 $discard,site=xhamster.com
+$discard,site=xhamster19.com
 $discard,site=xhopen.com
 $discard,site=xnxx.com
 $discard,site=xvideos.com
+$discard,site=xvidzz.com
 $discard,site=youjizz.sex
 $discard,site=youporn.com
 $discard,site=youramateurporn.com
