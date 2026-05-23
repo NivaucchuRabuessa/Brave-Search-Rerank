@@ -1,11 +1,11 @@
-! name: Custom+1
+! name: Custom
 ! description: Custom reranking.
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (112)
+! Raised domains (113)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -66,6 +66,7 @@ $boost=2,site=everythingmoe.com
 $boost=2,site=exhentai.org
 $boost=2,site=filmsite.org
 $boost=2,site=forum.hardware.fr
+$boost=2,site=forum.paradoxplaza.com
 $boost=2,site=forum.thiweb.com
 $boost=2,site=forums.fuwanovel.moe
 $boost,site=fpgadeveloper.com
@@ -158,7 +159,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (62)
+! TLD-level rules (65)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -206,6 +207,7 @@ $downrank=10,site=youtube.com
 |https://*.online^$discard
 |https://*.pay^$discard
 |https://*.play^$discard
+|https://*.porn^$discard
 |https://*.pro^$discard
 |https://*.prof^$discard
 |https://*.pw^$discard
@@ -220,18 +222,22 @@ $downrank=10,site=youtube.com
 |https://*.trust^$discard
 |https://*.tv^$downrank=10
 |https://*.us^$discard
+|https://*.vip^$discard
 |https://*.work^$discard
 |https://*.xin^$discard
 |https://*.xxx^$discard
 |https://*.xyz^$discard
+|https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (122)
+! Discarded domains (146)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
 $discard,site=1000cocks.com
+$discard,site=24xxx.porn
 $discard,site=accio.com
+$discard,site=ah-me.com
 $discard,site=alohatube.com
 $discard,site=anyporn.com
 $discard,site=apps.apple.com
@@ -241,11 +247,14 @@ $discard,site=beeg.com
 $discard,site=bigfuck.tv
 $discard,site=bitget.com
 $discard,site=boyfriendtv.com
+$discard,site=bustybus.com
+$discard,site=catalysteds.com
 $discard,site=complex.com
 $discard,site=darknessporn.com
 $discard,site=en.m.wikipedia.org
 $discard,site=eporner.com
 $discard,site=erome.com
+$discard,site=eroprofile.com
 $discard,site=essayshark.com
 $discard,site=eveninsight.com
 $discard,site=faphouse.com
@@ -258,22 +267,29 @@ $discard,site=gangbangcreampie.com
 $discard,site=gay0day.com
 $discard,site=gaymaletube.com
 $discard,site=getyarn.io
+$discard,site=globalsupplycentre.com
 $discard,site=gosexpod.com
 $discard,site=hdtube.porn
 $discard,site=heavy-r.com
+$discard,site=herbysorganica.com
 $discard,site=hopkinsmedicine.org
+$discard,site=hotsexvideox.com
 $discard,site=hqporn.xxx
 $discard,site=ifstudies.org
 $discard,site=in2p3.fr
 $discard,site=instagram.com
 $discard,site=interracial.com
 $discard,site=iporntv.net
+$discard,site=ixxx.com
+$discard,site=japan-whores.com
 $discard,site=japancodesupply.com
+$discard,site=javfilms.com
 $discard,site=kiddle.co
 $discard,site=kidzworld.com
 $discard,site=kompoz2.com
 $discard,site=markmanson.net
 $discard,site=mat6tube.com
+$discard,site=maturetube.com
 $discard,site=media.io
 $discard,site=monsterwhitecock.com
 $discard,site=mrskin.com
@@ -291,12 +307,15 @@ $discard,site=pluralsight.com
 $discard,site=porn00.org
 $discard,site=porn300.com
 $discard,site=porn40.com
+$discard,site=porndude.wtf
 $discard,site=pornhat.com
 $discard,site=pornhub.com
+$discard,site=pornhub.org
 $discard,site=pornkai.com
 $discard,site=pornone.com
 $discard,site=pornpics.com
 $discard,site=pornrabbit.com
+$discard,site=porntrex.com
 $discard,site=pornzog.com
 $discard,site=punishworld.com
 $discard,site=pussyspace.net
@@ -315,8 +334,10 @@ $discard,site=sexvid.xxx
 $discard,site=shutterstock.com
 $discard,site=siliconvalleytime.com
 $discard,site=simple.wikipedia.org
+$discard,site=sniff-out.com
 $discard,site=softonic.com
 $discard,site=spankbang.com
+$discard,site=spankbang.party
 $discard,site=statnews.com
 $discard,site=superagent.sh
 $discard,site=teenhealthsource.com
@@ -325,6 +346,9 @@ $discard,site=tenor.com
 $discard,site=tenorshare.ai
 $discard,site=theclassicporn.com
 $discard,site=theporndude.com
+$discard,site=theporndude.nl
+$discard,site=theporndude.onl
+$discard,site=theporndude.org
 $discard,site=theyarehuge.com
 $discard,site=tiktok.com
 $discard,site=tnaflix.com
@@ -333,6 +357,7 @@ $discard,site=tubepornclassic.com
 $discard,site=tubesafari.com
 $discard,site=twentyeighthealth.com
 $discard,site=verywellmind.com
+$discard,site=veyse.com
 $discard,site=vogueadria.com
 $discard,site=votted.net
 $discard,site=voyeurhit.com
@@ -345,8 +370,11 @@ $discard,site=xhamster.com
 $discard,site=xhamster19.com
 $discard,site=xhopen.com
 $discard,site=xnxx.com
+$discard,site=xporndude.com
 $discard,site=xvideos.com
 $discard,site=xvidzz.com
+$discard,site=xxxymovies.com
+$discard,site=youjizz.com
 $discard,site=youjizz.sex
 $discard,site=youporn.com
 $discard,site=youramateurporn.com
