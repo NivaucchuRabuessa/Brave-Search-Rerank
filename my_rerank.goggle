@@ -5,7 +5,7 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (105)
+! Raised domains (111)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -13,9 +13,10 @@ $boost=2,site=4chan.org
 $boost,site=52pojie.cn
 $boost,site=accessnow.org
 $boost=4,site=afesta.tv
+$boost=4,site=aisi.gov.uk
 $boost,site=aistudio.google.com
 $boost=2,site=akiba-online.com
-$boost=8,site=alignment.anthropic.com
+$boost=10,site=alignment.anthropic.com
 $boost=4,site=allthetropes.org
 $boost,site=alternate.fr
 $boost=4,site=anilist.co
@@ -34,6 +35,7 @@ $boost=4,site=blog.archive.org
 $boost=4,site=blog.fruitbatfactory.com
 $boost,site=blog.google
 $boost=4,site=blog.kagi.com
+$boost=4,site=blog.mozilla.org
 $boost=2,site=blogs.mediapart.fr
 $boost=4,site=bnf.fr
 $boost=4,site=bnfa.fr
@@ -65,13 +67,16 @@ $boost=2,site=exhentai.org
 $boost=2,site=forum.hardware.fr
 $boost=2,site=forum.thiweb.com
 $boost=2,site=forums.fuwanovel.moe
+$boost,site=fpgadeveloper.com
 $boost,site=free.fr
 $boost=4,site=fruitbatfactory.com
 $boost=8,site=g.blicky.net
 $boost=4,site=gallica.bnf.fr
 $boost=2,site=gelbooru.com
 $boost,site=gitlab.com
+$boost,site=go.dev
 $boost,site=gunkies.org
+$boost=4,site=hacks.mozilla.org
 $boost=4,site=intfiction.org
 $boost=2,site=iqdb.org
 $boost=2,site=jisho.org
@@ -90,7 +95,7 @@ $boost,site=openai.com
 $boost=2,site=osu.ppy.sh
 $boost=2,site=pixiv.co.jp
 $boost=2,site=pixivision.net
-$boost=8,site=red.anthropic.com
+$boost=10,site=red.anthropic.com
 $boost=2,site=saucenao.com
 $boost,site=spacex.com
 $boost=2,site=sukebei.nyaa.si
@@ -109,8 +114,9 @@ $boost=2,site=wiktionary.org
 $boost=2,site=wired.com
 $boost,site=wordhippo.com
 $boost=2,site=wotaku.wiki
-$boost=8,site=www-cdn.anthropic.com
+$boost=10,site=www-cdn.anthropic.com
 $boost,site=x.com
+$boost=4,site=xbow.com
 $boost,site=yandex.com
 $boost=8,site=yorhel.nl
 $boost=4,site=yuri-project.net
@@ -216,38 +222,48 @@ $downrank=10,site=youtube.com
 |https://*.xyz^$discard
 
 ! ==========================================================================
-! Discarded domains (79)
+! Discarded domains (99)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
 $discard,site=1000cocks.com
+$discard,site=accio.com
 $discard,site=alohatube.com
 $discard,site=anyporn.com
 $discard,site=apps.apple.com
+$discard,site=architjn.com
 $discard,site=beeg.com
 $discard,site=bigfuck.tv
+$discard,site=bitget.com
 $discard,site=boyfriendtv.com
 $discard,site=darknessporn.com
 $discard,site=en.m.wikipedia.org
 $discard,site=eporner.com
 $discard,site=erome.com
+$discard,site=essayshark.com
 $discard,site=eveninsight.com
+$discard,site=faphouse.com
 $discard,site=fr.m.wiktionary.org
+$discard,site=freakden.com
 $discard,site=fuq.com
 $discard,site=gangbangcreampie.com
 $discard,site=gay0day.com
 $discard,site=gaymaletube.com
+$discard,site=getyarn.io
 $discard,site=hdtube.porn
 $discard,site=heavy-r.com
 $discard,site=hopkinsmedicine.org
 $discard,site=hqporn.xxx
 $discard,site=ifstudies.org
+$discard,site=in2p3.fr
+$discard,site=instagram.com
 $discard,site=interracial.com
 $discard,site=iporntv.net
 $discard,site=japancodesupply.com
 $discard,site=kiddle.co
 $discard,site=markmanson.net
 $discard,site=mat6tube.com
+$discard,site=media.io
 $discard,site=monsterwhitecock.com
 $discard,site=mywot.com
 $discard,site=nih.gov
@@ -256,6 +272,7 @@ $discard,site=nudevista.com
 $discard,site=open.spotify.com
 $discard,site=oprahdaily.com
 $discard,site=optionsforsexualhealth.org
+$discard,site=pantiesless.com
 $discard,site=pcrisk.com
 $discard,site=pluralsight.com
 $discard,site=porn00.org
@@ -264,21 +281,29 @@ $discard,site=pornhub.com
 $discard,site=pornkai.com
 $discard,site=pornone.com
 $discard,site=pornpics.com
+$discard,site=pornrabbit.com
 $discard,site=pornzog.com
 $discard,site=punishworld.com
 $discard,site=pussyspace.net
 $discard,site=r18.com
 $discard,site=redtube.com
+$discard,site=redwap.sex
 $discard,site=scamadviser.com
 $discard,site=semrush.com
 $discard,site=sex.com
 $discard,site=sexedrescue.com
+$discard,site=siliconvalleytime.com
 $discard,site=simple.wikipedia.org
+$discard,site=softonic.com
 $discard,site=spankbang.com
 $discard,site=statnews.com
+$discard,site=superagent.sh
 $discard,site=teenhealthsource.com
+$discard,site=teenxy.com
+$discard,site=tenorshare.ai
 $discard,site=theporndude.com
 $discard,site=theyarehuge.com
+$discard,site=tiktok.com
 $discard,site=tnaflix.com
 $discard,site=tubegalore.com
 $discard,site=tubesafari.com
@@ -286,6 +311,7 @@ $discard,site=twentyeighthealth.com
 $discard,site=verywellmind.com
 $discard,site=vogueadria.com
 $discard,site=votted.net
+$discard,site=voyeurhit.com
 $discard,site=webcatalog.io
 $discard,site=xcafe.com
 $discard,site=xgroovy.com
@@ -301,16 +327,20 @@ $discard,site=yourtango.com
 $discard,site=zbporn.com
 
 ! ==========================================================================
-! Path-specific rules (9)
+! Path-specific rules (13)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
-/engineering$boost=8,site=anthropic.com
-/forum/$downrank=10,site=myanimelist.net
-/forums.htm$boost=2,site=jeuxvideo.com
-/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm$boost=2,site=jeuxvideo.com
-/images$boost=2,site=yandex.com
-/images/$boost=2,site=yandex.ru
-/images/search$boost=2,site=yandex.ru
-/pmwiki/posts.php$downrank=10,site=tvtropes.org
-/research/$boost=8,site=openai.com
+/Jayanth-reflex/$discard,site=github.com
+/LuizaJarovsky/$discard,site=x.com
+/engineering$boost=10,site=anthropic.com
+/forum/$downrank=2,site=myanimelist.net
+/forums/$boost=2,site=jeuxvideo.com
+/images/$boost,site=yandex.com
+/images/$boost,site=yandex.ru
+/images/search$boost,site=yandex.ru
+/michaelw9999/$discard,site=github.com
+/n57d30top/$discard,site=github.com
+/pmwiki/posts.php$downrank=2,site=tvtropes.org
+/pmwiki/conversations.php$downrank=2,site=tvtropes.org
+/research/$boost=10,site=openai.com
