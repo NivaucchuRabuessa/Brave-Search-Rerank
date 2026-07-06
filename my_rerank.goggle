@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Personal reranking.
+! description: Custom reranking.
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (156)
+! Raised domains (176)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -35,7 +35,9 @@ $boost=2,site=article19.org
 $boost=4,site=arxiv.org
 $boost=8,site=assets.anthropic.com
 $boost=2,site=asus.com
+$boost=6,site=banq.qc.ca
 $boost,site=biorxiv.org
+$boost=2,site=blackbutterflyclothing.com
 $boost=4,site=blog.archive.org
 $boost=4,site=blog.fruitbatfactory.com
 $boost,site=blog.google
@@ -45,7 +47,9 @@ $boost=2,site=blogs.mediapart.fr
 $boost=4,site=bnf.fr
 $boost=4,site=bnfa.fr
 $boost=10,site=bottou.org
+$boost=2,site=boweryboyshistory.com
 $boost,site=britannica.com
+$boost=6,site=caf.fr
 $boost=4,site=cairn.info
 $boost=2,site=canardpc.com
 $boost,site=canon.fr
@@ -76,6 +80,7 @@ $boost=4,site=ecnl.org
 $boost=4,site=edri.org
 $boost,site=en.wikipedia.org
 $boost=2,site=en.wiktionary.org
+$boost=10,site=encres-cendrees.discutbb.com
 $boost=2,site=everythingmoe.com
 $boost=3,site=exadel.com
 $boost=2,site=exhentai.org
@@ -100,25 +105,33 @@ $boost=4,site=hacks.mozilla.org
 $boost=4,site=intfiction.org
 $boost=4,site=intima.fr
 $boost=2,site=iqdb.org
+$boost=6,site=iso.org
 $boost=2,site=jisho.org
+$boost=4,site=jlist.com
 $boost=4,site=jsonlintpro.com
+$boost=2,site=jsonviewer.stack.hu
 $boost=2,site=judgehype.com
 $boost=4,site=knowyourmeme.com
 $boost=2,site=konachan.com
 $boost=4,site=kowtowclothing.com
+$boost=4,site=lahalle.com
 $boost=4,site=laquadrature.net
 $boost=4,site=learn.microsoft.com
+$boost=6,site=maryevans.com
 $boost,site=merriam-webster.com
 $boost=4,site=mkbergman.com
-$boost=6,site=modal.com
+$boost=10,site=modal.com
 $boost=4,site=myanimelist.net
 $boost=2,site=net-a-porter.com
 $boost=3,site=netsources-fr.com
 $boost,site=neurips.cc
 $boost=2,site=nextinpact.com
 $boost=2,site=nicovideo.jp
+$boost=8,site=nirsoft.net
+$boost=6,site=numerique.banq.qc.ca
 $boost,site=oneuptime.com
 $boost,site=openai.com
+$boost=6,site=openmodeldb.info
 $boost=2,site=osu.ppy.sh
 $boost=8,site=pamelazave.com
 $boost=4,site=patpro.net
@@ -129,12 +142,17 @@ $boost=10,site=red.anthropic.com
 $boost=8,site=respectmodels.com
 $boost=2,site=revolve.com
 $boost=2,site=saucenao.com
+$boost=2,site=sewhistorically.com
 $boost=2,site=shopbop.com
+$boost=4,site=sidneyeileen.com
 $boost=6,site=simonsfoundation.org
+$boost=4,site=skeletonsintheclosetclothing.com
 $boost=3,site=smiling.agency
 $boost,site=softpedia.com
+$boost=4,site=sosh.fr
 $boost,site=spacex.com
 $boost=2,site=sukebei.nyaa.si
+$boost=4,site=thepragmaticcostumer.wordpress.com
 $boost=2,site=thereformation.com
 $boost=4,site=tlmc.eu
 $boost=8,site=transformer-circuits.pub
@@ -145,9 +163,11 @@ $boost=4,site=twitterwebviewer.com
 $boost,site=uncyclopedia.org
 $boost=4,site=uniqlo.com
 $boost=4,site=vndb.org
+$boost=2,site=wearinghistoryblog.com
 $boost,site=web.archive.org
 $boost=4,site=wiki.archiveteam.org
 $boost=8,site=wiki.bibanon.org
+$boost=4,site=wiki.gg
 $boost=2,site=wiki.old.yuri-project.net
 $boost=4,site=wiki.yuri-project.net
 $boost=4,site=wikidata.org
@@ -210,7 +230,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (84)
+! TLD-level rules (89)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -220,6 +240,7 @@ $downrank=10,site=youtube.com
 |https://*.art^$discard
 |https://*.asia^$discard
 |https://*.au^$discard
+|https://*.best^$discard
 |https://*.bingo^$discard
 |https://*.biz^$discard
 |https://*.bm^$discard
@@ -227,11 +248,13 @@ $downrank=10,site=youtube.com
 |https://*.bt^$discard
 |https://*.bw^$discard
 |https://*.ca^$discard
+|https://*.cc^$discard
 |https://*.cc^$downrank=10
 |https://*.click^$discard
 |https://*.cloud^$discard
 |https://*.co^$discard
 |https://*.codes^$discard
+|https://*.com.au^$discard
 |https://*.cw^$discard
 |https://*.data^$discard
 |https://*.dealer^$discard
@@ -268,6 +291,7 @@ $downrank=10,site=youtube.com
 |https://*.network^$discard
 |https://*.news^$discard
 |https://*.nr^$discard
+|https://*.nrw^$discard
 |https://*.nz^$discard
 |https://*.one^$discard
 |https://*.online^$discard
@@ -278,6 +302,7 @@ $downrank=10,site=youtube.com
 |https://*.prof^$discard
 |https://*.pw^$discard
 |https://*.py^$discard
+|https://*.ru^$discard
 |https://*.rugby^$discard
 |https://*.select^$discard
 |https://*.shop^$discard
@@ -300,10 +325,11 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (655)
+! Discarded domains (739)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
+$discard,site=01net.com
 $discard,site=1000cocks.com
 $discard,site=247premiumcart.com
 $discard,site=24xxx.porn
@@ -337,6 +363,7 @@ $discard,site=alohatube.com
 $discard,site=altapps.net
 $discard,site=alternativeer.com
 $discard,site=alternativeto.net
+$discard,site=alwaysvpn.com
 $discard,site=amalytix.com
 $discard,site=amaryllo.us
 $discard,site=anime-sama.fr
@@ -349,8 +376,10 @@ $discard,site=aomei.fr
 $discard,site=apidog.com
 $discard,site=apify.com
 $discard,site=apiyi.com
+$discard,site=apkmirror.com
 $discard,site=appadvice.com
 $discard,site=apps.apple.com
+$discard,site=apps.microsoft.com
 $discard,site=appshunter.io
 $discard,site=appvizer.co.uk
 $discard,site=architjn.com
@@ -369,6 +398,8 @@ $discard,site=beginnersinai.org
 $discard,site=bemyhole.com
 $discard,site=benchlm.ai
 $discard,site=berlitz.com
+$discard,site=bestguide.com
+$discard,site=bestvpn.org
 $discard,site=betaseries.com
 $discard,site=beyondthebeez.com
 $discard,site=bigboobbundle.com
@@ -376,6 +407,7 @@ $discard,site=bigfuck.tv
 $discard,site=bigporn.com
 $discard,site=bigthink.com
 $discard,site=bitget.com
+$discard,site=bleepingcomputer.com
 $discard,site=blogspot.com
 $discard,site=book.fr
 $discard,site=bookcaps.com
@@ -388,7 +420,10 @@ $discard,site=brightdata.com
 $discard,site=browseract.com
 $discard,site=buildfastwithai.com
 $discard,site=businessho.com
+$discard,site=businessinsider.com
 $discard,site=bustybus.com
+$discard,site=byteiota.com
+$discard,site=cafonline.com
 $discard,site=campaignswift.com
 $discard,site=capterra.com
 $discard,site=catalysteds.com
@@ -410,11 +445,14 @@ $discard,site=clickup.com
 $discard,site=cliffsnotes.com
 $discard,site=cloud.mn
 $discard,site=cloudgpuprice.com
+$discard,site=cloudprice.net
+$discard,site=cloudwards.net
 $discard,site=cloudzero.com
 $discard,site=cnet.com
 $discard,site=coconut.co
 $discard,site=codebeautify.org
 $discard,site=codeless.co
+$discard,site=codersera.com
 $discard,site=codeur.com
 $discard,site=colormango.com
 $discard,site=cometapi.com
@@ -426,10 +464,14 @@ $discard,site=contentstudio.io
 $discard,site=corelab.tech
 $discard,site=costgoat.com
 $discard,site=coursehero.com
+$discard,site=crunchbase.com
 $discard,site=cultofmac.com
 $discard,site=curiousconcept.com
 $discard,site=curioustaxonomy.net
 $discard,site=cvte.com
+$discard,site=cyberghostsecurity.com
+$discard,site=cyberghostvpn.com
+$discard,site=cyberinsider.com
 $discard,site=cybernews.com
 $discard,site=dailydownloaded.com
 $discard,site=danity.fr
@@ -455,6 +497,7 @@ $discard,site=dicloak.com
 $discard,site=digg.com
 $discard,site=digitalapplied.com
 $discard,site=digitallaunchpad.net
+$discard,site=digitaltrends.com
 $discard,site=digitiz.fr
 $discard,site=digmandarin.com
 $discard,site=dihuni.com
@@ -465,15 +508,19 @@ $discard,site=dropbox.com
 $discard,site=drpam.com
 $discard,site=easeus.com
 $discard,site=easeus.fr
+$discard,site=echosdunet.net
 $discard,site=ecomclips.com
 $discard,site=economictimes.com
 $discard,site=edunavajas.com
+$discard,site=electrons.co
 $discard,site=elephantdrive.com
 $discard,site=embedsocial.com
 $discard,site=en.m.wikipedia.org
+$discard,site=engadget.com
 $discard,site=enotes.com
 $discard,site=entrepreneur.com
 $discard,site=eporner.com
+$discard,site=epubor.com
 $discard,site=erome.com
 $discard,site=eroprofile.com
 $discard,site=eslint.org
@@ -487,12 +534,15 @@ $discard,site=europeanswitch.com
 $discard,site=eurotechguide.com
 $discard,site=eurotoolkit.eu
 $discard,site=eveninsight.com
+$discard,site=excel-easy.com
 $discard,site=exeleonmagazine.com
+$discard,site=experte.com
 $discard,site=exportcomments.com
 $discard,site=extrag.one
 $discard,site=facebook.com
 $discard,site=factually.co
 $discard,site=faisalrafique.com
+$discard,site=familysearch.org
 $discard,site=faphouse.com
 $discard,site=faphouse.tv
 $discard,site=fashion-blog.fr
@@ -505,6 +555,7 @@ $discard,site=filehorse.com
 $discard,site=filejump.com
 $discard,site=filelu.com
 $discard,site=files.fm
+$discard,site=filmix.gg
 $discard,site=fireload.com
 $discard,site=firesticktvstream.com
 $discard,site=fitgap.com
@@ -512,6 +563,7 @@ $discard,site=flathub.org
 $discard,site=flickr.com
 $discard,site=folderfort.com
 $discard,site=followeran.com
+$discard,site=forbes.com
 $discard,site=forem.com
 $discard,site=fr.m.wiktionary.org
 $discard,site=freakden.com
@@ -543,9 +595,11 @@ $discard,site=globalsupplycentre.com
 $discard,site=gologin.com
 $discard,site=goodtech.info
 $discard,site=gosexpod.com
+$discard,site=goteleport.com
 $discard,site=gradesaver.com
 $discard,site=guru99.com
 $discard,site=hackernoon.com
+$discard,site=hakoit.com
 $discard,site=hamsterstack.com
 $discard,site=handyrecovery.com
 $discard,site=happylibus.com
@@ -557,6 +611,7 @@ $discard,site=heavy-r.com
 $discard,site=helline.fr
 $discard,site=heltar.com
 $discard,site=herbysorganica.com
+$discard,site=heroic.com
 $discard,site=hervemouyalphotographer.com
 $discard,site=hindikaro.com
 $discard,site=hindustantimes.com
@@ -594,27 +649,39 @@ $discard,site=ionos.com
 $discard,site=ionos.fr
 $discard,site=iporntv.net
 $discard,site=iptvranking.com
+$discard,site=issuetracker.google.com
 $discard,site=itexpertnow.com
 $discard,site=itpro.com
 $discard,site=ixxx.com
 $discard,site=japan-whores.com
 $discard,site=japancodesupply.com
 $discard,site=javfilms.com
+$discard,site=jechange.fr
 $discard,site=jianguoyun.com
 $discard,site=journaldesfemmes.fr
 $discard,site=jpbound.com
 $discard,site=jpost.com
+$discard,site=json-pretty.com
+$discard,site=jsonbeautifier.org
+$discard,site=jsoneditoronline.org
+$discard,site=jsonformatter.org
+$discard,site=jsonformatterpro.com
+$discard,site=jsonformatterspro.com
 $discard,site=jsonlint.com
+$discard,site=jsonpretty.com
+$discard,site=jsonprettyprint.net
 $discard,site=juliangoldie.com
 $discard,site=justwatch.com
 $discard,site=k2snow.com
 $discard,site=kiddle.co
 $discard,site=kidzworld.com
+$discard,site=klu.ai
 $discard,site=knightli.com
 $discard,site=kompoz2.com
 $discard,site=lafabriquedunet.fr
 $discard,site=langcopilot.com
 $discard,site=laozhang.ai
+$discard,site=learn.microsoft.com
 $discard,site=leetcode.com
 $discard,site=letsdatascience.com
 $discard,site=letstalksex.net
@@ -623,8 +690,10 @@ $discard,site=lifetimedeals.net
 $discard,site=lifetimo.com
 $discard,site=ling-app.com
 $discard,site=linkedin.com
+$discard,site=linksgpt.com
 $discard,site=litcharts.com
 $discard,site=livechatai.com
+$discard,site=livetv102.net
 $discard,site=llm-stats.com
 $discard,site=llmreference.com
 $discard,site=lmmarketcap.com
@@ -632,9 +701,11 @@ $discard,site=lmspeed.net
 $discard,site=lo4d.com
 $discard,site=lovetoknow.com
 $discard,site=ltl-school.com
+$discard,site=lucaberton.com
 $discard,site=luckynumb3rs.github.io
 $discard,site=maayot.com
 $discard,site=maboiteadessous.com
+$discard,site=machinelearningmastery.com
 $discard,site=mackeeper.com
 $discard,site=macupdate.com
 $discard,site=macworld.com
@@ -646,12 +717,14 @@ $discard,site=manga-news.com
 $discard,site=mannequin-senior.fr
 $discard,site=markmanson.net
 $discard,site=marktechpost.com
+$discard,site=mashable.com
 $discard,site=massedcompute.com
 $discard,site=mat6tube.com
 $discard,site=matthiasjilliot.com
 $discard,site=maturetube.com
 $discard,site=maxicasting.com
 $discard,site=media.io
+$discard,site=medium.com
 $discard,site=mega.io
 $discard,site=memeburn.com
 $discard,site=mepis.org
@@ -664,6 +737,7 @@ $discard,site=movieweb.com
 $discard,site=mrskin.com
 $discard,site=multcloud.com
 $discard,site=mwm.ai
+$discard,site=myheritage.com
 $discard,site=mylifeandkids.com
 $discard,site=mymagicprompt.com
 $discard,site=mysextoyguide.com
@@ -689,9 +763,14 @@ $discard,site=onaholand.com
 $discard,site=onetop.fr
 $discard,site=onidel.com
 $discard,site=onlime.app
+$discard,site=onlineformater.com
+$discard,site=onlinejsontools.com
+$discard,site=onlinetools.com
 $discard,site=open.spotify.com
 $discard,site=opentools.ai
+$discard,site=openvino.ai
 $discard,site=oprahdaily.com
+$discard,site=optimum.com
 $discard,site=optionsforsexualhealth.org
 $discard,site=optoutai.co.uk
 $discard,site=oralytics.com
@@ -711,6 +790,9 @@ $discard,site=pcmac.download
 $discard,site=pcrisk.com
 $discard,site=pearlsvibe.com
 $discard,site=peekviewer.com
+$discard,site=pharmacieeiffelcommerce.com
+$discard,site=pharmaciepolygoneriviera.com
+$discard,site=pharmao.fr
 $discard,site=phoenixgamedevelopment.com
 $discard,site=photographe-de-mode.com
 $discard,site=picclick.com
@@ -719,6 +801,7 @@ $discard,site=pinterest.com
 $discard,site=piunikaweb.com
 $discard,site=pixlr.com
 $discard,site=plasticsurgeryistanbul.net
+$discard,site=play.google.com
 $discard,site=pluralsight.com
 $discard,site=polybull.com
 $discard,site=pommpoire.fr
@@ -739,6 +822,7 @@ $discard,site=porntrex.com
 $discard,site=porntrex.tv
 $discard,site=pornzog.com
 $discard,site=postel.app
+$discard,site=prettyjson.org
 $discard,site=pricepertoken.com
 $discard,site=promptolis.com
 $discard,site=psst-innovation.com
@@ -750,12 +834,14 @@ $discard,site=quora.com
 $discard,site=quotefancy.com
 $discard,site=r18.com
 $discard,site=rclone.org
+$discard,site=recollections.biz
 $discard,site=reddxxx.com
 $discard,site=redtube.com
 $discard,site=reducpriv.com
 $discard,site=reductionsprivees.com
 $discard,site=redwap.sex
 $discard,site=redwap.tv
+$discard,site=referencement-bourgognefranchecomte.fr
 $discard,site=refinery29.com
 $discard,site=regivia.com
 $discard,site=renderhub.com
@@ -765,9 +851,11 @@ $discard,site=roboflow.com
 $discard,site=rockstaracademy.com
 $discard,site=roku.com
 $discard,site=rsync.net
+$discard,site=ru.wiktionary.org
 $discard,site=runcrate.ai
 $discard,site=saashub.com
 $discard,site=saaspirate.com
+$discard,site=saasworthy.com
 $discard,site=sabrepc.com
 $discard,site=santemagazine.fr
 $discard,site=scamadviser.com
@@ -777,6 +865,8 @@ $discard,site=scrapingbee.com
 $discard,site=screenrant.com
 $discard,site=scribd.com
 $discard,site=seaart.ai
+$discard,site=security.org
+$discard,site=selectra.info
 $discard,site=self.md
 $discard,site=semrush.com
 $discard,site=sesterce.com
@@ -794,7 +884,9 @@ $discard,site=shumerprompt.com
 $discard,site=shutterstock.com
 $discard,site=siliconvalleytime.com
 $discard,site=similarweb.com
+$discard,site=simonwillison.net
 $discard,site=simple.wikipedia.org
+$discard,site=site24x7.com
 $discard,site=slapped.com
 $discard,site=slashdot.org
 $discard,site=smartaiforbiz.com
@@ -810,8 +902,10 @@ $discard,site=sourceforge.net
 $discard,site=spankbang.com
 $discard,site=spankbang.party
 $discard,site=sparknotes.com
+$discard,site=spotsaas.com
 $discard,site=stacksocial.com
 $discard,site=stagshop.com
+$discard,site=stanventures.com
 $discard,site=startmodelexperience.com
 $discard,site=statnews.com
 $discard,site=stevekinney.com
@@ -831,8 +925,11 @@ $discard,site=techjacksolutions.com
 $discard,site=techjury.net
 $discard,site=technobezz.com
 $discard,site=technologycounter.com
+$discard,site=technologyevaluation.com
 $discard,site=techradar.com
+$discard,site=techrepublic.com
 $discard,site=techspot.com
+$discard,site=techtimes.com
 $discard,site=teenhealthsource.com
 $discard,site=teenxy.com
 $discard,site=tenor.com
@@ -840,6 +937,8 @@ $discard,site=tenorshare.ai
 $discard,site=terabox.com
 $discard,site=testednet.com
 $discard,site=tgtube.com
+$discard,site=theairankings.com
+$discard,site=thebestvpn.com
 $discard,site=theclassicporn.com
 $discard,site=thecodersblog.com
 $discard,site=thecut.com
@@ -847,6 +946,8 @@ $discard,site=thegamer.com
 $discard,site=thegww.com
 $discard,site=thenaturallovecompany.com
 $discard,site=thenewstack.io
+$discard,site=thenimblenerd.com
+$discard,site=theparisianguide.com
 $discard,site=theporndude.com
 $discard,site=theporndude.nl
 $discard,site=theporndude.onl
@@ -859,6 +960,7 @@ $discard,site=thumbstacks.com
 $discard,site=thumbzilla.com
 $discard,site=thunderbit.com
 $discard,site=thundercompute.com
+$discard,site=thurrott.com
 $discard,site=tiktok.com
 $discard,site=tinuiti.com
 $discard,site=tinyeye.com
@@ -881,6 +983,7 @@ $discard,site=transjizz.com
 $discard,site=trending-prompt.com
 $discard,site=trendingtopics.eu
 $discard,site=troypoint.com
+$discard,site=truecorset.com
 $discard,site=truefoundry.com
 $discard,site=trustedreviews.com
 $discard,site=ttu.fr
@@ -912,10 +1015,12 @@ $discard,site=veyse.com
 $discard,site=vibesparking.com
 $discard,site=viblo.asia
 $discard,site=viralaccounts.com
+$discard,site=vk.com
 $discard,site=vogueadria.com
 $discard,site=voici.fr
 $discard,site=votted.net
 $discard,site=voyeurhit.com
+$discard,site=vpn.com
 $discard,site=vpnmentor.com
 $discard,site=vpnranks.com
 $discard,site=waitbutwhy.com
@@ -923,7 +1028,9 @@ $discard,site=watchsololeveling.org
 $discard,site=watsspace.com
 $discard,site=wattpad.com
 $discard,site=webcatalog.io
+$discard,site=whitepages.com
 $discard,site=winbuzzer.com
+$discard,site=windowsreport.com
 $discard,site=winget.run
 $discard,site=winstall.app
 $discard,site=wisetoast.com
@@ -950,6 +1057,8 @@ $discard,site=xvideos.com
 $discard,site=xvidzz.com
 $discard,site=xxxymovies.com
 $discard,site=yahoo.com
+$discard,site=yalla-goal.com
+$discard,site=yalla-live-tv.org
 $discard,site=youjizz.com
 $discard,site=youjizz.sex
 $discard,site=youporn.com
@@ -961,7 +1070,7 @@ $discard,site=zbporn.com
 $discard,site=zmescience.com
 
 ! ==========================================================================
-! Path-specific rules (32)
+! Path-specific rules (34)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -989,6 +1098,7 @@ $discard,site=zmescience.com
 /pmwiki/conversations.php$downrank=2,site=tvtropes.org
 /pmwiki/posts.php$downrank=2,site=tvtropes.org
 /r/TwoXChromosomes/$discard,site=reddit.com
+/research$boost=10,site=allenai.org
 /research/$boost=10,site=openai.com
 /research/$boost=8,site=ai.meta.com
 /research/publications/$boost=8,site=ai.meta.com
@@ -997,3 +1107,4 @@ $discard,site=zmescience.com
 /translate$downrank=10,site=translate.google.com
 /view/nicoleruta$boost=4,site=sites.google.com
 /vladikoff/$discard,site=github.com
+/wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=8,site=fr.wikisource.org
