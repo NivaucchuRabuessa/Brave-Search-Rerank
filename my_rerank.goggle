@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom reranking.
+! description: Custom filters
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -230,7 +230,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (96)
+! TLD-level rules (118)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -241,6 +241,7 @@ $downrank=10,site=youtube.com
 |https://*.art^$discard
 |https://*.asia^$discard
 |https://*.au^$discard
+|https://*.be^$downrank=10
 |https://*.best^$discard
 |https://*.bingo^$discard
 |https://*.biz^$discard
@@ -248,6 +249,7 @@ $downrank=10,site=youtube.com
 |https://*.book^$discard
 |https://*.br^$discard
 |https://*.bt^$discard
+|https://*.build^$discard
 |https://*.bw^$discard
 |https://*.ca^$discard
 |https://*.cc^$discard
@@ -260,14 +262,20 @@ $downrank=10,site=youtube.com
 |https://*.cw^$discard
 |https://*.data^$discard
 |https://*.dealer^$discard
+|https://*.deals^$discard
 |https://*.desi^$discard
 |https://*.dev^$discard
+|https://*.diy^$discard
 |https://*.dot^$discard
+|https://*.download^$discard
 |https://*.edu^$discard
+|https://*.es^$discard
 |https://*.es^$downrank=10
+|https://*.eu^$downrank=10
 |https://*.fast^$discard
+|https://*.fm^$downrank=10
+|https://*.gg^$downrank=10
 |https://*.google^$discard
-|https://*.guru^$discard
 |https://*.health^$discard
 |https://*.help^$discard
 |https://*.hot^$discard
@@ -279,6 +287,8 @@ $downrank=10,site=youtube.com
 |https://*.info^$discard
 |https://*.info^$downrank=10
 |https://*.io^$discard
+|https://*.is^$discard
+|https://*.it^$downrank=10
 |https://*.kid^$discard
 |https://*.krd^$discard
 |https://*.led^$discard
@@ -287,20 +297,24 @@ $downrank=10,site=youtube.com
 |https://*.living^$discard
 |https://*.ly^$discard
 |https://*.market^$discard
+|https://*.md^$downrank=10
 |https://*.me^$discard
 |https://*.moi^$discard
 |https://*.mq^$discard
 |https://*.mv^$discard
 |https://*.name^$discard
 |https://*.net^$discard
+|https://*.net^$downrank=10
 |https://*.network^$discard
 |https://*.news^$discard
+|https://*.nl^$downrank=10
 |https://*.nr^$discard
 |https://*.nrw^$discard
 |https://*.nz^$discard
 |https://*.one^$discard
 |https://*.onl^$discard
 |https://*.online^$discard
+|https://*.party^$downrank=10
 |https://*.pay^$discard
 |https://*.play^$discard
 |https://*.porn^$discard
@@ -308,31 +322,39 @@ $downrank=10,site=youtube.com
 |https://*.prof^$discard
 |https://*.pw^$discard
 |https://*.py^$discard
-|https://*.ru^$discard
 |https://*.rugby^$discard
+|https://*.run^$discard
 |https://*.select^$discard
+|https://*.sex^$discard
+|https://*.sh^$discard
 |https://*.shop^$discard
 |https://*.site^$discard
+|https://*.sk^$discard
 |https://*.spot^$discard
+|https://*.sx^$discard
 |https://*.tech^$discard
 |https://*.tips^$discard
 |https://*.to^$discard
+|https://*.to^$downrank=10
 |https://*.top^$discard
 |https://*.trust^$discard
 |https://*.tube^$discard
 |https://*.tv^$downrank=10
+|https://*.tw^$downrank=10
 |https://*.ua^$discard
-|https://*.us^$discard
+|https://*.uk^$downrank=10
+|https://*.us^$downrank=10
 |https://*.vip^$discard
 |https://*.watch^$discard
 |https://*.work^$discard
+|https://*.wtf^$discard
 |https://*.xin^$discard
 |https://*.xxx^$discard
 |https://*.xyz^$discard
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (986)
+! Discarded domains (1114)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -340,9 +362,15 @@ $discard,site=01net.com
 $discard,site=1000cocks.com
 $discard,site=247premiumcart.com
 $discard,site=24xxx.porn
+$discard,site=2folie.com
 $discard,site=3d.sk
+$discard,site=3movs.com
 $discard,site=4tube.com
+$discard,site=6annonce.net
+$discard,site=7mmtv.sx
+$discard,site=8muses.io
 $discard,site=abilitymagazine.com
+$discard,site=absoluporn.com
 $discard,site=accio.com
 $discard,site=accuweather.com
 $discard,site=adameve.com
@@ -380,6 +408,8 @@ $discard,site=alterotic.com
 $discard,site=alwaysvpn.com
 $discard,site=amalytix.com
 $discard,site=amaryllo.us
+$discard,site=amateuretsexe.com
+$discard,site=amateurporn.me
 $discard,site=americansexdolls.com
 $discard,site=anime-sama.fr
 $discard,site=anotherwrapper.com
@@ -398,6 +428,7 @@ $discard,site=apps.microsoft.com
 $discard,site=appshunter.io
 $discard,site=appvizer.co.uk
 $discard,site=architjn.com
+$discard,site=archivebate.com
 $discard,site=archon.diy
 $discard,site=arnav.au
 $discard,site=arporn.com
@@ -406,12 +437,17 @@ $discard,site=asexstories.com
 $discard,site=ashemaletube.com
 $discard,site=assoass.com
 $discard,site=automationlinks.com
+$discard,site=aznude.com
 $discard,site=babesnetwork.com
 $discard,site=badalkhatri.com
+$discard,site=baddiehub.com
+$discard,site=baddiesonly.tv
 $discard,site=badjojo.com
+$discard,site=balancetanude.fr
 $discard,site=banana1015.com
 $discard,site=bang.com
 $discard,site=bangbrosnetwork.com
+$discard,site=bazoocam.org
 $discard,site=beautifulvalentins.com
 $discard,site=bedbible.com
 $discard,site=beebs.app
@@ -425,10 +461,14 @@ $discard,site=best-paypornsites.net
 $discard,site=best10pornsites.com
 $discard,site=bestaiporn.com
 $discard,site=bestguide.com
+$discard,site=bestjavporn.com
 $discard,site=bestpayadultsites.com
 $discard,site=bestporn.net
+$discard,site=bestporngames.com
+$discard,site=bestpornsites.biz
 $discard,site=bestvpn.org
 $discard,site=betaseries.com
+$discard,site=beurettesvideo.com
 $discard,site=beyondthebeez.com
 $discard,site=bigassporn.tv
 $discard,site=bigboobbundle.com
@@ -440,10 +480,15 @@ $discard,site=bitget.com
 $discard,site=blackedraw.com
 $discard,site=bleepingcomputer.com
 $discard,site=blogspot.com
+$discard,site=bobtv.fr
+$discard,site=bobvoyeur.com
+$discard,site=bonporn.com
 $discard,site=book.fr
 $discard,site=bookcaps.com
 $discard,site=bookrags.com
 $discard,site=borgbase.com
+$discard,site=borntobefuck.com
+$discard,site=boundhub.com
 $discard,site=boyfriendtv.com
 $discard,site=bra-calculator.com
 $discard,site=braincuber.com
@@ -463,10 +508,12 @@ $discard,site=campaignswift.com
 $discard,site=cams.com
 $discard,site=camsfinder.com
 $discard,site=camsoda.com
+$discard,site=camstreams.tv
 $discard,site=capterra.com
 $discard,site=catalysteds.com
 $discard,site=cbackup.com
 $discard,site=ccforeveryone.com
+$discard,site=celebjihad.com
 $discard,site=chatgptpricing.com
 $discard,site=chatlyai.app
 $discard,site=chaturbate.com
@@ -474,6 +521,7 @@ $discard,site=chinese-forums.com
 $discard,site=chineseidioms.com
 $discard,site=chirurgie-esthetique-vincent-masson.com
 $discard,site=christine-lingerie.com
+$discard,site=chyoa.com
 $discard,site=circleboom.com
 $discard,site=clarkconnect.com
 $discard,site=claude-manual.com
@@ -535,6 +583,7 @@ $discard,site=deepinsightai.io
 $discard,site=degoo.com
 $discard,site=deploybase.ai
 $discard,site=depositphotos.com
+$discard,site=desihub.org
 $discard,site=dev.to
 $discard,site=devproblems.com
 $discard,site=devtk.ai
@@ -551,6 +600,7 @@ $discard,site=dihuni.com
 $discard,site=dinotube.com
 $discard,site=disabledaccounthelp.com
 $discard,site=disk-drill.com
+$discard,site=dondi.ai
 $discard,site=dothewife.com
 $discard,site=drime.cloud
 $discard,site=dropbox.com
@@ -574,6 +624,7 @@ $discard,site=eporner.com
 $discard,site=epubor.com
 $discard,site=erome.com
 $discard,site=eroprofile.com
+$discard,site=erothots.is
 $discard,site=eslint.org
 $discard,site=essayshark.com
 $discard,site=eualternativefor.com
@@ -594,9 +645,13 @@ $discard,site=facebook.com
 $discard,site=factually.co
 $discard,site=faisalrafique.com
 $discard,site=fakehub.com
+$discard,site=familyporner.com
+$discard,site=familypornhd.com
 $discard,site=familysearch.org
 $discard,site=familystrokes.com
 $discard,site=fancentro.com
+$discard,site=fap-nation.com
+$discard,site=fapello.com
 $discard,site=faphouse.com
 $discard,site=faphouse.tv
 $discard,site=fapongayporn.com
@@ -606,6 +661,7 @@ $discard,site=felicloud.com
 $discard,site=felloai.com
 $discard,site=fetishdude.com
 $discard,site=fifteenpeas.com
+$discard,site=fikfap.com
 $discard,site=filecr.com
 $discard,site=filehorse.com
 $discard,site=filejump.com
@@ -621,19 +677,24 @@ $discard,site=flathub.org
 $discard,site=flickr.com
 $discard,site=fling.com
 $discard,site=flirt.com
+$discard,site=flirtcam.ai
 $discard,site=folderfort.com
 $discard,site=followeran.com
 $discard,site=forbes.com
 $discard,site=forem.com
 $discard,site=forhertube.com
+$discard,site=fpo.xxx
 $discard,site=fr.m.wiktionary.org
 $discard,site=freakden.com
 $discard,site=freecodecamp.org
 $discard,site=freeones.com
+$discard,site=fry99.com
 $discard,site=fuq.com
+$discard,site=furaffinity.net
 $discard,site=futanarihentai.net
 $discard,site=futureagi.com
 $discard,site=fux.com
+$discard,site=fyptt.to
 $discard,site=g2.com
 $discard,site=g2blazing.com
 $discard,site=g2fame.com
@@ -669,6 +730,7 @@ $discard,site=gologin.com
 $discard,site=goodtech.info
 $discard,site=gosexpod.com
 $discard,site=goteleport.com
+$discard,site=gptgirlfriend.online
 $discard,site=gradesaver.com
 $discard,site=gridinsoft.com
 $discard,site=guru99.com
@@ -680,11 +742,17 @@ $discard,site=happylibus.com
 $discard,site=harlowandfox.com
 $discard,site=hauteflair.com
 $discard,site=hdporncomics.com
+$discard,site=hdsexvideo.xxx
 $discard,site=hdtube.porn
+$discard,site=hdtubemovies.xxx
 $discard,site=heavy-r.com
+$discard,site=heavyfetish.com
 $discard,site=helline.fr
+$discard,site=hello.porn
 $discard,site=heltar.com
+$discard,site=hentai-fap.fr
 $discard,site=hentai-moon.com
+$discard,site=hentai-paradise.fr
 $discard,site=hentai-porn.net
 $discard,site=hentai-scenes.com
 $discard,site=hentai0day.com
@@ -694,32 +762,42 @@ $discard,site=hentaibro.com
 $discard,site=hentaicore.com
 $discard,site=hentaiera.com
 $discard,site=hentaifine.com
+$discard,site=hentaifr.net
 $discard,site=hentaigo.com
+$discard,site=hentaihaven.xxx
 $discard,site=hentailor.com
 $discard,site=hentairider.com
 $discard,site=hentairoulette.com
 $discard,site=hentaisites.com
+$discard,site=hentaismile.com
 $discard,site=hentaitop.org
 $discard,site=hentaiuncensored.net
 $discard,site=hentaiuncensored.to
+$discard,site=hentaivost.fr
 $discard,site=hentaixcomic-com.zproxy.org
 $discard,site=hentaixfurry.com
 $discard,site=hentaixyuri.com
+$discard,site=hentaizone.xyz
 $discard,site=hentaverse.com
 $discard,site=herbysorganica.com
 $discard,site=heroic.com
 $discard,site=hervemouyalphotographer.com
+$discard,site=hhentai.fr
 $discard,site=highreply.com
 $discard,site=hindikaro.com
 $discard,site=hindustantimes.com
+$discard,site=histoire-erotique.org
+$discard,site=histoires-de-sexe.net
 $discard,site=hitpaw.com
 $discard,site=hollyland.com
 $discard,site=homemadegalore.com
 $discard,site=homemoviestube.com
+$discard,site=homo.xxx
 $discard,site=honeysx.com
 $discard,site=hookupguru.com
 $discard,site=hopkinsmedicine.org
 $discard,site=hosttest.co.uk
+$discard,site=hotchat.ai
 $discard,site=hotessejob.com
 $discard,site=hotsexvideox.com
 $discard,site=hqporn.xxx
@@ -727,6 +805,7 @@ $discard,site=hqporner.com
 $discard,site=hustletoai.com
 $discard,site=hypefury.com
 $discard,site=hyperstack.cloud
+$discard,site=hypnotube.com
 $discard,site=iamsissy.com
 $discard,site=icedrive.net
 $discard,site=icetranny.com
@@ -738,6 +817,8 @@ $discard,site=ifstudies.org
 $discard,site=igenfun.com
 $discard,site=ignore4k.com
 $discard,site=iknowthatgirl.com
+$discard,site=ilikecomix.com
+$discard,site=imagefap.com
 $discard,site=imlive.com
 $discard,site=in2p3.fr
 $discard,site=incogniton.com
@@ -747,6 +828,7 @@ $discard,site=informer.com
 $discard,site=insanelymac.com
 $discard,site=instagram.com
 $discard,site=intellectualead.com
+$discard,site=internetchicks.com
 $discard,site=internxt.com
 $discard,site=interracial.com
 $discard,site=intima.fr
@@ -771,6 +853,7 @@ $discard,site=jechange.fr
 $discard,site=jerkroulette.com
 $discard,site=jianguoyun.com
 $discard,site=journaldesfemmes.fr
+$discard,site=joylovedolls.com
 $discard,site=jpbound.com
 $discard,site=jpost.com
 $discard,site=json-pretty.com
@@ -788,13 +871,17 @@ $discard,site=k2snow.com
 $discard,site=karups.com
 $discard,site=kiddle.co
 $discard,site=kidzworld.com
+$discard,site=kif.tube
 $discard,site=klu.ai
 $discard,site=knightli.com
 $discard,site=kompoz2.com
+$discard,site=ladyxena.com
 $discard,site=lafabriquedunet.fr
 $discard,site=langcopilot.com
 $discard,site=laozhang.ai
 $discard,site=largehdtube.com
+$discard,site=leakgallery.com
+$discard,site=leakyourporn.com
 $discard,site=learn.microsoft.com
 $discard,site=leetcode.com
 $discard,site=lesbian8.com
@@ -809,6 +896,7 @@ $discard,site=linkedin.com
 $discard,site=linksgpt.com
 $discard,site=litcharts.com
 $discard,site=literotica.com
+$discard,site=livecamrips.tv
 $discard,site=livechatai.com
 $discard,site=livetv102.net
 $discard,site=llm-stats.com
@@ -824,8 +912,10 @@ $discard,site=ltl-school.com
 $discard,site=lucaberton.com
 $discard,site=lucasentertainment.com
 $discard,site=luckynumb3rs.github.io
+$discard,site=lushstories.com
 $discard,site=lustery.com
 $discard,site=m-hentai.net
+$discard,site=m-porn.xxx
 $discard,site=maayot.com
 $discard,site=maboiteadessous.com
 $discard,site=machinelearningmastery.com
@@ -842,6 +932,7 @@ $discard,site=manga-news.com
 $discard,site=mannequin-senior.fr
 $discard,site=markmanson.net
 $discard,site=marktechpost.com
+$discard,site=maruchihentai.cc
 $discard,site=mashable.com
 $discard,site=massedcompute.com
 $discard,site=mat6tube.com
@@ -851,12 +942,14 @@ $discard,site=maxicasting.com
 $discard,site=media.io
 $discard,site=medium.com
 $discard,site=mega.io
+$discard,site=megatube.xxx
 $discard,site=melonstube.com
 $discard,site=memeburn.com
 $discard,site=mepis.org
 $discard,site=metacto.com
 $discard,site=metaporn.com
 $discard,site=mhentai.net
+$discard,site=milfnut.com
 $discard,site=milfporn.tv
 $discard,site=minitool.com
 $discard,site=miohentai.com
@@ -866,12 +959,15 @@ $discard,site=mofosnetwork.com
 $discard,site=monsterwhitecock.com
 $discard,site=morphllm.com
 $discard,site=mostpopularpornsites.com
+$discard,site=motherless.xxx
 $discard,site=movieweb.com
 $discard,site=mrporngeek.com
 $discard,site=mrskin.com
 $discard,site=multcloud.com
 $discard,site=multibytetech.com
+$discard,site=multporn.net
 $discard,site=mwm.ai
+$discard,site=mygaysites.com
 $discard,site=mygfporn.com
 $discard,site=myhentaicomics.com
 $discard,site=myhentaigallery.com
@@ -909,6 +1005,8 @@ $discard,site=obsidianstats.com
 $discard,site=octobrowser.net
 $discard,site=octoparse.com
 $discard,site=odir.fr
+$discard,site=ok.xxx
+$discard,site=olympine.com
 $discard,site=omgkinky.com
 $discard,site=onaholand.com
 $discard,site=onepornlist.com
@@ -919,6 +1017,7 @@ $discard,site=onlineformater.com
 $discard,site=onlinejsontools.com
 $discard,site=onlinetools.com
 $discard,site=onlyfans.com
+$discard,site=onvatrad.com
 $discard,site=open.spotify.com
 $discard,site=opentools.ai
 $discard,site=openvino.ai
@@ -933,6 +1032,7 @@ $discard,site=outscraper.com
 $discard,site=owncloud.com
 $discard,site=oystervpn.com
 $discard,site=ozbargain.com.au
+$discard,site=paheal.net
 $discard,site=paigeniedringhaus.com
 $discard,site=panaversity.org
 $discard,site=pandorarecovery.com
@@ -942,9 +1042,11 @@ $discard,site=passion.com
 $discard,site=pcloud.com
 $discard,site=pcmac.download
 $discard,site=pcrisk.com
+$discard,site=pdude.link
 $discard,site=pearlsvibe.com
 $discard,site=peekviewer.com
 $discard,site=penispictures.com
+$discard,site=perfectgirls.xxx
 $discard,site=pharmacieeiffelcommerce.com
 $discard,site=pharmaciepolygoneriviera.com
 $discard,site=pharmao.fr
@@ -953,6 +1055,7 @@ $discard,site=photographe-de-mode.com
 $discard,site=picclick.com
 $discard,site=pichunter.com
 $discard,site=pimeyes.com
+$discard,site=pimpbunny.com
 $discard,site=pinterest.com
 $discard,site=piunikaweb.com
 $discard,site=pixlr.com
@@ -963,22 +1066,30 @@ $discard,site=playporngames.com
 $discard,site=pluralsight.com
 $discard,site=polybull.com
 $discard,site=pommpoire.fr
+$discard,site=poopeegirls.com
 $discard,site=porcore.com
 $discard,site=porn00.org
 $discard,site=porn300.com
 $discard,site=porn40.com
+$discard,site=porn4fans.com
+$discard,site=pornbeurette.com
 $discard,site=porndig.com
+$discard,site=porndude.link
 $discard,site=porndude.wtf
 $discard,site=porngames.com
 $discard,site=porngames.tv
+$discard,site=porngameshub.com
 $discard,site=porngeek.com
 $discard,site=pornhat.com
+$discard,site=pornhoarder.tw
 $discard,site=pornhub.com
 $discard,site=pornhub.org
 $discard,site=pornication.com
+$discard,site=pornid.xxx
 $discard,site=pornkai.com
 $discard,site=pornmd.com
 $discard,site=pornone.com
+$discard,site=pornovore.fr
 $discard,site=pornpic.com
 $discard,site=pornpics.com
 $discard,site=pornplanner.com
@@ -987,9 +1098,12 @@ $discard,site=pornrabbit.com
 $discard,site=pornseaus.com
 $discard,site=pornsheriff.com
 $discard,site=pornsitesnow.com
+$discard,site=porntn.com
 $discard,site=porntrex.com
 $discard,site=porntrex.tv
 $discard,site=porntube.com
+$discard,site=pornwebmasters.com
+$discard,site=pornworks.app
 $discard,site=pornzog.com
 $discard,site=postel.app
 $discard,site=premiumpornsites.net
@@ -1003,10 +1117,12 @@ $discard,site=pussyspace.com
 $discard,site=pussyspace.net
 $discard,site=pvtistes.net
 $discard,site=qorno.com
+$discard,site=quartier-rouge.be
 $discard,site=quora.com
 $discard,site=quotefancy.com
 $discard,site=r18.com
 $discard,site=rabbitscams.sex
+$discard,site=rat.xxx
 $discard,site=rawrides.tv
 $discard,site=rclone.org
 $discard,site=realsexdoll.com
@@ -1045,13 +1161,16 @@ $discard,site=screenrant.com
 $discard,site=scribd.com
 $discard,site=sdhentai.com
 $discard,site=seaart.ai
+$discard,site=secrets.ai
 $discard,site=security.org
 $discard,site=selectra.info
 $discard,site=self.md
 $discard,site=semrush.com
 $discard,site=sesterce.com
 $discard,site=sex.com
+$discard,site=sexadvisor.com
 $discard,site=sexedrescue.com
+$discard,site=sexemodel.com
 $discard,site=sexhq.com
 $discard,site=sexlikereal.com
 $discard,site=sexstories.com
@@ -1077,6 +1196,7 @@ $discard,site=similarweb.com
 $discard,site=simonwillison.net
 $discard,site=simple.wikipedia.org
 $discard,site=site24x7.com
+$discard,site=skyprivate.click
 $discard,site=slapped.com
 $discard,site=slashdot.org
 $discard,site=smartaiforbiz.com
@@ -1092,6 +1212,7 @@ $discard,site=sourceforge.net
 $discard,site=spankbang.com
 $discard,site=spankbang.party
 $discard,site=sparknotes.com
+$discard,site=spicychat.ai
 $discard,site=spotsaas.com
 $discard,site=stackoverflow.com
 $discard,site=stacksocial.com
@@ -1107,6 +1228,7 @@ $discard,site=storm-skinwear.fr
 $discard,site=streamable.com
 $discard,site=stripchat.com
 $discard,site=substack.com
+$discard,site=sugarlab.ai
 $discard,site=superagent.sh
 $discard,site=superannotate.com
 $discard,site=superporn.com
@@ -1114,8 +1236,11 @@ $discard,site=supersummary.com
 $discard,site=sureprompts.com
 $discard,site=svscomics.com
 $discard,site=swappz.com
+$discard,site=sxyprn.com
 $discard,site=tabooless.net
+$discard,site=tabootube.xxx
 $discard,site=tabutoys.com
+$discard,site=tameuf.com
 $discard,site=tckcandy.com
 $discard,site=teamskeet.com
 $discard,site=techbasedmarketing.com
@@ -1138,13 +1263,17 @@ $discard,site=teenxy.com
 $discard,site=tenor.com
 $discard,site=tenorshare.ai
 $discard,site=terabox.com
+$discard,site=tescort.com
 $discard,site=testednet.com
+$discard,site=tgirlsex.xxx
 $discard,site=tgtube.com
 $discard,site=theairankings.com
 $discard,site=thebestvpn.com
 $discard,site=theclassicporn.com
 $discard,site=thecodersblog.com
 $discard,site=thecut.com
+$discard,site=thefantazy.com
+$discard,site=thefappeningblog.com
 $discard,site=thegamer.com
 $discard,site=thegww.com
 $discard,site=thenaturallovecompany.com
@@ -1163,6 +1292,8 @@ $discard,site=thepornlist.com
 $discard,site=thetorrentio.com
 $discard,site=theworldofchinese.com
 $discard,site=theyarehuge.com
+$discard,site=thisvid.com
+$discard,site=thothub.to
 $discard,site=threads.com
 $discard,site=thumbstacks.com
 $discard,site=thumbzilla.com
@@ -1170,6 +1301,7 @@ $discard,site=thunderbit.com
 $discard,site=thundercompute.com
 $discard,site=thurrott.com
 $discard,site=tiava.com
+$discard,site=tik.porn
 $discard,site=tiktok.com
 $discard,site=tinuiti.com
 $discard,site=tinyeye.com
@@ -1189,6 +1321,7 @@ $discard,site=torrent2cloud.com
 $discard,site=torrentcompare.com
 $discard,site=touteslespoitrines.com
 $discard,site=towardsdeeplearning.com
+$discard,site=tpd.deals
 $discard,site=trackmyhashtag.com
 $discard,site=tracxn.com
 $discard,site=trainercentral.com
@@ -1196,8 +1329,10 @@ $discard,site=tranny.one
 $discard,site=trannyclips.com
 $discard,site=trannygem.com
 $discard,site=trannytube.net
+$discard,site=trannytube.tv
 $discard,site=transfercloud.io
 $discard,site=transjizz.com
+$discard,site=trash.porn
 $discard,site=trending-prompt.com
 $discard,site=trendingtopics.eu
 $discard,site=trixhentai.com
@@ -1215,6 +1350,7 @@ $discard,site=tubepornclassic.com
 $discard,site=tubepornstars.com
 $discard,site=tubesafari.com
 $discard,site=tubev.sex
+$discard,site=tukif.com
 $discard,site=tukifporno.com
 $discard,site=tushy.com
 $discard,site=tutorabcchinese.com
@@ -1246,10 +1382,12 @@ $discard,site=viewgals.com
 $discard,site=vipwank.com
 $discard,site=viralaccounts.com
 $discard,site=virtualrealporn.com
+$discard,site=vjav.com
 $discard,site=vk.com
 $discard,site=vogueadria.com
 $discard,site=voici.fr
 $discard,site=voilaporno.com
+$discard,site=voissa.com
 $discard,site=votted.net
 $discard,site=voyeur-house.tv
 $discard,site=voyeurhit.com
@@ -1262,11 +1400,14 @@ $discard,site=vrporngalaxy.com
 $discard,site=vrsmash.com
 $discard,site=vrsumo.com
 $discard,site=waitbutwhy.com
+$discard,site=watchmygf.me
 $discard,site=watchsololeveling.org
 $discard,site=watsspace.com
 $discard,site=wattpad.com
 $discard,site=webcatalog.io
+$discard,site=webchoc.com
 $discard,site=webikeo.fr
+$discard,site=whassup.fr
 $discard,site=whitepages.com
 $discard,site=winbuzzer.com
 $discard,site=windowsreport.com
@@ -1278,10 +1419,13 @@ $discard,site=womenshealthmag.com
 $discard,site=wondershare.com
 $discard,site=wordpress.com
 $discard,site=wsls.com
+$discard,site=x-manga.org
+$discard,site=x-tg.tube
 $discard,site=xanimeporn.com
 $discard,site=xcafe.com
 $discard,site=xda-developers.com
 $discard,site=xecce.com
+$discard,site=xfollow.com
 $discard,site=xfree.com
 $discard,site=xgroovy.com
 $discard,site=xhaccess.com
@@ -1290,19 +1434,24 @@ $discard,site=xhamster19.com
 $discard,site=xhamster2.com
 $discard,site=xhopen.com
 $discard,site=xmegadrive.com
+$discard,site=xmoviesforyou.com
 $discard,site=xnxx.com
 $discard,site=xo-xo.fr
 $discard,site=xpaysites.com
+$discard,site=xpee.com
 $discard,site=xporndude.com
 $discard,site=xpressglass.net
+$discard,site=xstory-fr.com
 $discard,site=xvideos.com
 $discard,site=xvidzz.com
+$discard,site=xxbrits.com
 $discard,site=xxxbule.com
 $discard,site=xxxfollow.com
 $discard,site=xxxymovies.com
 $discard,site=yahoo.com
 $discard,site=yalla-goal.com
 $discard,site=yalla-live-tv.org
+$discard,site=yesporn.vip
 $discard,site=youjizz.com
 $discard,site=youjizz.sex
 $discard,site=youporn.com
@@ -1311,6 +1460,7 @@ $discard,site=yourdoll.com
 $discard,site=yourmodel.fr
 $discard,site=yourtango.com
 $discard,site=youtubecommentsdownloader.com
+$discard,site=youx.xxx
 $discard,site=yuriwaifus.com
 $discard,site=zbporn.com
 $discard,site=zeenite.com
