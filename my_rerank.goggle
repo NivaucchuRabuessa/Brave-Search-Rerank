@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Filters
+! description: Custom filters
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (201)
+! Raised domains (216)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -13,6 +13,8 @@ $boost=5,site=4chan.org
 $boost,site=52pojie.cn
 $boost,site=accessnow.org
 $boost=10,site=afesta.tv
+$boost,site=agenceenligne.roannaise-de-leau.fr
+$boost=8,site=airc.aist.go.jp
 $boost,site=aisi.gov.uk
 $boost,site=aistudio.google.com
 $boost=5,site=akiba-online.com
@@ -23,6 +25,7 @@ $boost,site=allthetropes.org
 $boost,site=alternate.de
 $boost=7,site=alternate.fr
 $boost,site=aluigi.altervista.org
+$boost,site=ambulancedessapins.fr
 $boost=5,site=amd.com
 $boost=5,site=anilist.co
 $boost,site=animatetimes.com
@@ -33,6 +36,7 @@ $boost,site=antigravity.google
 $boost,site=apjjf.org
 $boost=5,site=archive.org
 $boost,site=archlinux.org
+$boost=10,site=artexhibition.jp
 $boost,site=article19.org
 $boost=5,site=arxiv.org
 $boost=7,site=assets.anthropic.com
@@ -57,6 +61,8 @@ $boost=10,site=caf.fr
 $boost=8,site=cairn.info
 $boost,site=canardpc.com
 $boost,site=canon.fr
+$boost=5,site=canonical.com
+$boost=10,site=catalog.hathitrust.org
 $boost=5,site=caveacademy.com
 $boost=8,site=cdprojektred.com
 $boost=8,site=cedric.cnam.fr
@@ -84,6 +90,7 @@ $boost=8,site=dic.pixiv.net
 $boost=5,site=direct.mit.edu
 $boost=7,site=dlsite.com
 $boost=7,site=docs.nvidia.com
+$boost=5,site=downmagaz.net
 $boost,site=druide.com
 $boost=5,site=e-hentai.org
 $boost,site=ebsco.com
@@ -93,6 +100,7 @@ $boost,site=edri.org
 $boost=5,site=en.wikipedia.org
 $boost=5,site=en.wiktionary.org
 $boost=10,site=encres-cendrees.discutbb.com
+$boost=10,site=erikbern.com
 $boost=5,site=everythingmoe.com
 $boost=5,site=exhentai.org
 $boost=5,site=filmsite.org
@@ -136,12 +144,15 @@ $boost=5,site=laquadrature.net
 $boost,site=learn.microsoft.com
 $boost=8,site=leconjugueur.lefigaro.fr
 $boost=8,site=linusakesson.net
+$boost=5,site=macif.fr
 $boost=7,site=maryevans.com
 $boost,site=merriam-webster.com
 $boost=5,site=mitpress.mit.edu
 $boost=5,site=mobygames.com
 $boost=10,site=modal.com
 $boost=2,site=myanimelist.net
+$boost=8,site=nationalgeographic.com
+$boost=8,site=nationalgeographic.fr
 $boost,site=net-a-porter.com
 $boost,site=neurips.cc
 $boost=5,site=next.ink
@@ -154,6 +165,7 @@ $boost,site=openai.com
 $boost,site=openai.smapply.org
 $boost,site=openmodeldb.info
 $boost=5,site=osu.ppy.sh
+$boost=5,site=pagesjaunes.fr
 $boost=8,site=pamelazave.com
 $boost=7,site=patpro.net
 $boost=10,site=piggyback.com
@@ -165,6 +177,7 @@ $boost=5,site=red.anthropic.com
 $boost,site=respectmodels.com
 $boost,site=revolve.com
 $boost,site=rhymezone.com
+$boost,site=samsung.com
 $boost=5,site=saucenao.com
 $boost=5,site=sewhistorically.com
 $boost,site=shopbop.com
@@ -184,12 +197,14 @@ $boost=8,site=transformer-circuits.pub
 $boost,site=translate.google.com
 $boost,site=translate.kagi.com
 $boost=5,site=tvtropes.org
+$boost=5,site=ubuntu.com
 $boost=5,site=uncyclopedia.org
 $boost=5,site=uniqlo.com
 $boost=5,site=valvesoftware.com
 $boost=8,site=vndb.org
 $boost=5,site=wearinghistoryblog.com
 $boost=5,site=web.archive.org
+$boost=8,site=webrecorder.net
 $boost=5,site=wiki.archiveteam.org
 $boost=10,site=wiki.bibanon.org
 $boost=5,site=wiki.gg
@@ -396,7 +411,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1215)
+! Discarded domains (1235)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -453,10 +468,13 @@ $discard,site=alternativeer.com
 $discard,site=alternativeto.net
 $discard,site=alterotic.com
 $discard,site=alwaysvpn.com
+$discard,site=amaia-traduction.com
 $discard,site=amalytix.com
 $discard,site=amaryllo.us
 $discard,site=amateuretsexe.com
 $discard,site=amateurporn.me
+$discard,site=amberscript.com
+$discard,site=ambulance-des-sapins.fr
 $discard,site=americansexdolls.com
 $discard,site=analyticsvidhya.com
 $discard,site=anime-sama.fr
@@ -561,6 +579,7 @@ $discard,site=cams.com
 $discard,site=camsfinder.com
 $discard,site=camsoda.com
 $discard,site=camstreams.tv
+$discard,site=capcut.com
 $discard,site=capterra.com
 $discard,site=casagbic.com
 $discard,site=catalysteds.com
@@ -573,6 +592,7 @@ $discard,site=chatgptaihub.com
 $discard,site=chatgptpricing.com
 $discard,site=chatlyai.app
 $discard,site=chaturbate.com
+$discard,site=checksub.com
 $discard,site=chinese-forums.com
 $discard,site=chineseidioms.com
 $discard,site=chirurgie-esthetique-vincent-masson.com
@@ -759,6 +779,7 @@ $discard,site=forem.com
 $discard,site=forhertube.com
 $discard,site=fpo.xxx
 $discard,site=fr.m.wiktionary.org
+$discard,site=franceverif.fr
 $discard,site=freakden.com
 $discard,site=freecodecamp.org
 $discard,site=freeones.com
@@ -819,6 +840,7 @@ $discard,site=hakoit.com
 $discard,site=hamsterstack.com
 $discard,site=handyrecovery.com
 $discard,site=happylibus.com
+$discard,site=happyscribe.com
 $discard,site=harlowandfox.com
 $discard,site=hauteflair.com
 $discard,site=hdporncomics.com
@@ -1061,6 +1083,7 @@ $discard,site=multcloud.com
 $discard,site=multibytetech.com
 $discard,site=multporn.net
 $discard,site=mwm.ai
+$discard,site=my-subs.co
 $discard,site=mygaysites.com
 $discard,site=mygfporn.com
 $discard,site=myhentaicomics.com
@@ -1269,6 +1292,7 @@ $discard,site=scenediscrete.com
 $discard,site=scolaconsult.fr
 $discard,site=scramble.cloud
 $discard,site=scrapingbee.com
+$discard,site=screenapp.io
 $discard,site=screenrant.com
 $discard,site=scribd.com
 $discard,site=sdhentai.com
@@ -1328,6 +1352,7 @@ $discard,site=spankbang.party
 $discard,site=sparknotes.com
 $discard,site=spicychat.ai
 $discard,site=spotsaas.com
+$discard,site=srtfiles.com
 $discard,site=stable-diffusion-art.com
 $discard,site=stackoverflow.com
 $discard,site=stacksocial.com
@@ -1347,6 +1372,9 @@ $discard,site=storm-skinwear.fr
 $discard,site=streamable.com
 $discard,site=stripchat.com
 $discard,site=substack.com
+$discard,site=subtitlebot.com
+$discard,site=subtitlekit.com
+$discard,site=subtranslateai.com
 $discard,site=sugarlab.ai
 $discard,site=superagent.sh
 $discard,site=superannotate.com
@@ -1394,6 +1422,7 @@ $discard,site=the-agent-report.com
 $discard,site=theairankings.com
 $discard,site=thebestvpn.com
 $discard,site=theclassicporn.com
+$discard,site=theclassifiedrecord.com
 $discard,site=thecodersblog.com
 $discard,site=thecut.com
 $discard,site=thefantazy.com
@@ -1413,6 +1442,7 @@ $discard,site=theporndude.org
 $discard,site=theporndude.tv
 $discard,site=thepornlinks.com
 $discard,site=thepornlist.com
+$discard,site=thesubtitledb.com
 $discard,site=thetorrentio.com
 $discard,site=theworldofchinese.com
 $discard,site=theyarehuge.com
@@ -1455,6 +1485,7 @@ $discard,site=trannyclips.com
 $discard,site=trannygem.com
 $discard,site=trannytube.net
 $discard,site=trannytube.tv
+$discard,site=transcri.io
 $discard,site=transfercloud.io
 $discard,site=transjizz.com
 $discard,site=trash.porn
@@ -1490,6 +1521,7 @@ $discard,site=twillot.com
 $discard,site=twtdata.com
 $discard,site=txxx.com
 $discard,site=typingmind.com
+$discard,site=ubuntu-fr.org
 $discard,site=uloz.to
 $discard,site=umesh-malik.com
 $discard,site=unfollr.com
@@ -1498,6 +1530,7 @@ $discard,site=upstash.com
 $discard,site=usagebar.com
 $discard,site=vaia.com
 $discard,site=vantage.sh
+$discard,site=veed.io
 $discard,site=versus.com
 $discard,site=verywellmind.com
 $discard,site=veyse.com
@@ -1522,6 +1555,7 @@ $discard,site=voyeur-house.tv
 $discard,site=voyeurhit.com
 $discard,site=vpn.com
 $discard,site=vpnmentor.com
+$discard,site=vpnpro.com
 $discard,site=vpnranks.com
 $discard,site=vrcosplayx.com
 $discard,site=vrporn.com
@@ -1546,6 +1580,7 @@ $discard,site=wisetoast.com
 $discard,site=wmedia.es
 $discard,site=womenshealthmag.com
 $discard,site=wondershare.com
+$discard,site=wondershare.fr
 $discard,site=wordpress.com
 $discard,site=wsls.com
 $discard,site=x-manga.org
@@ -1617,7 +1652,7 @@ $discard,site=zproxy.org
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (37)
+! Path-specific rules (38)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -1641,6 +1676,7 @@ $discard,site=zzztube.com
 /images/$boost,site=yandex.ru
 /images/search$boost,site=yandex.ru
 /learn$boost=8,site=huggingface.co
+/maps$boost=10,site=google.com
 /michaelw9999/$discard,site=github.com
 /n57d30top/$discard,site=github.com
 /people/301718759371133/leon-bottou/$boost=10,site=ai.meta.com
