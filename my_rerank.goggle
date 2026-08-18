@@ -119,7 +119,7 @@ $boost,site=ecnl.org
 $boost=8,site=edf.fr
 $boost,site=edri.org
 $boost=8,site=edrlab.org
-$boost=5,site=en.wikipedia.org
+$boost=2,site=en.wikipedia.org
 $boost=5,site=en.wiktionary.org
 $boost=10,site=encres-cendrees.discutbb.com
 $boost=10,site=erikbern.com
