@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.7
+! description: Custom.8
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (293)
+! Raised domains (294)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -230,6 +230,7 @@ $boost=5,site=pixivision.net
 $boost,site=portaly.cc
 $boost,site=projectrho.com
 $boost=10,site=proton.me
+$boost=10,site=publish.x.com
 $boost=5,site=quakenet.org
 $boost=5,site=quechoisir.org
 $boost=5,site=quixel.com
@@ -348,7 +349,7 @@ $downrank=10,site=tiktok.com
 $downrank=10,site=tinychan.net
 $downrank=10,site=uptodown.com
 $downrank=10,site=webmd.com
-$downrank=2,site=x.com
+$downrank=5,site=x.com
 $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
@@ -519,7 +520,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1581)
+! Discarded domains (1589)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -545,6 +546,7 @@ $discard,site=a3erf.com
 $discard,site=aat.ee
 $discard,site=abi.gr
 $discard,site=abilitymagazine.com
+$discard,site=about.x.com
 $discard,site=absoluporn.com
 $discard,site=accio.com
 $discard,site=accountancyage.com
@@ -727,6 +729,7 @@ $discard,site=browseract.com
 $discard,site=buildfastwithai.com
 $discard,site=builtwith.com
 $discard,site=burnoutdevs.com
+$discard,site=business.x.com
 $discard,site=businessho.com
 $discard,site=businessinsider.com
 $discard,site=bustybus.com
@@ -805,12 +808,14 @@ $discard,site=com.pk
 $discard,site=com.ru
 $discard,site=cometapi.com
 $discard,site=comingsoon.net
+$discard,site=communitynotes.x.com
 $discard,site=complex.com
 $discard,site=composio.dev
 $discard,site=compufirst.com
 $discard,site=compute.exchange
 $discard,site=computeprices.com
 $discard,site=computerworld.com
+$discard,site=console.x.com
 $discard,site=contentstudio.io
 $discard,site=corel.com
 $discard,site=corelab.tech
@@ -880,6 +885,7 @@ $discard,site=dinotube.com
 $discard,site=disabledaccounthelp.com
 $discard,site=disk-drill.com
 $discard,site=dnb.com
+$discard,site=docs.x.com
 $discard,site=dondi.ai
 $discard,site=dothewife.com
 $discard,site=downforai.com
@@ -1102,6 +1108,7 @@ $discard,site=heavy-r.com
 $discard,site=heavyfetish.com
 $discard,site=helline.fr
 $discard,site=hello.porn
+$discard,site=help.x.com
 $discard,site=heltar.com
 $discard,site=hentai-fap.fr
 $discard,site=hentai-moon.com
@@ -1585,6 +1592,7 @@ $discard,site=priveeai.com
 $discard,site=prodiris.fr
 $discard,site=promptolis.com
 $discard,site=psst-innovation.com
+$discard,site=publish.x.com
 $discard,site=punishworld.com
 $discard,site=pussyspace.com
 $discard,site=pussyspace.net
@@ -2030,6 +2038,7 @@ $discard,site=writingbeginner.com
 $discard,site=wsls.com
 $discard,site=x-manga.org
 $discard,site=x-tg.tube
+$discard,site=x.com.
 $discard,site=xanimeporn.com
 $discard,site=xanimu.com
 $discard,site=xasiat.com
@@ -2106,11 +2115,13 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (175)
+! Path-specific rules (220)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
 /09Nachika$boost=5,site=x.com
+/1_1porn$discard,site=x.com
+/1pornone$discard,site=x.com
 /2011/$boost=5,site=soranews24.com
 /2012/$boost=5,site=soranews24.com
 /2013/$boost=5,site=soranews24.com
@@ -2125,29 +2136,36 @@ $discard,site=zzztube.com
 /Awk20000/$discard,site=x.com
 /CAT02A$boost=5,site=x.com
 /CHAPI1225tattoo$boost=5,site=x.com
+/CanvasPirate/$discard,site=x.com
 /CenturiiC/$boost=5,site=x.com
+/CommunityNotes/$discard,site=x.com
 /Decentralised-AI/$discard,site=github.com
 /Ent_Duke$boost=5,site=x.com
 /FearedBuck/status$discard,site=x.com
 /FeinbergVlad$boost=5,site=x.com
 /HaibaraStation$discard,site=x.com
+/HelpfulNotes$boost=10,site=x.com
 /Jayanth-reflex/$discard,site=github.com
 /K__Med/$discard,site=x.com
 /KamenPilled/$discard,site=x.com
+/LamboPower_com$discard,site=x.com
 /Layla_3D$boost=5,site=x.com
 /LuizaJarovsky/$discard,site=x.com
 /PADDLEPADDLE/$boost=5,site=github.com
 /PomPomStudio$boost=5,site=x.com
 /Porges/programming-history$boost=5,site=github.com
+/PornCorp/$discard,site=x.com
 /REALMizkif/$discard,site=x.com
 /RealAudiodude$boost=5,site=x.com
 /SaviorS_OOTB$boost=5,site=x.com
 /SuperBitchBecky$boost=5,site=x.com
 /TheCurtismMKII/$discard,site=x.com
+/ThePornProject1$discard,site=x.com
 /Vivikotann$boost=10,site=x.com
 /YuriHorie$boost=5,site=x.com
 /_kamu2$boost=5,site=x.com
 /_sholtodouglas$boost=5,site=x.com
+/abbymachines/$discard,site=x.com
 /acteduweininger/$discard,site=x.com
 /aigirlsphoto$discard,site=x.com
 /album/$discard,site=tidal.com
@@ -2163,6 +2181,8 @@ $discard,site=zzztube.com
 /beatmario$boost=5,site=x.com
 /beiwerk/liste.html$boost=10,site=lyriktheorie.uni-wuppertal.de
 /bernhardsson$boost=5,site=x.com
+/bestcommnotes$discard,site=x.com
+/bigboneblack$discard,site=x.com
 /blog$boost=8,site=huggingface.co
 /bmontxna/$boost=5,site=x.com
 /bread_boys$discard,site=x.com
@@ -2171,17 +2191,25 @@ $discard,site=zzztube.com
 /cLciel57520/$discard,site=x.com
 /cafe__british$boost=5,site=x.com
 /characters/all$boost=5,site=anime-planet.com
+/cnviolations$discard,site=x.com
 /coleam00/$discard,site=github.com
 /crystal44982644/$discard,site=x.com
 /curator/$discard,site=store.steampowered.com
+/cuttle_shuttle/$discard,site=x.com
 /dae_mon3$boost=5,site=x.com
 /daipunchX/$boost=5,site=x.com
+/dartgunintel/$discard,site=x.com
 /docs$boost=5,site=huggingface.co
 /download/cfx1990-10-12$discard,site=archive.org
 /dpa/$boost=10,site=nglibrary.ngs.org
 /drive/$discard,site=colab.research.google.com
 /en/$boost=5,site=un.org
+/en/$discard,site=help.x.com
+/en/$discard,site=x.com
+/en/using-x$discard,site=help.x.com
+/en/using-x$discard,site=x.com
 /engineering$boost=10,site=anthropic.com
+/explore$discard,site=x.com
 /forum/$downrank=10,site=myanimelist.net
 /forums/$boost=4,site=jeuxvideo.com
 /freusan/$discard,site=x.com
@@ -2190,17 +2218,25 @@ $discard,site=zzztube.com
 /gfpupu$boost=5,site=x.com
 /giffmana$boost=5,site=x.com
 /goodgirlpupu$boost=5,site=x.com
+/googleporn__$discard,site=x.com
 /goto$discard,site=google.com
 /gpara1818$boost=5,site=x.com
+/guide/$discard,site=communitynotes.x.com
+/handybandi$discard,site=x.com
 /hashtag/$discard,site=x.com
 /hiboema/$discard,site=x.com
+/holafly_com$discard,site=x.com
 /hotatenshi333$boost=5,site=x.com
+/huge_hoe/$discard,site=x.com
+/i/communitynotes$discard,site=x.com
+/i/flow$discard,site=x.com
 /i/trending$discard,site=x.com
 /ia_inori$boost=5,site=x.com
 /images/$boost,site=yandex.com
 /images/$boost,site=yandex.ru
 /images/search$boost,site=yandex.ru
 /infoxiao$boost=5,site=x.com
+/iniciarsesion$discard,site=x.com
 /jellymation$boost=5,site=x.com
 /ke_ta_gekidoku$boost=5,site=x.com
 /kellerjordan0$boost=8,site=x.com
@@ -2227,6 +2263,7 @@ $discard,site=zzztube.com
 /n_hirowa$boost=5,site=x.com
 /niliuchahui$boost=5,site=x.com
 /nl/$discard,site=infomaniak.com
+/noteupdates$discard,site=x.com
 /nsfwcharai$discard,site=x.com
 /nukitarou1$boost=5,site=x.com
 /oookinacoooo$discard,site=x.com
@@ -2235,11 +2272,23 @@ $discard,site=zzztube.com
 /people/301718759371133/leon-bottou/$boost=10,site=ai.meta.com
 /pmwiki/conversations.php$downrank=5,site=tvtropes.org
 /pmwiki/posts.php$downrank=5,site=tvtropes.org
+/porn$discard,site=x.com
+/porn__animation$discard,site=x.com
+/porn_actually$discard,site=x.com
+/porngifvids$discard,site=x.com
+/porngm$discard,site=x.com
+/porngvideo$discard,site=x.com
+/pornhub0121$discard,site=x.com
+/pornporn$discard,site=x.com
+/pornporn_to$discard,site=x.com
+/pornpros$discard,site=x.com
+/pornue$discard,site=x.com
 /portalgraph/$boost=5,site=x.com
 /programming-history/$boost=5,site=porges.github.io
 /project/$discard,site=pypi.org
 /prprKIRIN$boost=5,site=x.com
 /qaltted$boost=5,site=x.com
+/qwargly/$discard,site=x.com
 /r/Boobies/$discard,site=reddit.com
 /r/HatsuneMiku_Hentai/$discard,site=reddit.com
 /r/OutOfTheLoop$discard,site=reddit.com
@@ -2253,8 +2302,11 @@ $discard,site=zzztube.com
 /research/$boost=5,site=ai.meta.com
 /research/$boost=5,site=openai.com
 /research/publications/$boost=8,site=ai.meta.com
+/research/verify/$boost=10,site=openai.com
+/ryanlindley/$discard,site=x.com
 /scalingintelligence/$discard,site=github.com
 /search$discard,site=x.com
+/senixdev1$discard,site=x.com
 /show/$boost=10,site=my.matterport.com
 /slash_soft$boost=5,site=x.com
 /snowybitch2$boost=5,site=x.com
@@ -2267,6 +2319,7 @@ $discard,site=zzztube.com
 /throtem_1$boost=5,site=x.com
 /topics/$discard,site=github.com
 /translate$downrank=10,site=translate.google.com
+/transporn711$discard,site=x.com
 /turkce/$discard,site=bbc.com
 /u54182$boost=5,site=x.com
 /ubermachinework$boost=5,site=x.com
@@ -2280,6 +2333,7 @@ $discard,site=zzztube.com
 /webarchive/about$boost=10,site=bbc.co.uk
 /wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=10,site=fr.wikisource.org
 /wurabecky$boost=5,site=x.com
+/x.$discard,site=x.com
 /xerorgg/$discard,site=x.com
 /ylecun$boost=5,site=x.com
 /youyume0225$boost=5,site=x.com
