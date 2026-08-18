@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom filters
+! description: Custom.2
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -342,7 +342,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (142)
+! TLD-level rules (144)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -429,6 +429,7 @@ $downrank=10,site=youtube.com
 |https://*.mobi^$discard
 |https://*.moi^$discard
 |https://*.mq^$discard
+|https://*.ms^$discard
 |https://*.mv^$discard
 |https://*.name^$discard
 |https://*.net^$discard
@@ -467,6 +468,7 @@ $downrank=10,site=youtube.com
 |https://*.st^$downrank=10
 |https://*.sx^$discard
 |https://*.tech^$discard
+|https://*.technology^$discard
 |https://*.tips^$discard
 |https://*.to^$discard
 |https://*.to^$downrank=10
@@ -490,7 +492,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1409)
+! Discarded domains (1424)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -566,6 +568,7 @@ $discard,site=amateurporn.me
 $discard,site=amberscript.com
 $discard,site=ambulance-des-sapins.fr
 $discard,site=americansexdolls.com
+$discard,site=amnic.com
 $discard,site=analyticsvidhya.com
 $discard,site=ancestrel.com
 $discard,site=anime-sama.fr
@@ -590,6 +593,7 @@ $discard,site=appvizer.co.uk
 $discard,site=architjn.com
 $discard,site=archivebate.com
 $discard,site=archon.diy
+$discard,site=arkanecloud.com
 $discard,site=arnav.au
 $discard,site=arporn.com
 $discard,site=artcountrycanada.com
@@ -830,6 +834,7 @@ $discard,site=edunavajas.com
 $discard,site=electrons.co
 $discard,site=elephantdrive.com
 $discard,site=embedsocial.com
+$discard,site=emma.ms
 $discard,site=en.m.wikipedia.org
 $discard,site=encyclopedie.fr
 $discard,site=engadget.com
@@ -974,9 +979,14 @@ $discard,site=gosexpod.com
 $discard,site=goteleport.com
 $discard,site=gptgirlfriend.online
 $discard,site=gptsol.org
+$discard,site=gpu-hunt.com
 $discard,site=gpuaas.com
+$discard,site=gpucloudlist.com
+$discard,site=gpucost.org
 $discard,site=gpunex.com
+$discard,site=gpuperhour.com
 $discard,site=gpupoet.com
+$discard,site=gpusmith.com
 $discard,site=gradesaver.com
 $discard,site=gridinsoft.com
 $discard,site=grigio.org
@@ -1052,6 +1062,7 @@ $discard,site=homo.xxx
 $discard,site=honeysx.com
 $discard,site=hookupguru.com
 $discard,site=hopkinsmedicine.org
+$discard,site=horizoniq.com
 $discard,site=hornyfap.tv
 $discard,site=hostkey.com
 $discard,site=hostrunway.com
@@ -1205,6 +1216,7 @@ $discard,site=luckynumb3rs.github.io
 $discard,site=lushbinary.com
 $discard,site=lushstories.com
 $discard,site=lustery.com
+$discard,site=lyceum.technology
 $discard,site=m-hentai.net
 $discard,site=m-porn.xxx
 $discard,site=maayot.com
@@ -1331,12 +1343,14 @@ $discard,site=opentweet.io
 $discard,site=openvino.ai
 $discard,site=openworklabs.com
 $discard,site=oprahdaily.com
+$discard,site=opslyft.com
 $discard,site=optimum.com
 $discard,site=optionsforsexualhealth.org
 $discard,site=optoutai.co.uk
 $discard,site=oralytics.com
 $discard,site=oreateai.com
 $discard,site=oreilly.com
+$discard,site=ornn.com
 $discard,site=outagely.com
 $discard,site=outscraper.com
 $discard,site=owncloud.com
@@ -1526,6 +1540,7 @@ $discard,site=sexyhub.com
 $discard,site=sexyrealsexdolls.com
 $discard,site=sfailabs.com
 $discard,site=sfeir.com
+$discard,site=shadeform.com
 $discard,site=shapeez.com
 $discard,site=shareanynudes.com
 $discard,site=sharewareonsale.com
@@ -1767,9 +1782,11 @@ $discard,site=uptime.com
 $discard,site=uptimeinstitute.com
 $discard,site=usagebar.com
 $discard,site=vaia.com
+$discard,site=valebyte.com
 $discard,site=vantage.sh
 $discard,site=vdscom.ru
 $discard,site=veed.io
+$discard,site=ventusserver.com
 $discard,site=verifsites.com
 $discard,site=versus.com
 $discard,site=verywellmind.com
