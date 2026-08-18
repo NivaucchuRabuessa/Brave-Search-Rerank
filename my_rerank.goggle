@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom.6
+! description: Custom.7
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -353,7 +353,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (156)
+! TLD-level rules (160)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -388,6 +388,7 @@ $downrank=10,site=youtube.com
 |https://*.co^$discard
 |https://*.codes^$discard
 |https://*.com.au^$discard
+|https://*.com.sg^$discard
 |https://*.com.tr^$discard
 |https://*.com^$downrank=4
 |https://*.cu^$discard
@@ -423,6 +424,7 @@ $downrank=10,site=youtube.com
 |https://*.il^$discard
 |https://*.im^$discard
 |https://*.in^$discard
+|https://*.inc^$discard
 |https://*.info^$discard
 |https://*.info^$downrank=10
 |https://*.ink^$discard
@@ -479,6 +481,7 @@ $downrank=10,site=youtube.com
 |https://*.ro^$discard
 |https://*.rugby^$discard
 |https://*.run^$discard
+|https://*.science^$discard
 |https://*.select^$discard
 |https://*.sex^$discard
 |https://*.sh^$discard
@@ -507,6 +510,7 @@ $downrank=10,site=youtube.com
 |https://*.vip^$discard
 |https://*.watch^$discard
 |https://*.work^$discard
+|https://*.works^$discard
 |https://*.world^$discard
 |https://*.wtf^$discard
 |https://*.xin^$discard
@@ -515,7 +519,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1574)
+! Discarded domains (1581)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -577,6 +581,7 @@ $discard,site=airexplorer.net
 $discard,site=airlivedrive.com
 $discard,site=aitooldiscovery.com
 $discard,site=aitoolgeek.com
+$discard,site=aitools.inc
 $discard,site=aitoolsdevpro.com
 $discard,site=aituts.com
 $discard,site=aivario.com
@@ -739,6 +744,7 @@ $discard,site=camsoda.com
 $discard,site=camstreams.tv
 $discard,site=capcut.com
 $discard,site=capterra.com
+$discard,site=capterra.com.sg
 $discard,site=careersforge.com
 $discard,site=casagbic.com
 $discard,site=catalysteds.com
@@ -1030,6 +1036,7 @@ $discard,site=geekchamp.com
 $discard,site=geeky-gadgets.com
 $discard,site=gemius.fr
 $discard,site=gempages.net
+$discard,site=genai.works
 $discard,site=genshinporn.com
 $discard,site=geomayenne.fr
 $discard,site=getaiperks.com
@@ -1368,6 +1375,7 @@ $discard,site=modelsearchengine.com
 $discard,site=mofosnetwork.com
 $discard,site=mongoengine.org
 $discard,site=monsterwhitecock.com
+$discard,site=moonpreneur.com
 $discard,site=morphllm.com
 $discard,site=mostpopularpornsites.com
 $discard,site=motherless.xxx
@@ -1398,6 +1406,7 @@ $discard,site=mysexgamer.com
 $discard,site=mysextoyguide.com
 $discard,site=mywot.com
 $discard,site=myxvideos.com
+$discard,site=naidb.miraheze.org
 $discard,site=nakedtube.com
 $discard,site=nastypornpics.com
 $discard,site=naughtyamerica.com
@@ -1416,6 +1425,8 @@ $discard,site=noodlemagazine.com
 $discard,site=northflank.com
 $discard,site=norton.com
 $discard,site=note.com
+$discard,site=novelai.moe
+$discard,site=novix.science
 $discard,site=noxinfluencer.com
 $discard,site=nsfw-character-ai.fr
 $discard,site=nsfwchar.com
@@ -2095,43 +2106,76 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (87)
+! Path-specific rules (175)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
+/09Nachika$boost=5,site=x.com
 /2011/$boost=5,site=soranews24.com
 /2012/$boost=5,site=soranews24.com
 /2013/$boost=5,site=soranews24.com
 /2014/$boost=5,site=soranews24.com
 /2015/$boost=5,site=soranews24.com
 /2026/03/22/goodbye-to-yorhel/$boost=10,site=blog.fruitbatfactory.com
+/610racing$boost=10,site=x.com
 /@BreadBoys$boost=5,site=youtube.com
+/AISecurityInst$boost=5,site=x.com
+/AI_Illust_000/$discard,site=x.com
 /Asmongold$boost=5,site=x.com
 /Awk20000/$discard,site=x.com
+/CAT02A$boost=5,site=x.com
+/CHAPI1225tattoo$boost=5,site=x.com
+/CenturiiC/$boost=5,site=x.com
 /Decentralised-AI/$discard,site=github.com
+/Ent_Duke$boost=5,site=x.com
 /FearedBuck/status$discard,site=x.com
+/FeinbergVlad$boost=5,site=x.com
+/HaibaraStation$discard,site=x.com
 /Jayanth-reflex/$discard,site=github.com
 /K__Med/$discard,site=x.com
 /KamenPilled/$discard,site=x.com
+/Layla_3D$boost=5,site=x.com
 /LuizaJarovsky/$discard,site=x.com
 /PADDLEPADDLE/$boost=5,site=github.com
+/PomPomStudio$boost=5,site=x.com
 /Porges/programming-history$boost=5,site=github.com
 /REALMizkif/$discard,site=x.com
+/RealAudiodude$boost=5,site=x.com
+/SaviorS_OOTB$boost=5,site=x.com
+/SuperBitchBecky$boost=5,site=x.com
 /TheCurtismMKII/$discard,site=x.com
+/Vivikotann$boost=10,site=x.com
+/YuriHorie$boost=5,site=x.com
+/_kamu2$boost=5,site=x.com
+/_sholtodouglas$boost=5,site=x.com
+/acteduweininger/$discard,site=x.com
+/aigirlsphoto$discard,site=x.com
 /album/$discard,site=tidal.com
+/alexgkendall$boost=5,site=x.com
 /allenai/$boost=8,site=github.com
 /animevost_fr$discard,site=twitter.com
 /api/docs/pricing$boost=10,site=developers.openai.com
+/art_ex_japan$boost=5,site=x.com
+/ashenmash$boost=5,site=x.com
+/bbcarchive$boost=5,site=x.com
 /be/$discard,site=uniqlo.com
+/beamoriyurumo$boost=5,site=x.com
+/beatmario$boost=5,site=x.com
 /beiwerk/liste.html$boost=10,site=lyriktheorie.uni-wuppertal.de
+/bernhardsson$boost=5,site=x.com
 /blog$boost=8,site=huggingface.co
+/bmontxna/$boost=5,site=x.com
 /bread_boys$discard,site=x.com
 /breadboysinc$discard,site=x.com
 /breadboysyt$discard,site=x.com
+/cLciel57520/$discard,site=x.com
+/cafe__british$boost=5,site=x.com
 /characters/all$boost=5,site=anime-planet.com
 /coleam00/$discard,site=github.com
 /crystal44982644/$discard,site=x.com
 /curator/$discard,site=store.steampowered.com
+/dae_mon3$boost=5,site=x.com
+/daipunchX/$boost=5,site=x.com
 /docs$boost=5,site=huggingface.co
 /download/cfx1990-10-12$discard,site=archive.org
 /dpa/$boost=10,site=nglibrary.ngs.org
@@ -2141,24 +2185,61 @@ $discard,site=zzztube.com
 /forum/$downrank=10,site=myanimelist.net
 /forums/$boost=4,site=jeuxvideo.com
 /freusan/$discard,site=x.com
+/fu_mihi_ko$boost=5,site=x.com
+/fulakko$boost=5,site=x.com
+/gfpupu$boost=5,site=x.com
+/giffmana$boost=5,site=x.com
+/goodgirlpupu$boost=5,site=x.com
 /goto$discard,site=google.com
+/gpara1818$boost=5,site=x.com
 /hashtag/$discard,site=x.com
 /hiboema/$discard,site=x.com
+/hotatenshi333$boost=5,site=x.com
+/i/trending$discard,site=x.com
+/ia_inori$boost=5,site=x.com
 /images/$boost,site=yandex.com
 /images/$boost,site=yandex.ru
 /images/search$boost,site=yandex.ru
+/infoxiao$boost=5,site=x.com
+/jellymation$boost=5,site=x.com
+/ke_ta_gekidoku$boost=5,site=x.com
+/kellerjordan0$boost=8,site=x.com
+/kensyouen_Y$boost=5,site=x.com
+/kinaco_m0ch1$discard,site=x.com
+/kinacocreate$discard,site=x.com
+/kotekjedi_ml$boost=5,site=x.com
 /learn$boost=8,site=huggingface.co
+/lightshadow2209$boost=5,site=x.com
+/lmthang$boost=5,site=x.com
+/mangadaisuki15$boost=5,site=x.com
 /maps$boost=10,site=google.com
+/marrontorisu$boost=5,site=x.com
+/matthen2$boost=5,site=x.com
 /met-publications$boost=8,site=metmuseum.org
 /michaelw9999/$discard,site=github.com
+/mino_sketch$boost=5,site=x.com
+/misanay1$boost=5,site=x.com
+/mo24yu$boost=5,site=x.com
+/mostevilestgirl$boost=5,site=x.com
+/muta_poo$boost=5,site=x.com
+/mymind$boost=5,site=x.com
 /n57d30top/$discard,site=github.com
+/n_hirowa$boost=5,site=x.com
+/niliuchahui$boost=5,site=x.com
 /nl/$discard,site=infomaniak.com
 /nsfwcharai$discard,site=x.com
+/nukitarou1$boost=5,site=x.com
+/oookinacoooo$discard,site=x.com
+/oriori937182$boost=5,site=x.com
 /peinguinwithhat/$discard,site=x.com
 /people/301718759371133/leon-bottou/$boost=10,site=ai.meta.com
 /pmwiki/conversations.php$downrank=5,site=tvtropes.org
 /pmwiki/posts.php$downrank=5,site=tvtropes.org
+/portalgraph/$boost=5,site=x.com
 /programming-history/$boost=5,site=porges.github.io
+/project/$discard,site=pypi.org
+/prprKIRIN$boost=5,site=x.com
+/qaltted$boost=5,site=x.com
 /r/Boobies/$discard,site=reddit.com
 /r/HatsuneMiku_Hentai/$discard,site=reddit.com
 /r/OutOfTheLoop$discard,site=reddit.com
@@ -2167,22 +2248,40 @@ $discard,site=zzztube.com
 /r/deeplearning$discard,site=reddit.com
 /r/questions$discard,site=reddit.com
 /r/videos$discard,site=reddit.com
+/ratatatat74$boost=5,site=x.com
 /research$boost=10,site=allenai.org
 /research/$boost=5,site=ai.meta.com
 /research/$boost=5,site=openai.com
 /research/publications/$boost=8,site=ai.meta.com
 /scalingintelligence/$discard,site=github.com
+/search$discard,site=x.com
 /show/$boost=10,site=my.matterport.com
+/slash_soft$boost=5,site=x.com
+/snowybitch2$boost=5,site=x.com
 /spnati/$boost=5,site=gitgud.io
+/start_furuike$boost=5,site=x.com
 /tags/$discard,site=archiveofourown.org
+/the_vc_intern$discard,site=x.com
 /thebredfactory_$discard,site=x.com
+/throtem_$boost=5,site=x.com
+/throtem_1$boost=5,site=x.com
 /topics/$discard,site=github.com
 /translate$downrank=10,site=translate.google.com
 /turkce/$discard,site=bbc.com
+/u54182$boost=5,site=x.com
+/ubermachinework$boost=5,site=x.com
+/urapunchX/$boost=5,site=x.com
 /us/size-chart$boost=10,site=lavieenrose.com
+/victortaelin$boost=5,site=x.com
 /view/nicoleruta$boost=8,site=sites.google.com
 /vladikoff/$discard,site=github.com
+/waifupupu$boost=5,site=x.com
 /watch$discard,site=youtube.com
 /webarchive/about$boost=10,site=bbc.co.uk
 /wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=10,site=fr.wikisource.org
+/wurabecky$boost=5,site=x.com
 /xerorgg/$discard,site=x.com
+/ylecun$boost=5,site=x.com
+/youyume0225$boost=5,site=x.com
+/zmsfm$boost=5,site=x.com
+/zoanna3D$boost=5,site=x.com
