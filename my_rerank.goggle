@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.10
+! description: Custom.11
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (344)
+! Raised domains (346)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -154,6 +154,7 @@ $boost,site=franceinfo.fr
 $boost,site=free.fr
 $boost=8,site=frockflicks.com
 $boost,site=fruitbatfactory.com
+$boost=6,site=funnyjunk.com
 $boost=8,site=g.blicky.net
 $boost=10,site=gallica.bnf.fr
 $boost=8,site=gc-ee.org
@@ -300,6 +301,7 @@ $boost=5,site=steamdb.info
 $boost,site=stellabiderman.ai
 $boost,site=stockholmsfotografen.se
 $boost=5,site=store.steampowered.com
+$boost=5,site=storychan.com
 $boost=5,site=sukebei.nyaa.si
 $boost=10,site=swehb.nasa.gov
 $boost=5,site=synopsys.com
@@ -406,7 +408,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (172)
+! TLD-level rules (173)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -552,6 +554,7 @@ $downrank=10,site=youtube.com
 |https://*.space^$discard
 |https://*.spot^$discard
 |https://*.st^$downrank=10
+|https://*.stream^$discard
 |https://*.sx^$discard
 |https://*.tech^$discard
 |https://*.technology^$discard
@@ -584,7 +587,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1809)
+! Discarded domains (1839)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -593,6 +596,7 @@ $discard,site=1000cocks.com
 $discard,site=123comparer.fr
 $discard,site=123rf.com
 $discard,site=17centurymaths.com
+$discard,site=18comix.org
 $discard,site=1stdibs.com
 $discard,site=247premiumcart.com
 $discard,site=24xxx.porn
@@ -637,6 +641,7 @@ $discard,site=aicontentcreate.com
 $discard,site=aicupid.org
 $discard,site=aidenapp.org
 $discard,site=aieasypic.com
+$discard,site=aiexotic.com
 $discard,site=aihentaigenerator.net
 $discard,site=aikraft.ru
 $discard,site=aimadetools.com
@@ -694,6 +699,7 @@ $discard,site=analyticsvidhya.com
 $discard,site=ancestrel.com
 $discard,site=androidauthority.com
 $discard,site=anime-sama.fr
+$discard,site=animeidhentai.com
 $discard,site=animevost.fr
 $discard,site=anotherwrapper.com
 $discard,site=anthropicisdown.com
@@ -733,6 +739,7 @@ $discard,site=aspose.com
 $discard,site=assoass.com
 $discard,site=asterozoacapital.com
 $discard,site=atelierdurdan.com
+$discard,site=atlaq.com
 $discard,site=atmakitchenware.fr
 $discard,site=ausmodels.com
 $discard,site=automationlinks.com
@@ -751,6 +758,7 @@ $discard,site=banana1015.com
 $discard,site=bang.com
 $discard,site=bangbrosnetwork.com
 $discard,site=bazoocam.org
+$discard,site=bdsmlr.com
 $discard,site=beautifulvalentins.com
 $discard,site=bedbible.com
 $discard,site=beebs.app
@@ -810,6 +818,7 @@ $discard,site=brasizecalculator.com
 $discard,site=brave-browser.de
 $discard,site=brave.fr
 $discard,site=bravenmanor.com
+$discard,site=bravotube.tv
 $discard,site=brazzersnetwork.com
 $discard,site=breakingcube.com
 $discard,site=briefia.fr
@@ -842,6 +851,8 @@ $discard,site=capterra.com
 $discard,site=capterra.com.sg
 $discard,site=capterra.fr
 $discard,site=careersforge.com
+$discard,site=cartoonporn.com
+$discard,site=cartoonpornvids.com
 $discard,site=casagbic.com
 $discard,site=catalysteds.com
 $discard,site=cbackup.com
@@ -864,6 +875,7 @@ $discard,site=chaturbate.com
 $discard,site=checksub.com
 $discard,site=chemicloud.com
 $discard,site=chicagoreader.com
+$discard,site=childlight.org
 $discard,site=chinese-forums.com
 $discard,site=chineseidioms.com
 $discard,site=chip.de
@@ -936,6 +948,7 @@ $discard,site=cpu-monkey.com
 $discard,site=craftmarkdown.com
 $discard,site=createhentai.com
 $discard,site=createimg.com
+$discard,site=createporn.com
 $discard,site=crunchbase.com
 $discard,site=crushon.ai
 $discard,site=cryptobriefing.com
@@ -1002,6 +1015,7 @@ $discard,site=dihuni.com
 $discard,site=dinotube.com
 $discard,site=disabledaccounthelp.com
 $discard,site=disk-drill.com
+$discard,site=districtenergy.org
 $discard,site=divxland.org
 $discard,site=dixmilleheures.fr
 $discard,site=dnb.com
@@ -1208,6 +1222,7 @@ $discard,site=glukhov.org
 $discard,site=go-tools.org
 $discard,site=go.id
 $discard,site=gologin.com
+$discard,site=goodhentai.org
 $discard,site=goodtech.info
 $discard,site=gosexpod.com
 $discard,site=goteleport.com
@@ -1322,6 +1337,7 @@ $discard,site=hotessejob.com
 $discard,site=hotsexvideox.com
 $discard,site=hqporn.xxx
 $discard,site=hqporner.com
+$discard,site=hqpornsearch.com
 $discard,site=hstream.com
 $discard,site=html2markdown.toolpie.com
 $discard,site=hubfi.fr
@@ -1358,6 +1374,7 @@ $discard,site=imlive.com
 $discard,site=immocomplexe.com
 $discard,site=imperial4men.fr
 $discard,site=in2p3.fr
+$discard,site=inaporn.com
 $discard,site=incogniton.com
 $discard,site=indeed.com
 $discard,site=indiatimes.com
@@ -1392,6 +1409,7 @@ $discard,site=itforbusiness.fr
 $discard,site=itlibra.com
 $discard,site=itpro.com
 $discard,site=itspov.com
+$discard,site=iusca.org
 $discard,site=iwannacreateapps.com
 $discard,site=ixxx.com
 $discard,site=japan-whores.com
@@ -1449,6 +1467,7 @@ $discard,site=kompoz2.com
 $discard,site=kotaku.com
 $discard,site=kraviona.com
 $discard,site=kucoin.com
+$discard,site=kuro-ai.com
 $discard,site=labelyourdata.com
 $discard,site=laboutiquedunet.com
 $discard,site=ladyxena.com
@@ -1532,6 +1551,7 @@ $discard,site=maisonsdumonde.com
 $discard,site=majorgeeks.com
 $discard,site=maketecheasier.com
 $discard,site=malt.fr
+$discard,site=malwaretips.com
 $discard,site=manageengine.com
 $discard,site=manga-news.com
 $discard,site=mannequin-senior.fr
@@ -1645,6 +1665,7 @@ $discard,site=noxinfluencer.com
 $discard,site=nsfw-character-ai.fr
 $discard,site=nsfwchar.com
 $discard,site=nsfwcharai.com
+$discard,site=nsfwgirlfriend.com
 $discard,site=nsfwlover.com
 $discard,site=nude-modelz.com
 $discard,site=nudevista.com
@@ -1661,6 +1682,7 @@ $discard,site=octobrowser.net
 $discard,site=octoparse.com
 $discard,site=odir.fr
 $discard,site=offlinecreator.com
+$discard,site=ohentai.org
 $discard,site=ohiosap.org
 $discard,site=ok.xxx
 $discard,site=olympine.com
@@ -1669,6 +1691,7 @@ $discard,site=onaholand.com
 $discard,site=onepornlist.com
 $discard,site=onetop.fr
 $discard,site=onidel.com
+$discard,site=onion.live
 $discard,site=onlime.app
 $discard,site=onlineformater.com
 $discard,site=onlinejsontools.com
@@ -1686,6 +1709,7 @@ $discard,site=opentweet.io
 $discard,site=openvino.ai
 $discard,site=openworklabs.com
 $discard,site=openxcell.com
+$discard,site=oppai.stream
 $discard,site=oprahdaily.com
 $discard,site=opslyft.com
 $discard,site=optimum.com
@@ -1802,6 +1826,7 @@ $discard,site=porntube.com
 $discard,site=pornwebmasters.com
 $discard,site=pornworks.app
 $discard,site=pornzog.com
+$discard,site=porzo.com
 $discard,site=poshmark.com
 $discard,site=postel.app
 $discard,site=premiumpornsites.net
@@ -1862,6 +1887,7 @@ $discard,site=rentingwell.com
 $discard,site=retroevent.pl
 $discard,site=reverso.net
 $discard,site=rewarx.com
+$discard,site=rinuploads.org.atlaq.com
 $discard,site=rk.com
 $discard,site=roboactu.fr
 $discard,site=roboflow.com
@@ -1928,12 +1954,14 @@ $discard,site=sexlikereal.com
 $discard,site=sexstories.com
 $discard,site=sextubespot.com
 $discard,site=sexvid.xxx
+$discard,site=sexxxgif.com
 $discard,site=sexyhub.com
 $discard,site=sexyrealsexdolls.com
 $discard,site=sfailabs.com
 $discard,site=sfeir.com
 $discard,site=shadecoder.com
 $discard,site=shadeform.com
+$discard,site=shameless.com
 $discard,site=shapeez.com
 $discard,site=shareanynudes.com
 $discard,site=sharewareonsale.com
@@ -2003,6 +2031,7 @@ $discard,site=statussight.com
 $discard,site=statut-services.fr
 $discard,site=staxxx.com
 $discard,site=steambase.io
+$discard,site=steamunderground.net
 $discard,site=stevehanksartwork.com
 $discard,site=stevekinney.com
 $discard,site=stevesie.com
@@ -2105,6 +2134,7 @@ $discard,site=thepornlinks.com
 $discard,site=thepornlist.com
 $discard,site=thepricer.org
 $discard,site=theresanaiforthat.com
+$discard,site=thermalsciencetech.com
 $discard,site=thesubtitledb.com
 $discard,site=thesuperyachtpeople.com
 $discard,site=thetorrentio.com
@@ -2324,6 +2354,7 @@ $discard,site=xcafe.com
 $discard,site=xcamladyx.com
 $discard,site=xda-developers.com
 $discard,site=xecce.com
+$discard,site=xfantazy.org
 $discard,site=xfollow.com
 $discard,site=xfree.com
 $discard,site=xfreehd.com
@@ -2333,6 +2364,7 @@ $discard,site=xhamster.com
 $discard,site=xhamster19.com
 $discard,site=xhamster2.com
 $discard,site=xhopen.com
+$discard,site=xipics.com
 $discard,site=xmegadrive.com
 $discard,site=xmoviesforyou.com
 $discard,site=xnxx.com
@@ -2382,6 +2414,7 @@ $discard,site=z-image-omni-base.com
 $discard,site=z-image.ai
 $discard,site=zakworldoffacades.com
 $discard,site=zbporn.com
+$discard,site=zbporn.tv
 $discard,site=zedas.fr
 $discard,site=zeenite.com
 $discard,site=zhentube.com
@@ -2399,7 +2432,7 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (296)
+! Path-specific rules (338)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -2415,6 +2448,7 @@ $discard,site=zzztube.com
 /4ortytwo$boost=5,site=github.com
 /610racing$boost=10,site=x.com
 /@BreadBoys$boost=5,site=youtube.com
+/@SteamUnderground20$discard,site=youtube.com
 /@aitooltips$discard,site=youtube.com
 /@kevin_ai$discard,site=youtube.com
 /AISecurityInst$boost=5,site=x.com
@@ -2514,6 +2548,7 @@ $discard,site=zzztube.com
 /daipunchX/$boost=5,site=x.com
 /dartgunintel/$discard,site=x.com
 /discover/$discard,site=tiktok.com
+/discussions/$discard,site=steamcommunity.com
 /docs$boost=5,site=huggingface.co
 /download/cfx1990-10-12$discard,site=archive.org
 /dpa/$boost=10,site=nglibrary.ngs.org
@@ -2536,6 +2571,7 @@ $discard,site=zzztube.com
 /freusan/$discard,site=x.com
 /fu_mihi_ko$boost=5,site=x.com
 /fulakko$boost=5,site=x.com
+/g/$discard,site=e-hentai.org
 /gayret/$discard,site=github.com
 /gfpupu$boost=5,site=x.com
 /ght901$boost=5,site=github.com
@@ -2545,6 +2581,7 @@ $discard,site=zzztube.com
 /googleporn__$discard,site=x.com
 /goto$discard,site=google.com
 /gpara1818$boost=5,site=x.com
+/groups/$discard,site=facebook.com
 /guide/$discard,site=communitynotes.x.com
 /handybandi$discard,site=x.com
 /hasantayyar/$discard,site=gist.github.com
@@ -2637,13 +2674,17 @@ $discard,site=zzztube.com
 /r/Boobies/$discard,site=reddit.com
 /r/Futurology$discard,site=reddit.com
 /r/HatsuneMiku_Hentai/$discard,site=reddit.com
+/r/NSFWGenerators$discard,site=reddit.com
 /r/OutOfTheLoop$discard,site=reddit.com
+/r/PiratedGames$discard,site=reddit.com
 /r/SideProject$discard,site=reddit.com
+/r/TwoBestFriendsPlay$discard,site=reddit.com
 /r/TwoXChromosomes/$discard,site=reddit.com
 /r/apachespark$discard,site=reddit.com
 /r/bing$discard,site=reddit.com
 /r/callmekevin2$discard,site=reddit.com
 /r/deeplearning$discard,site=reddit.com
+/r/pirataria$discard,site=reddit.com
 /r/questions$discard,site=reddit.com
 /r/videos$discard,site=reddit.com
 /ratatatat74$boost=5,site=x.com
@@ -2652,10 +2693,12 @@ $discard,site=zzztube.com
 /research/$boost=5,site=openai.com
 /research/publications/$boost=8,site=ai.meta.com
 /research/verify/$boost=10,site=openai.com
+/riverstore/$discard,site=github.com
 /rohanpaul_ai/$discard,site=x.com
 /ryanlindley/$discard,site=x.com
 /scalingintelligence/$discard,site=github.com
 /search$discard,site=x.com
+/search/$discard,site=shutterstock.com
 /senixdev1$discard,site=x.com
 /show/$boost=10,site=my.matterport.com
 /slash_soft$boost=5,site=x.com
@@ -2664,6 +2707,7 @@ $discard,site=zzztube.com
 /sonsuzdongu/$discard,site=github.com
 /spnati/$boost=5,site=gitgud.io
 /start_furuike$boost=5,site=x.com
+/steamunderground/$discard,site=instagram.com
 /sukruozan/$discard,site=gist.github.com
 /tabloida_$boost=5,site=twitter.com
 /tags/$discard,site=archiveofourown.org
@@ -2686,6 +2730,7 @@ $discard,site=zzztube.com
 /view/nicoleruta$boost=8,site=sites.google.com
 /vladikoff/$discard,site=github.com
 /waifupupu$boost=5,site=x.com
+/watch$boost=1,site=youtube.com
 /watch$discard,site=youtube.com
 /webarchive/about$boost=10,site=bbc.co.uk
 /wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=10,site=fr.wikisource.org
@@ -2699,3 +2744,33 @@ $discard,site=zzztube.com
 /zai-org/$boost=5,site=github.com
 /zmsfm$boost=5,site=x.com
 /zoanna3D$boost=5,site=x.com
+|https://*.com/check-website/$discard
+|https://*.com/discover/$discard
+|https://*.com/discussions/$discard
+|https://*.com/en/search$discard
+|https://*.com/genre/$discard
+|https://*.com/groups/$discard
+|https://*.com/guides/$discard
+|https://*.com/itm/$discard
+|https://*.com/model/$discard
+|https://*.com/models/$discard
+|https://*.com/post/search$discard
+|https://*.com/review/$discard
+|https://*.com/search/$discard
+|https://*.com/tag/$discard
+|https://*.com/tags/$discard
+|https://*.com/url-scan/$discard
+|https://*.com/videos/$discard
+|https://*.com/watch/$discard
+|https://*.edu/current-news/$discard
+|https://*.info/tag/$discard
+|https://*.io/games/$discard
+|https://*.net/category/$discard
+|https://*.net/faq/$discard
+|https://*.net/term-and-condition/$discard
+|https://*.org/plugins/$discard
+|https://*.org/search/$discard
+|https://*.org/tags/$discard
+|https://*.org/tagsearch.php$discard
+|https://*.tv/search/$discard
+|https://*.tv/vid/$discard
