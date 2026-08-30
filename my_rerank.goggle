@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom.9
+! description: Custom.10
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -406,7 +406,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (170)
+! TLD-level rules (172)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -447,6 +447,7 @@ $downrank=10,site=youtube.com
 |https://*.com.sg^$discard
 |https://*.com.tr^$discard
 |https://*.com^$downrank=4
+|https://*.com^$downrank=6
 |https://*.cu^$discard
 |https://*.cw^$discard
 |https://*.data^$discard
@@ -575,6 +576,7 @@ $downrank=10,site=youtube.com
 |https://*.work^$discard
 |https://*.works^$discard
 |https://*.world^$discard
+|https://*.ws^$discard
 |https://*.wtf^$discard
 |https://*.xin^$discard
 |https://*.xxx^$discard
@@ -582,7 +584,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1788)
+! Discarded domains (1809)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -623,6 +625,7 @@ $discard,site=adrive.com
 $discard,site=adultdvdtalk.com
 $discard,site=adultempire.com
 $discard,site=adultfriendfinder.com
+$discard,site=adultload.ws
 $discard,site=aethir.com
 $discard,site=agence-mannequin-onetop.com
 $discard,site=agence-marilou.com
@@ -1007,6 +1010,7 @@ $discard,site=dondi.ai
 $discard,site=dothewife.com
 $discard,site=downforai.com
 $discard,site=downforeveryoneorjustme.com
+$discard,site=dporn.com
 $discard,site=dreamgen.com
 $discard,site=drime.cloud
 $discard,site=dropbox.com
@@ -1044,6 +1048,7 @@ $discard,site=enotes.com
 $discard,site=entrepreneur.com
 $discard,site=eocengineers.com
 $discard,site=eporner.com
+$discard,site=epornz.com
 $discard,site=epubor.com
 $discard,site=erome.com
 $discard,site=eroprofile.com
@@ -1072,6 +1077,7 @@ $discard,site=exittechnologies.com
 $discard,site=experte.com
 $discard,site=explainx.ai
 $discard,site=exportcomments.com
+$discard,site=exposednurses.com
 $discard,site=extrag.one
 $discard,site=facebook.com
 $discard,site=factually.co
@@ -1338,6 +1344,7 @@ $discard,site=idiskhome.com
 $discard,site=idrive.com
 $discard,site=ifactoryapp.com
 $discard,site=ifstudies.org
+$discard,site=ifuckedherfinally.com
 $discard,site=igenfun.com
 $discard,site=ign.com
 $discard,site=ignore4k.com
@@ -1359,6 +1366,7 @@ $discard,site=informer.com
 $discard,site=infoswitch.fr
 $discard,site=infyways.com
 $discard,site=innovatiana.com
+$discard,site=inporn.com
 $discard,site=insanelymac.com
 $discard,site=instagram.com
 $discard,site=intellectualead.com
@@ -1755,6 +1763,7 @@ $discard,site=porn300.com
 $discard,site=porn40.com
 $discard,site=porn4fans.com
 $discard,site=pornbeurette.com
+$discard,site=pornbox.com
 $discard,site=porndig.com
 $discard,site=porndos.com
 $discard,site=porndude.link
@@ -1763,6 +1772,7 @@ $discard,site=porngames.com
 $discard,site=porngames.tv
 $discard,site=porngameshub.com
 $discard,site=porngeek.com
+$discard,site=porngo.com
 $discard,site=pornhat.com
 $discard,site=pornhoarder.tw
 $discard,site=pornhub.com
@@ -1780,12 +1790,14 @@ $discard,site=pornpics.com
 $discard,site=pornplanner.com
 $discard,site=pornprosnetwork.com
 $discard,site=pornrabbit.com
+$discard,site=pornraw.com
 $discard,site=pornseaus.com
 $discard,site=pornsheriff.com
 $discard,site=pornsitesnow.com
 $discard,site=porntn.com
 $discard,site=porntrex.com
 $discard,site=porntrex.tv
+$discard,site=porntry.com
 $discard,site=porntube.com
 $discard,site=pornwebmasters.com
 $discard,site=pornworks.app
@@ -1905,6 +1917,7 @@ $discard,site=serveurpro.fr
 $discard,site=servicetrade.com
 $discard,site=servnetuk.com
 $discard,site=sesterce.com
+$discard,site=severeporn.com
 $discard,site=sex.com
 $discard,site=sexadvisor.com
 $discard,site=sexedrescue.com
@@ -2012,6 +2025,7 @@ $discard,site=supersummary.com
 $discard,site=sureprompts.com
 $discard,site=svscomics.com
 $discard,site=swappz.com
+$discard,site=swapsmut.com
 $discard,site=sxyprn.com
 $discard,site=syncfusion.com
 $discard,site=synonymo.fr
@@ -2133,6 +2147,7 @@ $discard,site=tophentai.com
 $discard,site=toppaidpornsites.com
 $discard,site=toppornsites.com
 $discard,site=torontogarba.cfd
+$discard,site=toroporno.com
 $discard,site=torrent2cloud.com
 $discard,site=torrentcompare.com
 $discard,site=touteslespoitrines.com
@@ -2206,6 +2221,7 @@ $discard,site=updatemybrowser.org
 $discard,site=updatestar.com
 $discard,site=updownradar.com
 $discard,site=upgrad.com
+$discard,site=upornia.com
 $discard,site=upstash.com
 $discard,site=uptime.com
 $discard,site=uptimeinstitute.com
@@ -2224,6 +2240,7 @@ $discard,site=ventusserver.com
 $discard,site=verifsites.com
 $discard,site=versus.com
 $discard,site=vertopal.com
+$discard,site=veryfreeporn.com
 $discard,site=verywellmind.com
 $discard,site=veyse.com
 $discard,site=vibesparking.com
@@ -2279,6 +2296,7 @@ $discard,site=whatsthebigdata.com
 $discard,site=wheresyoured.at
 $discard,site=whitefiber.com
 $discard,site=whitepages.com
+$discard,site=whoreshub.com
 $discard,site=winbuzzer.com
 $discard,site=windowsreport.com
 $discard,site=winget.run
@@ -2298,10 +2316,12 @@ $discard,site=wsls.com
 $discard,site=x-manga.org
 $discard,site=x-tg.tube
 $discard,site=x.com.
+$discard,site=x3vid.com
 $discard,site=xanimeporn.com
 $discard,site=xanimu.com
 $discard,site=xasiat.com
 $discard,site=xcafe.com
+$discard,site=xcamladyx.com
 $discard,site=xda-developers.com
 $discard,site=xecce.com
 $discard,site=xfollow.com
@@ -2328,6 +2348,8 @@ $discard,site=xvidzz.com
 $discard,site=xxbrits.com
 $discard,site=xxxbp.tv
 $discard,site=xxxbule.com
+$discard,site=xxxdan.com
+$discard,site=xxxfiles.com
 $discard,site=xxxfollow.com
 $discard,site=xxxner.com
 $discard,site=xxxymovies.com
@@ -2338,6 +2360,7 @@ $discard,site=yellow.com
 $discard,site=yesporn.vip
 $discard,site=yo-rent.com
 $discard,site=yolculuktutkusu.com
+$discard,site=you-porn.com
 $discard,site=youjizz.com
 $discard,site=youjizz.sex
 $discard,site=youmind.com
