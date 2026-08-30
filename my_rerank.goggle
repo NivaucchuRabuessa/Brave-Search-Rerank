@@ -344,7 +344,7 @@ $boost=5,site=wolframcloud.com
 $boost,site=wordhippo.com
 $boost=5,site=wotaku.wiki
 $boost=8,site=www-cdn.anthropic.com
-$boost=5,site=x.com
+$boost=2,site=x.com
 $boost=5,site=xkcd.com
 $boost,site=yandex.com
 $boost=8,site=yorhel.nl
