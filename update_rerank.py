@@ -34,7 +34,9 @@ BOOST_PATTERN = re.compile(r"^\$boost(?:=(\d+))?,site=(.+)$")
 DOWNRANK_PATTERN = re.compile(r"^\$downrank(?:=(\d+))?,site=(.+)$")
 DISCARD_SITE_PATTERN = re.compile(r"^\$discard,site=(.+)$")
 TLD_PATTERN = re.compile(r"^\|https://\*\.(.+)\^(.+)$")
-PATH_PATTERN = re.compile(r"^(/[^\$]+)\$(.+),site=(.+)$")
+ACTION_OPTION_PATTERN = re.compile(
+    r"^(?:boost|downrank)(?:=(?:[1-9]|10))?$|^discard$"
+)
 
 
 def parse_cookie_file(path: Path) -> set[str]:
@@ -78,6 +80,24 @@ def parse_pending_file(path: Path) -> list[str]:
     ]
 
 
+def is_url_pattern_instruction(line: str) -> bool:
+    """Return whether a URL pattern contains an explicit ranking action.
+
+    Brave URL patterns may be relative or absolute and may contain anchors,
+    wildcards, paths, and optional filters such as ``site=``. The text before
+    the first dollar sign is the URL pattern; the comma-separated text after it
+    contains the options.
+    """
+    url_pattern, separator, options = line.partition("$")
+    if not separator or not url_pattern or not options:
+        return False
+
+    return any(
+        ACTION_OPTION_PATTERN.fullmatch(option) is not None
+        for option in options.split(",")
+    )
+
+
 def classify_instruction(line: str, data: dict) -> bool:
     """
     Classify a single instruction line and merge it into `data`.
@@ -108,8 +128,7 @@ def classify_instruction(line: str, data: dict) -> bool:
         data["tld_rules"].add(line)
         return True
 
-    match_path = PATH_PATTERN.match(line)
-    if match_path:
+    if is_url_pattern_instruction(line):
         data["path_rules"].add(line)
         return True
 
