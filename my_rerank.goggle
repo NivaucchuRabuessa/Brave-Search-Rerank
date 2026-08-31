@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.11
+! description: Custom.12
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (346)
+! Raised domains (347)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -103,6 +103,7 @@ $boost,site=crazyshit.com
 $boost,site=crystal-lang.org
 $boost,site=culturezvous.com
 $boost=8,site=cut-the-knot.org
+$boost,site=cyberimpact.com
 $boost=5,site=dailyscript.com
 $boost=10,site=dam.ngs.org
 $boost=5,site=danbooru.donmai.us
@@ -408,7 +409,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (173)
+! TLD-level rules (180)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -420,6 +421,7 @@ $downrank=10,site=youtube.com
 |https://*.ai^$downrank=10
 |https://*.airforce^$discard
 |https://*.app^$discard
+|https://*.ar^$discard
 |https://*.art^$discard
 |https://*.asia^$discard
 |https://*.au^$discard
@@ -429,8 +431,10 @@ $downrank=10,site=youtube.com
 |https://*.best^$discard
 |https://*.bingo^$discard
 |https://*.biz^$discard
+|https://*.blog^$discard
 |https://*.bm^$discard
 |https://*.book^$discard
+|https://*.bot^$discard
 |https://*.br^$discard
 |https://*.bt^$discard
 |https://*.build^$discard
@@ -439,6 +443,7 @@ $downrank=10,site=youtube.com
 |https://*.cc^$discard
 |https://*.cc^$downrank=10
 |https://*.ceo^$discard
+|https://*.chat^$discard
 |https://*.city^$discard
 |https://*.click^$discard
 |https://*.cloud^$discard
@@ -513,6 +518,7 @@ $downrank=10,site=youtube.com
 |https://*.mq^$discard
 |https://*.ms^$discard
 |https://*.mv^$discard
+|https://*.mx^$discard
 |https://*.name^$discard
 |https://*.net^$discard
 |https://*.net^$downrank=10
@@ -551,10 +557,12 @@ $downrank=10,site=youtube.com
 |https://*.shop^$discard
 |https://*.site^$discard
 |https://*.sk^$discard
+|https://*.so^$discard
 |https://*.space^$discard
 |https://*.spot^$discard
 |https://*.st^$downrank=10
 |https://*.stream^$discard
+|https://*.studio^$discard
 |https://*.sx^$discard
 |https://*.tech^$discard
 |https://*.technology^$discard
@@ -587,7 +595,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1839)
+! Discarded domains (1864)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -642,6 +650,7 @@ $discard,site=aicupid.org
 $discard,site=aidenapp.org
 $discard,site=aieasypic.com
 $discard,site=aiexotic.com
+$discard,site=aihentaichat.com
 $discard,site=aihentaigenerator.net
 $discard,site=aikraft.ru
 $discard,site=aimadetools.com
@@ -649,6 +658,7 @@ $discard,site=aimagicx.com
 $discard,site=aimer-la-cuisine.fr
 $discard,site=aiminingco.com
 $discard,site=aimultiple.com
+$discard,site=aimusic.so
 $discard,site=aipricing.guru
 $discard,site=aiproductivitycoach.com
 $discard,site=aiproductivitysecrets.com
@@ -660,11 +670,14 @@ $discard,site=airlivedrive.com
 $discard,site=aitooldiscovery.com
 $discard,site=aitoolduel.com
 $discard,site=aitoolgeek.com
+$discard,site=aitoolist.com
 $discard,site=aitoolly.com
 $discard,site=aitools.inc
 $discard,site=aitoolsdevpro.com
+$discard,site=aitoolsone.com
 $discard,site=aituts.com
 $discard,site=aivario.com
+$discard,site=alabama.gov
 $discard,site=alamy.com
 $discard,site=alamyimages.fr
 $discard,site=alibaba.com
@@ -699,6 +712,7 @@ $discard,site=analyticsvidhya.com
 $discard,site=ancestrel.com
 $discard,site=androidauthority.com
 $discard,site=anime-sama.fr
+$discard,site=animeart.studio
 $discard,site=animeidhentai.com
 $discard,site=animevost.fr
 $discard,site=anotherwrapper.com
@@ -743,6 +757,7 @@ $discard,site=atlaq.com
 $discard,site=atmakitchenware.fr
 $discard,site=ausmodels.com
 $discard,site=automationlinks.com
+$discard,site=avclabs.com
 $discard,site=aviation-defence-universe.com
 $discard,site=axecompute.com
 $discard,site=aznude.com
@@ -876,6 +891,7 @@ $discard,site=checksub.com
 $discard,site=chemicloud.com
 $discard,site=chicagoreader.com
 $discard,site=childlight.org
+$discard,site=childrenshospital.org
 $discard,site=chinese-forums.com
 $discard,site=chineseidioms.com
 $discard,site=chip.de
@@ -981,6 +997,7 @@ $discard,site=datastudios.org
 $discard,site=datatypes.net
 $discard,site=dataversity.net
 $discard,site=dattodrive.com
+$discard,site=davisthompsonfoundation.org
 $discard,site=daxon.fr
 $discard,site=decodemandarinchinese.com
 $discard,site=decodo.com
@@ -1045,6 +1062,7 @@ $discard,site=economictimes.com
 $discard,site=ecorpit.com
 $discard,site=edenai.co
 $discard,site=edtechinnovationhub.com
+$discard,site=edu.ar
 $discard,site=edunavajas.com
 $discard,site=electronicdesign.com
 $discard,site=electrons.co
@@ -1067,6 +1085,7 @@ $discard,site=epubor.com
 $discard,site=erome.com
 $discard,site=eroprofile.com
 $discard,site=erothots.is
+$discard,site=esa.org
 $discard,site=esaitech.com
 $discard,site=eslint.org
 $discard,site=essayshark.com
@@ -1133,6 +1152,7 @@ $discard,site=filetypeadvisor.com
 $discard,site=filmbooster.fr
 $discard,site=filmix.gg
 $discard,site=finalfantasysex.com
+$discard,site=findmyaitool.com
 $discard,site=fineartamerica.com
 $discard,site=fineshare.com
 $discard,site=fireload.com
@@ -1273,6 +1293,7 @@ $discard,site=hellotars.com
 $discard,site=help.x.com
 $discard,site=helploom.com
 $discard,site=heltar.com
+$discard,site=hent-ai.moe
 $discard,site=hentai-fap.fr
 $discard,site=hentai-moon.com
 $discard,site=hentai-paradise.fr
@@ -1285,14 +1306,17 @@ $discard,site=hentai4k.com
 $discard,site=hentaibro.com
 $discard,site=hentaicity.com
 $discard,site=hentaicore.com
+$discard,site=hentaidad.com
 $discard,site=hentaiera.com
 $discard,site=hentaifine.com
 $discard,site=hentaifr.net
+$discard,site=hentaigenerator.com
 $discard,site=hentaigo.com
 $discard,site=hentaihaven.xxx
 $discard,site=hentailor.com
 $discard,site=hentairider.com
 $discard,site=hentairoulette.com
+$discard,site=hentairox.com
 $discard,site=hentaisites.com
 $discard,site=hentaismile.com
 $discard,site=hentaitop.org
@@ -1350,6 +1374,7 @@ $discard,site=hypefury.com
 $discard,site=hyperstack.cloud
 $discard,site=hypnotube.com
 $discard,site=iamsissy.com
+$discard,site=iartificial.blog
 $discard,site=ic-components.com
 $discard,site=icedrive.net
 $discard,site=icetranny.com
@@ -1458,6 +1483,7 @@ $discard,site=kiddle.co
 $discard,site=kidzworld.com
 $discard,site=kif.tube
 $discard,site=kingstreetjax.com
+$discard,site=kinkly.com
 $discard,site=kitchenpro.fr
 $discard,site=klu.ai
 $discard,site=knightli.com
@@ -1650,8 +1676,10 @@ $discard,site=nerdleveltech.com
 $discard,site=nesaporn.com
 $discard,site=nesevo.com
 $discard,site=net.pl
+$discard,site=newportri.gov
 $discard,site=news4jax.com
 $discard,site=newsletter.semianalysis.com
+$discard,site=nightcafe.studio
 $discard,site=nih.gov
 $discard,site=noboring.com
 $discard,site=nodemaven.com
@@ -1674,6 +1702,7 @@ $discard,site=nuespournous.com
 $discard,site=numberanalytics.com
 $discard,site=nutaku.com
 $discard,site=nuviosync.com
+$discard,site=nyc.gov
 $discard,site=nykaafashion.com
 $discard,site=nylonup.com
 $discard,site=obsidianstats.com
@@ -2007,10 +2036,12 @@ $discard,site=softwareacquisition.com
 $discard,site=sololevelingseason2.com
 $discard,site=solvusoft.com
 $discard,site=sopilot.net
+$discard,site=soulkyn.com
 $discard,site=sourceforge.net
 $discard,site=spankbang.com
 $discard,site=spankbang.party
 $discard,site=sparknotes.com
+$discard,site=spicierai.com
 $discard,site=spicychat.ai
 $discard,site=spicylingerie.com
 $discard,site=sportskeeda.com
@@ -2055,6 +2086,7 @@ $discard,site=sureprompts.com
 $discard,site=svscomics.com
 $discard,site=swappz.com
 $discard,site=swapsmut.com
+$discard,site=sweetai.chat
 $discard,site=sxyprn.com
 $discard,site=syncfusion.com
 $discard,site=synonymo.fr
@@ -2358,6 +2390,7 @@ $discard,site=xfantazy.org
 $discard,site=xfollow.com
 $discard,site=xfree.com
 $discard,site=xfreehd.com
+$discard,site=xgluz.com
 $discard,site=xgroovy.com
 $discard,site=xhaccess.com
 $discard,site=xhamster.com
@@ -2432,7 +2465,7 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (338)
+! Path-specific rules (353)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -2670,6 +2703,7 @@ $discard,site=zzztube.com
 /prprKIRIN$boost=5,site=x.com
 /qaltted$boost=5,site=x.com
 /qwargly/$discard,site=x.com
+/r/AnimeAIPorn$discard,site=reddit.com
 /r/ArtistHate$discard,site=reddit.com
 /r/Boobies/$discard,site=reddit.com
 /r/Futurology$discard,site=reddit.com
@@ -2696,6 +2730,7 @@ $discard,site=zzztube.com
 /riverstore/$discard,site=github.com
 /rohanpaul_ai/$discard,site=x.com
 /ryanlindley/$discard,site=x.com
+/s/$discard,site=e-hentai.org
 /scalingintelligence/$discard,site=github.com
 /search$discard,site=x.com
 /search/$discard,site=shutterstock.com
@@ -2710,11 +2745,13 @@ $discard,site=zzztube.com
 /steamunderground/$discard,site=instagram.com
 /sukruozan/$discard,site=gist.github.com
 /tabloida_$boost=5,site=twitter.com
+/tag/$discard,site=e-hentai.org
 /tags/$discard,site=archiveofourown.org
 /the_vc_intern$discard,site=x.com
 /thebredfactory_$discard,site=x.com
 /throtem_$boost=5,site=x.com
 /throtem_1$boost=5,site=x.com
+/title/$discard,site=imdb.com
 /topics/$discard,site=github.com
 /translate$discard,site=translate.google.com
 /translate$downrank=10,site=translate.google.com
@@ -2744,6 +2781,9 @@ $discard,site=zzztube.com
 /zai-org/$boost=5,site=github.com
 /zmsfm$boost=5,site=x.com
 /zoanna3D$boost=5,site=x.com
+|https://*.chat/topics/$discard
+|https://*.com/ai-models/$discard
+|https://*.com/categories/$discard
 |https://*.com/check-website/$discard
 |https://*.com/discover/$discard
 |https://*.com/discussions/$discard
@@ -2751,7 +2791,11 @@ $discard,site=zzztube.com
 |https://*.com/genre/$discard
 |https://*.com/groups/$discard
 |https://*.com/guides/$discard
+|https://*.com/hentai/$discard
+|https://*.com/hentai/ai-generated$discard
+|https://*.com/hot-topic/$discard
 |https://*.com/itm/$discard
+|https://*.com/l/$discard
 |https://*.com/model/$discard
 |https://*.com/models/$discard
 |https://*.com/post/search$discard
@@ -2759,17 +2803,21 @@ $discard,site=zzztube.com
 |https://*.com/search/$discard
 |https://*.com/tag/$discard
 |https://*.com/tags/$discard
+|https://*.com/tool/$discard
 |https://*.com/url-scan/$discard
 |https://*.com/videos/$discard
 |https://*.com/watch/$discard
 |https://*.edu/current-news/$discard
+|https://*.gov/wp-content/$discard
 |https://*.info/tag/$discard
 |https://*.io/games/$discard
 |https://*.net/category/$discard
 |https://*.net/faq/$discard
 |https://*.net/term-and-condition/$discard
+|https://*.org/-/$discard
 |https://*.org/plugins/$discard
 |https://*.org/search/$discard
+|https://*.org/site/$discard
 |https://*.org/tags/$discard
 |https://*.org/tagsearch.php$discard
 |https://*.tv/search/$discard
