@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.12
+! description: Custom.13
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (347)
+! Raised domains (348)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -287,6 +287,7 @@ $boost,site=samsung.com
 $boost=5,site=saucenao.com
 $boost=10,site=service-public.gouv.fr
 $boost=5,site=sewhistorically.com
+$boost=2,site=sheep101.info
 $boost,site=shopbop.com
 $boost,site=shungagallery.com
 $boost=5,site=simonsfoundation.org
@@ -409,7 +410,7 @@ $downrank=10,site=yourdictionary.com
 $downrank=10,site=youtube.com
 
 ! ==========================================================================
-! TLD-level rules (180)
+! TLD-level rules (181)
 ! Blanket rules targeting entire top-level domains.
 ! ==========================================================================
 
@@ -474,6 +475,7 @@ $downrank=10,site=youtube.com
 |https://*.exchange^$discard
 |https://*.fast^$discard
 |https://*.fm^$downrank=10
+|https://*.fun^$discard
 |https://*.gay^$discard
 |https://*.gg^$downrank=10
 |https://*.google^$discard
@@ -595,7 +597,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1864)
+! Discarded domains (1910)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -603,6 +605,7 @@ $discard,site=01net.com
 $discard,site=1000cocks.com
 $discard,site=123comparer.fr
 $discard,site=123rf.com
+$discard,site=123topai.com
 $discard,site=17centurymaths.com
 $discard,site=18comix.org
 $discard,site=1stdibs.com
@@ -650,6 +653,7 @@ $discard,site=aicupid.org
 $discard,site=aidenapp.org
 $discard,site=aieasypic.com
 $discard,site=aiexotic.com
+$discard,site=aigenerationporn.com
 $discard,site=aihentaichat.com
 $discard,site=aihentaigenerator.net
 $discard,site=aikraft.ru
@@ -690,6 +694,7 @@ $discard,site=allianceair.in
 $discard,site=allmyfriendsaremodels.com
 $discard,site=allnude.pics
 $discard,site=allporncomic.com
+$discard,site=allrent.fr
 $discard,site=alohatube.com
 $discard,site=altapps.net
 $discard,site=alternativeer.com
@@ -711,6 +716,7 @@ $discard,site=anachart.com
 $discard,site=analyticsvidhya.com
 $discard,site=ancestrel.com
 $discard,site=androidauthority.com
+$discard,site=animated-character-database.fandom.com
 $discard,site=anime-sama.fr
 $discard,site=animeart.studio
 $discard,site=animeidhentai.com
@@ -758,6 +764,7 @@ $discard,site=atmakitchenware.fr
 $discard,site=ausmodels.com
 $discard,site=automationlinks.com
 $discard,site=avclabs.com
+$discard,site=avenchat.com
 $discard,site=aviation-defence-universe.com
 $discard,site=axecompute.com
 $discard,site=aznude.com
@@ -817,6 +824,7 @@ $discard,site=bitget.com
 $discard,site=blackedraw.com
 $discard,site=bleepingcomputer.com
 $discard,site=blogspot.com
+$discard,site=blushly.chat
 $discard,site=bobtv.fr
 $discard,site=bobvoyeur.com
 $discard,site=bonporn.com
@@ -829,6 +837,7 @@ $discard,site=boundhub.com
 $discard,site=boyfriendtv.com
 $discard,site=bra-calculator.com
 $discard,site=braincuber.com
+$discard,site=brandfetch.com
 $discard,site=brasizecalculator.com
 $discard,site=brave-browser.de
 $discard,site=brave.fr
@@ -851,9 +860,11 @@ $discard,site=businessinsider.com
 $discard,site=bustybus.com
 $discard,site=bustyworld.com
 $discard,site=buysellram.com
+$discard,site=buzzfile.com
 $discard,site=byteiota.com
 $discard,site=c4cgmn8trk.com
 $discard,site=cafonline.com
+$discard,site=caibotlist.com
 $discard,site=callmissed.com
 $discard,site=cam4.com
 $discard,site=campaignswift.com
@@ -861,6 +872,7 @@ $discard,site=cams.com
 $discard,site=camsfinder.com
 $discard,site=camsoda.com
 $discard,site=camstreams.tv
+$discard,site=canva.com
 $discard,site=capcut.com
 $discard,site=capterra.com
 $discard,site=capterra.com.sg
@@ -878,6 +890,7 @@ $discard,site=cemsutcu.wordpress.com
 $discard,site=chambersstwines.com
 $discard,site=change.org
 $discard,site=characterainsfw.com
+$discard,site=charaxai.com
 $discard,site=charterglobal.com
 $discard,site=charterworks.com
 $discard,site=chasejarvis.com
@@ -909,6 +922,7 @@ $discard,site=claudeaihub.com
 $discard,site=claudefa.st
 $discard,site=claudelog.com
 $discard,site=clay.com
+$discard,site=cleaq.com
 $discard,site=clic-ouest.fr
 $discard,site=clickup.com
 $discard,site=cliffsnotes.com
@@ -1001,6 +1015,7 @@ $discard,site=davisthompsonfoundation.org
 $discard,site=daxon.fr
 $discard,site=decodemandarinchinese.com
 $discard,site=decodo.com
+$discard,site=deepai.org
 $discard,site=deeper.com
 $discard,site=deepinfra.com
 $discard,site=deepinsightai.io
@@ -1130,9 +1145,11 @@ $discard,site=faphouse.com
 $discard,site=faphouse.tv
 $discard,site=fapongayporn.com
 $discard,site=fappeningbook.com
+$discard,site=farmstandapp.com
 $discard,site=fashion-blog.fr
 $discard,site=fashionnetwork.com
 $discard,site=fastcompany.com
+$discard,site=fastly.net
 $discard,site=fazier.com
 $discard,site=felicloud.com
 $discard,site=felloai.com
@@ -1150,6 +1167,7 @@ $discard,site=files.fm
 $discard,site=filesuffix.com
 $discard,site=filetypeadvisor.com
 $discard,site=filmbooster.fr
+$discard,site=filme.fr
 $discard,site=filmix.gg
 $discard,site=finalfantasysex.com
 $discard,site=findmyaitool.com
@@ -1173,6 +1191,7 @@ $discard,site=fooocus.one
 $discard,site=forbes.com
 $discard,site=forem.com
 $discard,site=forhertube.com
+$discard,site=fotor.com
 $discard,site=fpo.xxx
 $discard,site=fr.linkedin.com
 $discard,site=fr.m.wiktionary.org
@@ -1215,6 +1234,7 @@ $discard,site=geekchamp.com
 $discard,site=geeksforgeeks.org
 $discard,site=geeky-gadgets.com
 $discard,site=gemius.fr
+$discard,site=gemma4-ai.com
 $discard,site=gempages.net
 $discard,site=genai.works
 $discard,site=genshinporn.com
@@ -1222,6 +1242,7 @@ $discard,site=geomayenne.fr
 $discard,site=getaiperks.com
 $discard,site=getapipulse.com
 $discard,site=getapp.fr
+$discard,site=getcoai.com
 $discard,site=getdeploying.com
 $discard,site=getiton.com
 $discard,site=getlatka.com
@@ -1319,6 +1340,7 @@ $discard,site=hentairoulette.com
 $discard,site=hentairox.com
 $discard,site=hentaisites.com
 $discard,site=hentaismile.com
+$discard,site=hentaistudio.com
 $discard,site=hentaitop.org
 $discard,site=hentaiuncensored.net
 $discard,site=hentaiuncensored.to
@@ -1344,6 +1366,7 @@ $discard,site=histourismo.fr
 $discard,site=hitechdigital.com
 $discard,site=hitpaw.com
 $discard,site=hollyland.com
+$discard,site=home-sheep-home.fandom.com
 $discard,site=homemadegalore.com
 $discard,site=homemoviestube.com
 $discard,site=homo.xxx
@@ -1359,6 +1382,7 @@ $discard,site=hostwinds.com
 $discard,site=hotchat.ai
 $discard,site=hotessejob.com
 $discard,site=hotsexvideox.com
+$discard,site=hotxv.com
 $discard,site=hqporn.xxx
 $discard,site=hqporner.com
 $discard,site=hqpornsearch.com
@@ -1378,11 +1402,13 @@ $discard,site=iartificial.blog
 $discard,site=ic-components.com
 $discard,site=icedrive.net
 $discard,site=icetranny.com
+$discard,site=icfsupplyct.com
 $discard,site=ichatonline.com
 $discard,site=icollectionlingerie.com
 $discard,site=idealo.fr
 $discard,site=idiskhome.com
 $discard,site=idrive.com
+$discard,site=ieditore.com
 $discard,site=ifactoryapp.com
 $discard,site=ifstudies.org
 $discard,site=ifuckedherfinally.com
@@ -1424,6 +1450,7 @@ $discard,site=inworld.ai
 $discard,site=ionos.com
 $discard,site=ionos.fr
 $discard,site=ipaddress.com
+$discard,site=iphon.fr
 $discard,site=iporntv.net
 $discard,site=iptvranking.com
 $discard,site=islegitsite.com
@@ -1437,6 +1464,7 @@ $discard,site=itspov.com
 $discard,site=iusca.org
 $discard,site=iwannacreateapps.com
 $discard,site=ixxx.com
+$discard,site=jamara-shop.com
 $discard,site=japan-whores.com
 $discard,site=japancodesupply.com
 $discard,site=jarvislabs.ai
@@ -1489,8 +1517,11 @@ $discard,site=klu.ai
 $discard,site=knightli.com
 $discard,site=knowledgehut.com
 $discard,site=kocaelipsikolojievi.com
+$discard,site=kochava.com
 $discard,site=kompoz2.com
+$discard,site=kosokuai.com
 $discard,site=kotaku.com
+$discard,site=kplyinc.com
 $discard,site=kraviona.com
 $discard,site=kucoin.com
 $discard,site=kuro-ai.com
@@ -1575,6 +1606,7 @@ $discard,site=madhentaitube.com
 $discard,site=magica.com
 $discard,site=maisonsdumonde.com
 $discard,site=majorgeeks.com
+$discard,site=makensfw.com
 $discard,site=maketecheasier.com
 $discard,site=malt.fr
 $discard,site=malwaretips.com
@@ -1599,6 +1631,7 @@ $discard,site=maturetube.com
 $discard,site=mavtools.com
 $discard,site=maxiburo.fr
 $discard,site=maxicasting.com
+$discard,site=mcprice.fr
 $discard,site=md-to.com
 $discard,site=md2html.de
 $discard,site=mdconverthub.com
@@ -1618,6 +1651,8 @@ $discard,site=mesorigines.fr
 $discard,site=metacto.com
 $discard,site=metaporn.com
 $discard,site=mhentai.net
+$discard,site=microccase.com
+$discard,site=mile.fr
 $discard,site=milfnut.com
 $discard,site=milfporn.tv
 $discard,site=milliyet.com.tr
@@ -1753,6 +1788,7 @@ $discard,site=outagely.com
 $discard,site=outrightcrm.com
 $discard,site=outscraper.com
 $discard,site=owncloud.com
+$discard,site=ownpetz.com
 $discard,site=oystervpn.com
 $discard,site=ozbargain.com.au
 $discard,site=pages.dev
@@ -1778,6 +1814,7 @@ $discard,site=peekviewer.com
 $discard,site=penispictures.com
 $discard,site=perchance.org
 $discard,site=perfectgirls.xxx
+$discard,site=personality-database.com
 $discard,site=pharmacieeiffelcommerce.com
 $discard,site=pharmaciepolygoneriviera.com
 $discard,site=pharmao.fr
@@ -1865,12 +1902,14 @@ $discard,site=pricsy.fr
 $discard,site=primepornlist.com
 $discard,site=priveeai.com
 $discard,site=prodiris.fr
+$discard,site=promptchan.com
 $discard,site=promptcloud.com
 $discard,site=promptolis.com
 $discard,site=prudentpartners.in
 $discard,site=psst-innovation.com
 $discard,site=publiersonlivre.fr
 $discard,site=publish.x.com
+$discard,site=pump.fun
 $discard,site=punishworld.com
 $discard,site=pussyspace.com
 $discard,site=pussyspace.net
@@ -1887,6 +1926,7 @@ $discard,site=quesma.com
 $discard,site=quora.com
 $discard,site=quotefancy.com
 $discard,site=r18.com
+$discard,site=r34.app
 $discard,site=rabbitscams.sex
 $discard,site=rachatmaterielinformatique.fr
 $discard,site=raitly.com
@@ -1898,6 +1938,7 @@ $discard,site=rclone.org
 $discard,site=realsexdoll.com
 $discard,site=recollections.biz
 $discard,site=redacandco.fr
+$discard,site=redbubble.com
 $discard,site=reddxxx.com
 $discard,site=redfans.org
 $discard,site=redpanda.com
@@ -2025,6 +2066,8 @@ $discard,site=sld.cu
 $discard,site=slideshare.net
 $discard,site=slopdetector.org
 $discard,site=smartaiforbiz.com
+$discard,site=smartcom.fr
+$discard,site=smartrental.fr
 $discard,site=smilemakerscollection.com
 $discard,site=snaplytics.io
 $discard,site=sniff-out.com
@@ -2033,6 +2076,7 @@ $discard,site=socialblade.com
 $discard,site=soft112.com
 $discard,site=softonic.com
 $discard,site=softwareacquisition.com
+$discard,site=solflare.com
 $discard,site=sololevelingseason2.com
 $discard,site=solvusoft.com
 $discard,site=sopilot.net
@@ -2206,6 +2250,7 @@ $discard,site=tootimid.com
 $discard,site=top-site-adulte.fr
 $discard,site=topbusinesssoftware.com
 $discard,site=tophentai.com
+$discard,site=topmediai.com
 $discard,site=toppaidpornsites.com
 $discard,site=toppornsites.com
 $discard,site=torontogarba.cfd
@@ -2293,7 +2338,9 @@ $discard,site=upwork.com
 $discard,site=usagebar.com
 $discard,site=usersporn.com
 $discard,site=ustensilescuisine.fr
+$discard,site=uzit-direct.com
 $discard,site=vaia.com
+$discard,site=valala-shop.fr
 $discard,site=valebyte.com
 $discard,site=vantage.sh
 $discard,site=vdscom.ru
@@ -2313,6 +2360,7 @@ $discard,site=viewgals.com
 $discard,site=vipwank.com
 $discard,site=viralaccounts.com
 $discard,site=viralxxxporn.com
+$discard,site=virtualaiwaifu.com
 $discard,site=virtualrealporn.com
 $discard,site=vjav.com
 $discard,site=vk.com
@@ -2465,7 +2513,7 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (353)
+! Path-specific rules (370)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -2481,9 +2529,11 @@ $discard,site=zzztube.com
 /4ortytwo$boost=5,site=github.com
 /610racing$boost=10,site=x.com
 /@BreadBoys$boost=5,site=youtube.com
+/@SheepEsportsYTB$discard,site=youtube.com
 /@SteamUnderground20$discard,site=youtube.com
 /@aitooltips$discard,site=youtube.com
 /@kevin_ai$discard,site=youtube.com
+/@stasinopoulos.dimitrios/$discard,site=medium.com
 /AISecurityInst$boost=5,site=x.com
 /AI_Illust_000/$discard,site=x.com
 /AYi_AInotes/$discard,site=x.com
@@ -2562,14 +2612,18 @@ $discard,site=zzztube.com
 /bestcommnotes$discard,site=x.com
 /bigboneblack$discard,site=x.com
 /blog$boost=8,site=huggingface.co
+/blog$discard,site=betterwaifu.com
 /bmontxna/$boost=5,site=x.com
 /bread_boys$discard,site=x.com
 /breadboysinc$discard,site=x.com
 /breadboysyt$discard,site=x.com
 /buraksenyurt/$discard,site=github.com
+/c/$discard,site=walmart.com
 /cLciel57520/$discard,site=x.com
 /cafe__british$boost=5,site=x.com
 /category/$discard,site=amandasbookcorner.com
+/channel/UCS7H8U-n5mINVJjJsaRtGHg$discard,site=youtube.com
+/channel/UCi4nXZWPFR1KLFOiaWrvdPQ$discard,site=youtube.com
 /characters/all$boost=5,site=anime-planet.com
 /cnviolations$discard,site=x.com
 /coleam00/$discard,site=github.com
@@ -2676,11 +2730,13 @@ $discard,site=zzztube.com
 /oookinacoooo$discard,site=x.com
 /orgs/frenzymath$boost=6,site=github.com
 /oriori937182$boost=5,site=x.com
+/p/$discard,site=instagram.com
 /peinguinwithhat/$discard,site=x.com
 /people/$discard,site=mydramalist.com
 /people/301718759371133/leon-bottou/$boost=10,site=ai.meta.com
 /person/$discard,site=datatracker.ietf.org
 /person/$discard,site=primevideo.com
+/playlist$discard,site=youtube.com
 /pmwiki/conversations.php$downrank=5,site=tvtropes.org
 /pmwiki/posts.php$downrank=5,site=tvtropes.org
 /popular/$discard,site=instagram.com
@@ -2696,6 +2752,7 @@ $discard,site=zzztube.com
 /pornpros$discard,site=x.com
 /pornue$discard,site=x.com
 /portalgraph/$boost=5,site=x.com
+/posts/$discard,site=e621.net
 /posts/$discard,site=linkedin.com
 /profile/$discard,site=researchgate.net
 /programming-history/$boost=5,site=porges.github.io
@@ -2727,6 +2784,8 @@ $discard,site=zzztube.com
 /research/$boost=5,site=openai.com
 /research/publications/$boost=8,site=ai.meta.com
 /research/verify/$boost=10,site=openai.com
+/reshalfahsi/$discard,site=github.com
+/resources/$discard,site=modal.com
 /riverstore/$discard,site=github.com
 /rohanpaul_ai/$discard,site=x.com
 /ryanlindley/$discard,site=x.com
@@ -2764,6 +2823,7 @@ $discard,site=zzztube.com
 /user/$discard,site=open.spotify.com
 /user/ght901/$boost=4,site=reddit.com
 /victortaelin$boost=5,site=x.com
+/video/$discard,site=pornhub.com
 /view/nicoleruta$boost=8,site=sites.google.com
 /vladikoff/$discard,site=github.com
 /waifupupu$boost=5,site=x.com
@@ -2782,8 +2842,11 @@ $discard,site=zzztube.com
 /zmsfm$boost=5,site=x.com
 /zoanna3D$boost=5,site=x.com
 |https://*.chat/topics/$discard
+|https://*.co.uk/category/$discard
 |https://*.com/ai-models/$discard
+|https://*.com/business/$discard
 |https://*.com/categories/$discard
+|https://*.com/category/$discard
 |https://*.com/check-website/$discard
 |https://*.com/discover/$discard
 |https://*.com/discussions/$discard
@@ -2799,10 +2862,12 @@ $discard,site=zzztube.com
 |https://*.com/model/$discard
 |https://*.com/models/$discard
 |https://*.com/post/search$discard
+|https://*.com/prices/$discard
 |https://*.com/review/$discard
 |https://*.com/search/$discard
 |https://*.com/tag/$discard
 |https://*.com/tags/$discard
+|https://*.com/tool-detail/$discard
 |https://*.com/tool/$discard
 |https://*.com/url-scan/$discard
 |https://*.com/videos/$discard
