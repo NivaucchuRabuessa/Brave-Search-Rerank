@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Brave Rerank Quick Tune (Goggle Mode)
 // @namespace    master-rerank
-// @version      2.1
-// @description  Adds boost/downrank/discard controls to Brave Search results with strength and targeting-level prompts. Persists full Goggle instructions in localStorage for export.
+// @version      3.0
+// @description  Adds conflict-safe boost/downrank/discard controls to Brave Search results and exports canonical Goggle instructions.
 // @match        https://search.brave.com/goggles?q=*
 // @match        https://search.brave.com/search?q=*
 // @grant        none
@@ -17,37 +17,127 @@
   // ---------------------------------------------------------------------------
 
   const STORAGE_KEY = "rr_pending_instructions";
+  const MAXIMUM_DOWNRANK_STRENGTH = 10;
+  const ACTION_OPTION_PATTERN =
+    /^(?:boost|downrank)(?:=(?:[1-9]|10))?$|^discard$/;
+  const WHOLE_TLD_DISCARD_PATTERN =
+    /^(\|https:\/\/\*\.[a-z0-9.-]+\^)\$discard$/i;
+
+  function wholeTldDownrankFallback(instruction) {
+    const match = WHOLE_TLD_DISCARD_PATTERN.exec(instruction);
+    if (!match) return null;
+    return `${match[1]}$downrank=${MAXIMUM_DOWNRANK_STRENGTH}`;
+  }
+
+  function instructionTargetKey(instruction) {
+    const dollarIndex = instruction.indexOf("$");
+    if (dollarIndex < 0) return null;
+
+    const urlPattern = instruction.slice(0, dollarIndex);
+    const options = instruction.slice(dollarIndex + 1).split(",");
+    const actionOptions = options.filter((option) =>
+      ACTION_OPTION_PATTERN.test(option)
+    );
+    if (actionOptions.length !== 1) return null;
+
+    const targetOptions = options
+      .filter((option) => !ACTION_OPTION_PATTERN.test(option))
+      .sort();
+    return `${urlPattern}$${targetOptions.join(",")}`;
+  }
+
+  function canonicalizePendingInstructions(untrustedInstructions) {
+    const canonicalInstructions = [];
+    const knownInstructions = new Set();
+
+    for (const untrustedInstruction of untrustedInstructions) {
+      if (typeof untrustedInstruction !== "string") continue;
+      const instruction = untrustedInstruction.trim();
+      if (!instruction) continue;
+      if (!knownInstructions.has(instruction)) {
+        canonicalInstructions.push(instruction);
+        knownInstructions.add(instruction);
+      }
+    }
+
+    // A whole-TLD discard keeps the TLD blocked by default. Its paired
+    // maximum downrank becomes the fallback when the generator must suspend
+    // that discard to honor an explicit boost within the TLD.
+    for (const instruction of [...canonicalInstructions]) {
+      const fallback = wholeTldDownrankFallback(instruction);
+      if (fallback && !knownInstructions.has(fallback)) {
+        canonicalInstructions.push(fallback);
+        knownInstructions.add(fallback);
+      }
+    }
+
+    return canonicalInstructions;
+  }
 
   function loadPendingInstructions() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
+      const parsedInstructions = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(parsedInstructions)) return [];
+
+      const canonicalInstructions = canonicalizePendingInstructions(
+        parsedInstructions
+      );
+      const canonicalJson = JSON.stringify(canonicalInstructions);
+      if (canonicalJson !== raw) {
+        localStorage.setItem(STORAGE_KEY, canonicalJson);
+      }
+      return canonicalInstructions;
     } catch {
       return [];
     }
   }
 
   function savePendingInstructions(instructions) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(instructions));
+    const canonicalInstructions = canonicalizePendingInstructions(instructions);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(canonicalInstructions));
     updateBadge();
   }
 
-  function appendInstruction(line) {
-    const instructions = loadPendingInstructions();
-    // Avoid exact duplicates.
-    if (!instructions.includes(line)) {
-      instructions.push(line);
-    }
-    savePendingInstructions(instructions);
+  function pendingInstructionsWithReplacement(
+    existingInstructions,
+    newInstructions
+  ) {
+    const canonicalNewInstructions = canonicalizePendingInstructions(
+      newInstructions
+    );
+    const newTargetKeys = new Set(
+      canonicalNewInstructions
+        .map(instructionTargetKey)
+        .filter((targetKey) => targetKey !== null)
+    );
+    const retainedInstructions = canonicalizePendingInstructions(
+      existingInstructions
+    ).filter((instruction) => {
+      const targetKey = instructionTargetKey(instruction);
+      if (targetKey === null) {
+        return !canonicalNewInstructions.includes(instruction);
+      }
+      return !newTargetKeys.has(targetKey);
+    });
+    return canonicalizePendingInstructions([
+      ...retainedInstructions,
+      ...canonicalNewInstructions,
+    ]);
+  }
+
+  function replaceInstructionsForTarget(newInstructions) {
+    savePendingInstructions(
+      pendingInstructionsWithReplacement(
+        loadPendingInstructions(),
+        newInstructions
+      )
+    );
   }
 
   // ---------------------------------------------------------------------------
   // SVG icons
   // ---------------------------------------------------------------------------
-
-  const BOOST_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>`;
-
-  const DISCARD_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>`;
 
   const TUNE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/></svg>`;
 
@@ -84,13 +174,6 @@
       background: var(--color-bg-tertiary, rgba(128,128,128,0.15));
     }
     .rr-btn.rr-tune:hover { color: #a78bfa; }
-
-    .rr-btn.rr-done {
-      opacity: 1;
-    }
-    .rr-btn.rr-done.rr-boost   { color: #22c55e; }
-    .rr-btn.rr-done.rr-discard { color: #ef4444; }
-    .rr-btn.rr-done.rr-downrank { color: #f59e0b; }
 
     /* ---- Toast ---- */
     .rr-toast {
@@ -351,6 +434,33 @@
       font-variant-numeric: tabular-nums;
     }
 
+    .rr-target-sliders {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+    .rr-target-control {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .rr-target-control input[type="range"] {
+      width: 100%;
+      margin: 0;
+      accent-color: #a78bfa;
+    }
+    .rr-target-value {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+      font-size: 11px;
+      color: var(--color-text-secondary, #ccc);
+      text-align: center;
+    }
+
     .rr-target-preview {
       margin: 8px 0 12px;
       padding: 6px 8px;
@@ -359,7 +469,14 @@
       font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
       font-size: 11px;
       word-break: break-all;
+      white-space: pre-wrap;
       color: #a78bfa;
+    }
+    .rr-fallback-note {
+      margin: -6px 0 12px;
+      color: #f59e0b;
+      font-size: 11px;
+      line-height: 1.4;
     }
 
     .rr-popup-actions {
@@ -450,7 +567,7 @@
     }
   }
 
-  function buildInstruction(action, strength, level, urlParts, customPath) {
+  function buildInstruction(action, strength, hostTarget, urlParts, pathTarget) {
     let actionFragment;
     if (action === "discard") {
       actionFragment = "$discard";
@@ -458,29 +575,69 @@
       actionFragment = `$${action}=${strength}`;
     }
 
-    switch (level) {
-      case "tld":
-        return `|https://*.${urlParts.tld}^${actionFragment}`;
+    const pathPattern = pathTarget?.pattern || "";
 
-      case "domain":
-        return `${actionFragment},site=${urlParts.domain}`;
-
-      case "subdomain": {
-        const target = urlParts.subdomain || urlParts.domain;
-        return `${actionFragment},site=${target}`;
-      }
-
-      case "path": {
-        const pathValue = customPath || urlParts.path;
-        if (pathValue && pathValue !== "/") {
-          return `${pathValue}${actionFragment},site=${urlParts.subdomain || urlParts.domain}`;
-        }
-        return `${actionFragment},site=${urlParts.subdomain || urlParts.domain}`;
-      }
-
-      default:
-        return `${actionFragment},site=${urlParts.domain}`;
+    if (hostTarget.level === "tld") {
+      const hostPattern = `|https://*.${urlParts.tld}`;
+      if (!pathPattern) return `${hostPattern}^${actionFragment}`;
+      return `${hostPattern}${pathPattern}${actionFragment}`;
     }
+
+    if (pathPattern) {
+      return `${pathPattern}${actionFragment},site=${hostTarget.site}`;
+    }
+
+    return `${actionFragment},site=${hostTarget.site}`;
+  }
+
+  function buildInstructions(action, strength, hostTarget, urlParts, pathTarget) {
+    const primaryInstruction = buildInstruction(
+      action,
+      strength,
+      hostTarget,
+      urlParts,
+      pathTarget
+    );
+    const downrankFallback = wholeTldDownrankFallback(primaryInstruction);
+    return downrankFallback
+      ? [primaryInstruction, downrankFallback]
+      : [primaryInstruction];
+  }
+
+  function buildHostOptions(urlParts) {
+    const options = [];
+    if (urlParts.subdomain) {
+      options.push({
+        level: "subdomain",
+        label: urlParts.subdomain,
+        site: urlParts.subdomain,
+      });
+    }
+    options.push({
+      level: "domain",
+      label: urlParts.domain,
+      site: urlParts.domain,
+    });
+    options.push({ level: "tld", label: `.${urlParts.tld}` });
+    return options;
+  }
+
+  function buildPathOptions(urlParts) {
+    const options = [{ label: "No path", pattern: "" }];
+    const pathSegments = urlParts.path.split("/").filter(Boolean);
+
+    for (let index = 0; index < pathSegments.length; index += 1) {
+      const isLastSegment = index === pathSegments.length - 1;
+      const trailingSlash =
+        (index === 0 && !isLastSegment) ||
+        (isLastSegment && urlParts.path.endsWith("/"))
+          ? "/"
+          : "";
+      const path = `/${pathSegments.slice(0, index + 1).join("/")}${trailingSlash}`;
+      options.push({ label: path, pattern: path });
+    }
+
+    return options;
   }
 
   // ---------------------------------------------------------------------------
@@ -696,37 +853,33 @@
     levelLegend.textContent = "Target level";
     levelFieldset.appendChild(levelLegend);
 
-    const levelGroup = document.createElement("div");
-    levelGroup.className = "rr-radio-group";
+    const hostOptions = buildHostOptions(urlParts);
+    const pathOptions = buildPathOptions(urlParts);
+    const targetSliders = document.createElement("div");
+    targetSliders.className = "rr-target-sliders";
 
-    const levels = [
-      { value: "domain", label: urlParts.domain },
-      ...(urlParts.subdomain
-        ? [{ value: "subdomain", label: urlParts.subdomain }]
-        : []),
-      { value: "tld", label: `*.${urlParts.tld}` },
-      ...(urlParts.path && urlParts.path !== "/"
-        ? [{ value: "path", label: urlParts.path }]
-        : []),
-    ];
-
-    for (const levelOption of levels) {
-      const label = document.createElement("label");
-      const radio = document.createElement("input");
-      radio.type = "radio";
-      radio.name = "rr-level";
-      radio.value = levelOption.value;
-      if (levelOption.value === (urlParts.subdomain ? "subdomain" : "domain")) {
-        radio.checked = true;
-      }
-      const span = document.createElement("span");
-      span.textContent = levelOption.label;
-      label.appendChild(radio);
-      label.appendChild(span);
-      levelGroup.appendChild(label);
-      radio.addEventListener("change", updatePreview);
+    function createTargetControl(options, label, initialValue) {
+      const control = document.createElement("div");
+      control.className = "rr-target-control";
+      const slider = document.createElement("input");
+      slider.type = "range";
+      slider.min = "0";
+      slider.max = String(options.length - 1);
+      slider.step = "1";
+      slider.value = String(initialValue);
+      slider.setAttribute("aria-label", label);
+      slider.addEventListener("input", updatePreview);
+      const value = document.createElement("span");
+      value.className = "rr-target-value";
+      control.appendChild(slider);
+      control.appendChild(value);
+      targetSliders.appendChild(control);
+      return { slider, value };
     }
-    levelFieldset.appendChild(levelGroup);
+
+    const hostControl = createTargetControl(hostOptions, "Host specificity", 0);
+    const pathControl = createTargetControl(pathOptions, "Path specificity", 0);
+    levelFieldset.appendChild(targetSliders);
     panel.appendChild(levelFieldset);
 
     // --- Instruction preview ---
@@ -734,25 +887,39 @@
     previewBox.className = "rr-target-preview";
     panel.appendChild(previewBox);
 
+    const fallbackNote = document.createElement("div");
+    fallbackNote.className = "rr-fallback-note";
+    fallbackNote.textContent =
+      "Whole-TLD discard: a maximum downrank fallback is saved with it.";
+    fallbackNote.hidden = true;
+    panel.appendChild(fallbackNote);
+
     function getSelectedRadio(name) {
       return panel.querySelector(`input[name="${name}"]:checked`)?.value;
     }
 
     function updatePreview() {
       const selectedAction = getSelectedRadio("rr-action");
-      const selectedLevel = getSelectedRadio("rr-level");
       const selectedStrength = parseInt(strengthSlider.value, 10);
+      const selectedHost = hostOptions[parseInt(hostControl.slider.value, 10)];
+      const selectedPath = pathOptions[parseInt(pathControl.slider.value, 10)];
 
       strengthFieldset.style.display =
         selectedAction === "discard" ? "none" : "";
+      hostControl.value.textContent = selectedHost.label;
+      hostControl.value.title = selectedHost.label;
+      pathControl.value.textContent = selectedPath.label;
+      pathControl.value.title = selectedPath.label;
 
-      const instruction = buildInstruction(
+      const instructions = buildInstructions(
         selectedAction,
         selectedStrength,
-        selectedLevel,
-        urlParts
+        selectedHost,
+        urlParts,
+        selectedPath
       );
-      previewBox.textContent = instruction;
+      previewBox.textContent = instructions.join("\n");
+      fallbackNote.hidden = instructions.length === 1;
     }
 
     updatePreview();
@@ -771,19 +938,22 @@
     applyButton.textContent = "Apply";
     applyButton.addEventListener("click", () => {
       const selectedAction = getSelectedRadio("rr-action");
-      const selectedLevel = getSelectedRadio("rr-level");
       const selectedStrength = parseInt(strengthSlider.value, 10);
-      const instruction = buildInstruction(
+      const selectedHost = hostOptions[parseInt(hostControl.slider.value, 10)];
+      const selectedPath = pathOptions[parseInt(pathControl.slider.value, 10)];
+      const instructions = buildInstructions(
         selectedAction,
         selectedStrength,
-        selectedLevel,
-        urlParts
+        selectedHost,
+        urlParts,
+        selectedPath
       );
 
-      // Persist the full instruction line in localStorage.
-      appendInstruction(instruction);
+      // Replace every pending action for this exact target atomically. A
+      // whole-TLD discard includes its maximum-downrank fallback.
+      replaceInstructionsForTarget(instructions);
 
-      toast(`Saved: ${instruction}`, selectedAction);
+      toast(`Saved: ${instructions.join(" + ")}`, selectedAction);
       closePopup();
     });
 
@@ -846,11 +1016,15 @@
 
   function processResults() {
     const selectors = [
+      // Brave SERP v3 renders ordinary web results inside #mixed-main and no
+      // longer wraps them in either #results or a <main> element.
+      "#mixed-main .snippet[data-type='web']",
       "#results .snippet",
       "#results .fdb",
       "#results [data-type='web']",
       "#results .card",
       "#results .result",
+      "main .snippet",
     ];
 
     const seen = new Set();
@@ -860,7 +1034,18 @@
         if (seen.has(element)) continue;
         seen.add(element);
 
-        const link = element.querySelector("a[href^='http']");
+        // Restrict the legacy fallback selector to ordinary result cards so
+        // clusters remain clean.
+        if (
+          selector === "main .snippet" &&
+          !element.querySelector(":scope > .result-wrapper")
+        )
+          continue;
+
+        const link = element.querySelector(
+          ":scope > .result-wrapper > .result-content > a[href^='http'], " +
+            "a[href^='http']"
+        );
         if (!link) continue;
 
         const hostname = (() => {
