@@ -5,7 +5,7 @@
 ! avatar: #6e3aaf
 
 ! ==========================================================================
-! Raised domains (351)
+! Raised domains (350)
 ! Domains that appear higher in search results.
 ! ==========================================================================
 
@@ -244,7 +244,7 @@ $boost=5,site=nextinpact.com
 $boost=5,site=nga.gov
 $boost=10,site=nglibrary.ngs.org
 $boost=10,site=ngs.org
-$boost=8,site=nhentai.net
+$boost=5,site=nhentai.net
 $boost,site=nicovideo.jp
 $boost=8,site=niggastolemybike.ytmnd.com
 $boost=5,site=nijiyome.com
@@ -304,8 +304,7 @@ $boost=4,site=sqlite.org
 $boost=5,site=status.anthropic.com
 $boost=5,site=steamdb.info
 $boost,site=stellabiderman.ai
-$boost,site=stockholmsfotografen.se
-$boost=5,site=store.steampowered.com
+$boost,site=store.steampowered.com
 $boost=5,site=storychan.com
 $boost=5,site=sukebei.nyaa.si
 $boost=10,site=swehb.nasa.gov
@@ -324,7 +323,7 @@ $boost=5,site=tvtropes.org
 $boost=5,site=ubuntu.com
 $boost=5,site=un.org
 $boost=5,site=uncyclopedia.org
-$boost=5,site=underhentai.net
+$boost,site=underhentai.net
 $boost=5,site=uni-wuppertal.de
 $boost=5,site=uniqlo.com
 $boost,site=universalis.fr
@@ -594,7 +593,7 @@ $downrank=10,site=youtube.com
 |https://*.yachts^$discard
 
 ! ==========================================================================
-! Discarded domains (1908)
+! Discarded domains (1909)
 ! Domains that never appear in search results.
 ! ==========================================================================
 
@@ -1393,6 +1392,7 @@ $discard,site=hypeauditor.com
 $discard,site=hypefury.com
 $discard,site=hyperstack.cloud
 $discard,site=hypnotube.com
+$discard,site=ia600809.us.archive.org
 $discard,site=iamsissy.com
 $discard,site=iartificial.blog
 $discard,site=ic-components.com
@@ -2508,7 +2508,7 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (377)
+! Path-specific rules (382)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -2585,6 +2585,7 @@ $discard,site=zzztube.com
 /album/$discard,site=tidal.com
 /alexgkendall$boost=5,site=x.com
 /allenai/$boost=8,site=github.com
+/anime/genre$discard,site=myanimelist.net
 /animevost_fr$discard,site=twitter.com
 /anlatan_anne/$discard,site=instagram.com
 /annuaireinverse$boost=8,site=pagesjaunes.fr
@@ -2592,6 +2593,7 @@ $discard,site=zzztube.com
 /antonycourtney/tad$boost=2,site=github.com
 /apertusaviation$discard,site=twitter.com
 /api/docs/pricing$boost=10,site=developers.openai.com
+/app/$discard,site=store.steampowered.com
 /art_ex_japan$boost=5,site=x.com
 /ashenmash$boost=5,site=x.com
 /author/$discard,site=foreignpolicy.com
@@ -2632,6 +2634,7 @@ $discard,site=zzztube.com
 /dae_mon3$boost=5,site=x.com
 /daipunchX/$boost=5,site=x.com
 /dartgunintel/$discard,site=x.com
+/details/animehentai$discard,site=archive.org
 /discover/$discard,site=tiktok.com
 /discussions/$discard,site=steamcommunity.com
 /docs$boost=5,site=huggingface.co
@@ -2806,6 +2809,7 @@ $discard,site=zzztube.com
 /sukruozan/$discard,site=gist.github.com
 /tabloida_$boost=5,site=twitter.com
 /tag/$discard,site=e-hentai.org
+/tag/$discard,site=nhentai.net
 /tags/$discard,site=archiveofourown.org
 /the_vc_intern$discard,site=x.com
 /thebredfactory_$discard,site=x.com
@@ -2840,6 +2844,7 @@ $discard,site=zzztube.com
 /yemreak/$discard,site=github.com
 /ylecun$boost=5,site=x.com
 /youyume0225$boost=5,site=x.com
+/ystemsrx/$discard,site=huggingface.co
 /zai-org/$boost=5,site=github.com
 /zmsfm$boost=5,site=x.com
 /zoanna3D$boost=5,site=x.com
@@ -5447,6 +5452,7 @@ $discard,site=hentai2read.com
 $discard,site=hentai44.com
 $discard,site=hentaianime.video
 $discard,site=hentaibar.io
+$discard,site=hentaicity.com
 $discard,site=hentaicomicsfree.com
 $discard,site=hentaidad.com
 $discard,site=hentaiera.com
@@ -5462,6 +5468,7 @@ $discard,site=hentaipornpic.com
 $discard,site=hentaiporns.net
 $discard,site=hentairead.com
 $discard,site=hentaireviews.moe
+$discard,site=hentaisex.tv
 $discard,site=hentaisites.com
 $discard,site=hentaitube.one
 $discard,site=hentaixxxcomics.com
@@ -6724,6 +6731,7 @@ $discard,site=natural-net.fr
 $discard,site=naturalpastures.com
 $discard,site=natursteine-jaeger.de
 $discard,site=naughtyamerica.com
+$discard,site=naughtyhentai.com
 $discard,site=naughtyposts.com
 $discard,site=naughtyza.co.za
 $discard,site=naukri.com
@@ -8015,6 +8023,7 @@ $discard,site=sexdollqueen.com
 $discard,site=sexhoundlinks.com
 $discard,site=sexkomix2.com
 $discard,site=sexndolls.com
+$discard,site=sexpics24.com
 $discard,site=sexstories69.com
 $discard,site=sextb.net
 $discard,site=sextfun.com
