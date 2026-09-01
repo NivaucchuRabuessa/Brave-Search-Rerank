@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom.16
+! description: Custom.17
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -2593,7 +2593,7 @@ $discard,site=zzztube.com
 /antonycourtney/tad$boost=2,site=github.com
 /apertusaviation$discard,site=twitter.com
 /api/docs/pricing$boost=10,site=developers.openai.com
-/app/$discard,site=store.steampowered.com
+/app/$downrank=5,site=store.steampowered.com
 /art_ex_japan$boost=5,site=x.com
 /ashenmash$boost=5,site=x.com
 /author/$discard,site=foreignpolicy.com
