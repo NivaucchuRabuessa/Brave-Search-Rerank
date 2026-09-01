@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom.15
+! description: Custom.16
 ! public: false
 ! author: NivaucchuRabuessa
 ! avatar: #6e3aaf
@@ -2508,7 +2508,7 @@ $discard,site=zyniti.com
 $discard,site=zzztube.com
 
 ! ==========================================================================
-! Path-specific rules (382)
+! Path-specific rules (384)
 ! Rules targeting specific URL paths within a domain.
 ! ==========================================================================
 
@@ -2634,6 +2634,7 @@ $discard,site=zzztube.com
 /dae_mon3$boost=5,site=x.com
 /daipunchX/$boost=5,site=x.com
 /dartgunintel/$discard,site=x.com
+/details/$downrank=5,site=archive.org
 /details/animehentai$discard,site=archive.org
 /discover/$discard,site=tiktok.com
 /discussions/$discard,site=steamcommunity.com
@@ -2662,6 +2663,7 @@ $discard,site=zzztube.com
 /fu_mihi_ko$boost=5,site=x.com
 /fulakko$boost=5,site=x.com
 /g/$discard,site=e-hentai.org
+/g/$downrank=5,site=nhentai.net
 /gayret/$discard,site=github.com
 /gfpupu$boost=5,site=x.com
 /ght901$boost=5,site=github.com
