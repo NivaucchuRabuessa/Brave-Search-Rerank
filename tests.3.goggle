@@ -1,10 +1,10 @@
 ! name: Tests
-! description: Tests.2026.09.11.005
+! description: Tests.2026.09.11.006
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 301718759371133$boost=10,inurl
 margot-brunet$boost=10,inurl
-margot brunet$boost=10,intitle
-margot brunet$boost=10,indescription
+"margot brunet"$boost=10,intitle
+"margot brunet"$boost=10,indescription
