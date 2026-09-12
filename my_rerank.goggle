@@ -1,20 +1,25 @@
 ! name: Custom
-! description: Custom.2026.09.12.001
+! description: Custom.2026.09.12.002
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1178)
+! Canonical rules (1199)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
+/10/$boost=5
 /forum/$boost=1
 /forums/$boost=1
-/research/$boost=5
+/research/$boost=10,inurl
 /webarchive/$boost=10
 /wiki/$boost=1
 info-en-continue$boost=10,inurl
+kitchen*maid$boost=10
+maria*rundell$boost=10
+research-catalog$boost=10,inurl
+scullery*maid$boost=10
 |http://*.anthropic.com^$boost=1
 |http://*.bnf.fr^$boost=10
 |http://*.mozilla.org^$boost=1
@@ -37,6 +42,8 @@ info-en-continue$boost=10,inurl
 |https://*.playblackdesert.com/News/$boost=1
 |https://*.playblackdesert.com/News/Notice$boost=1
 |https://*.playblackdesert.com^$boost=1
+|https://archives.$boost=10
+|https://digitalcollections.$boost=10
 |https://forum.$boost=1
 |https://forums.$boost=1
 |https://wiki.$boost=1
@@ -90,6 +97,7 @@ $boost=1,site=article19.org
 $boost=1,site=arxiv.org
 $boost=1,site=astralcodexten.com
 $boost=1,site=asus.com
+$boost=5,site=atlassian.com
 $boost=1,site=au.rollingstone.com
 $boost=5,site=aws.amazon.com
 $boost=1,site=banq.qc.ca
@@ -209,6 +217,7 @@ $boost=5,site=exhentai.org
 $boost=1,site=fab.com
 $boost=1,site=fap-project.com
 $boost=1,site=fetlife.com
+$boost=5,site=figma.com
 $boost=1,site=filmsite.org
 $boost=1,site=finance.yahoo.com
 $boost=1,site=forbes.com
@@ -252,8 +261,8 @@ $boost=1,site=gitgud.io
 /afrozenator$boost=6,site=github.com
 /allenai/$boost=1,site=github.com
 /anthropics/$boost=1,site=github.com
-/antonycourtney/$boost=1,site=github.com
-/antonycourtney/tad$boost=1,site=github.com
+/antonycourtney/$boost=3,site=github.com
+/antonycourtney/tad$boost=5,site=github.com
 /edwardjhu$boost=6,site=github.com
 /finetunej$boost=1,site=github.com
 /ght901$boost=1,site=github.com
@@ -332,6 +341,7 @@ $boost=1,site=leidendeclaration.ai
 $boost=1,site=lejsl.com
 $boost=1,site=lesswrong.com
 $boost=1,site=libguides.lehman.edu
+/rylands/research/projects/current/mary-hamilton-papers/$boost=10,site=library.manchester.ac.uk
 $boost=1,site=library.metmuseum.org
 $boost=1,site=link.springer.com
 $boost=5,site=linktr.ee
@@ -405,6 +415,7 @@ $boost=1,site=nirsoft.net
 $boost=1,site=nor-blog.pages.dev
 $boost=1,site=notepad-plus-plus.org
 $boost=1,site=numerique.banq.qc.ca
+$boost=10,site=nypl.org
 $boost=1,site=nytimes.com
 $boost=1,site=oasis-open.org
 $boost=1,site=openai.com
@@ -455,7 +466,10 @@ $boost=1,site=render-state.to
 $boost=1,site=resources.metmuseum.org
 $boost=1,site=respectmodels.com
 $boost=5,site=retronews.fr
-$boost=1,site=reuters.com
+$boost=4,site=reuters.com
+$boost=5,site=reutersagency.com
+$boost=8,site=reutersbest.com
+$boost=5,site=reutersprofessional.com
 $boost=1,site=revolve.com
 $boost=1,site=rhymezone.com
 $boost=1,site=riotgames.com
@@ -518,6 +532,7 @@ $boost=1,site=thereformation.com
 $boost=1,site=thetransfemininereview.com
 /2025/03/26/tg-tf-subgenres/$boost=1,site=thetransfemininereview.com
 $boost=1,site=thewiki.moe
+$boost=5,site=thomsonreuters.com
 $boost=1,site=tidbits.com
 /@heaven_yoasobi$boost=1,site=tiktok.com
 $boost=1,site=tlmc.eu
@@ -569,6 +584,7 @@ $boost=1,site=wolfram.com
 $boost=1,site=wolframalpha.com
 $boost=1,site=wolframcloud.com
 $boost=1,site=womenarehuman.com
+$boost=10,site=womensprinthistoryproject.com
 $boost=1,site=wordhippo.com
 $boost=1,site=wotaku.wiki
 $boost=2,site=wpsu.org
@@ -635,6 +651,7 @@ $boost=1,site=wsj.com
 /marrontorisu$boost=1,site=x.com
 /masonmeyer_$boost=6,site=x.com
 /matthen2$boost=1,site=x.com
+/meshtimes_$boost=2,site=x.com
 /mino_sketch$boost=1,site=x.com
 /misanay1$boost=1,site=x.com
 /mkualquiera/$boost=1,site=x.com
@@ -649,6 +666,7 @@ $boost=1,site=wsj.com
 /norxornor/$boost=1,site=x.com
 /novelaiofficial$boost=5,site=x.com
 /nukitarou1$boost=1,site=x.com
+/openaidevs$boost=6,site=x.com
 /oriori937182$boost=1,site=x.com
 /portalgraph/$boost=1,site=x.com
 /prprKIRIN$boost=1,site=x.com
@@ -906,6 +924,7 @@ $discard,site=artificialcorner.com
 $discard,site=awesomeclaude.ai
 $discard,site=baike.baidu.com
 $discard,site=barcelonaivf.com
+$discard,site=biblio.com
 $discard,site=bivea-medical.fr
 $discard,site=bivea.fr
 $discard,site=bookey.app
@@ -924,6 +943,7 @@ $discard,site=chrome-stats.com
 $discard,site=claudeskills.info
 $discard,site=claudeskills.org
 $discard,site=cloudzat.com
+$discard,site=commonsensemedia.org
 $discard,site=craiyon.com
 $discard,site=crcanucha.blog
 $discard,site=cults3d.com
@@ -1075,6 +1095,7 @@ $discard,site=thezvi.substack.com
 /discover/$discard,site=tiktok.com
 $discard,site=tnaflix.com
 $discard,site=toutmasculin.com
+/translate$discard,site=translate.google.com
 $discard,site=truefoundry.com
 $discard,site=trustmyscience.com
 $discard,site=tube8.fr
