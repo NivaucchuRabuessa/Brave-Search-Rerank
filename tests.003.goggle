@@ -1,0 +1,12 @@
+! name: Tests
+! description: Tests.2026.09.13.003
+! public: false
+! author: Someone
+! avatar: #6e3aaf
+
+financialexpress$discard,inurl
+financial*express$discard,inurl
+financial express$discard,intitle
+financial express$discard,indescription
+Financial Express$discard,intitle
+Financial Express$discard,indescription
