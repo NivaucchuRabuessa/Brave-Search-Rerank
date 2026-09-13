@@ -1,9 +1,9 @@
 ! name: Tests
-! description: Tests.2026.09.13.008
+! description: Tests.2026.09.13.009
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 financial$discard
-india$discard
-bengladesh$discard
+India$discard
+Bangladesh$discard
