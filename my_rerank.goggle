@@ -1,16 +1,15 @@
 ! name: Custom
-! description: Custom.2026.09.15.005
+! description: Custom.2026.09.15.007
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1053)
+! Canonical rules (1071)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
 /images/$boost=2
-/research/$boost=10
 /wiki/$boost=1
 ^1990^$boost=6
 ^1991^$boost=6
@@ -52,6 +51,7 @@
 ^forum$boost=1
 ^ght901$boost=6,inurl
 ^model$boost=4,inurl
+^research^$boost=10
 ^webarchive$boost=10
 history$boost=3
 info-en-continue$boost=10
@@ -389,6 +389,7 @@ $boost=10,site=metmuseum.org
 /met-publications$boost=10,site=metmuseum.org
 $boost=1,site=mi.com
 $boost=1,site=microsoft.com
+$boost=8,site=milkfactory.jp
 $boost=1,site=millsfriends.org
 $boost=1,site=miraheze.org
 $boost=1,site=mirror.ibcp.fr
@@ -459,6 +460,7 @@ $boost=5,site=pixivision.net
 $boost=1,site=playblackdesert.com
 $boost=5,site=poipiku.com
 /programming-history/$boost=1,site=porges.github.io
+$boost=1,site=pornhub.com
 $boost=1,site=portaly.cc
 $boost=2,site=prism.openai.com
 $boost=1,site=projectrho.com
@@ -715,7 +717,6 @@ $boost=1,site=yuri-project.net
 $boost=5,site=zulip.com
 $boost=5,site=zulipchat.com
 /read/$downrank=10
-/tag/$downrank=10
 ^*sex$downrank=10
 ^advice$downrank=10
 ^app$downrank=10
@@ -728,6 +729,7 @@ $boost=5,site=zulipchat.com
 ^quote$downrank=10
 ^stock$downrank=10
 ^store$downrank=10
+^tag^$downrank=10
 ^tags^$downrank=10
 ^translat$downrank=10
 crypto$downrank=10
@@ -870,19 +872,23 @@ BehiSecc$discard
 ^test$discard
 ^top$discard
 ^video$discard
+^viewkey$discard
 ^what$discard
 ^xxx$discard
 africa$discard
+ai*generated$discard
 aliexpress$discard
 analy$discard
 argentina$discard,inurl
 artificial$discard
+asshole$discard
 awesome$discard
 babe$discard
 baby$discard
 bangladesh$discard
 barcelona$discard
 bitcoin$discard
+black*cock$discard
 brazil$discard,inurl
 burma$discard,inurl
 buzz$discard
@@ -899,8 +905,10 @@ ebony$discard
 ethereum$discard
 explain$discard
 extrem$discard
+father*daughter$discard
 financial$discard
 francis*eustache$discard
+fuck*stranger$discard
 fucktoy$discard
 furry$discard
 gay$discard
@@ -908,6 +916,11 @@ geek$discard
 gpt$discard
 guru$discard
 how-to$discard
+huge*ass$discard
+huge*boob$discard
+huge*breast$discard
+huge*thigh$discard
+huge*tit$discard
 hunt$discard
 img$discard
 incest$discard
@@ -921,7 +934,10 @@ leader$discard
 little$discard
 margot*brunet$discard
 mascu$discard
+mom*son$discard
 money$discard
+mother*friend$discard
+mother*son$discard
 nazi$discard
 need*help$discard
 nigeria$discard,inurl
@@ -947,6 +963,8 @@ slut$discard
 somalia$discard,inurl
 startup$discard,inurl
 steal$discard
+step*step$discard
+stranger*fuck$discard
 swap$discard
 swinger$discard
 switched$discard
