@@ -9,7 +9,4 @@
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
-/$discard,site=https://*.*
-/$discard,site=http://*.*
-
 ^https?://.*\/[a-z]$discard
