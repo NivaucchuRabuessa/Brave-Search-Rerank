@@ -1,5 +1,5 @@
 ! name: index
-! description: index
+! description: index.002
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
@@ -9,4 +9,4 @@
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
-/*$discard
+^*/*$discard
