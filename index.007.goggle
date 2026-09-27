@@ -1,11 +1,11 @@
-! name: index.006
-! description: index.006
+! name: index.007
+! description: index.007
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (104)
+! Canonical rules (198)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
@@ -113,3 +113,97 @@
 |https://*.*/Y$discard
 |http://*.*/Z$discard
 |https://*.*/Z$discard
+|http://*.*/!$discard
+|https://*.*/!$discard
+|http://*.*/"$discard
+|https://*.*/"$discard
+|http://*.*/#$discard
+|https://*.*/#$discard
+|http://*.*/%$discard
+|https://*.*/%$discard
+|http://*.*/&$discard
+|https://*.*/&$discard
+|http://*.*/'$discard
+|https://*.*/'$discard
+|http://*.*/($discard
+|https://*.*/($discard
+|http://*.*/)$discard
+|https://*.*/)$discard
+|http://*.*/+$discard
+|https://*.*/+$discard
+|http://*.*/,$discard
+|https://*.*/,$discard
+|http://*.*/-$discard
+|https://*.*/-$discard
+|http://*.*/.$discard
+|https://*.*/.$discard
+|http://*.*/:$discard
+|https://*.*/:$discard
+|http://*.*/;$discard
+|https://*.*/;$discard
+|http://*.*/<$discard
+|https://*.*/<$discard
+|http://*.*/=$discard
+|https://*.*/=$discard
+|http://*.*/?$discard
+|https://*.*/?$discard
+|http://*.*/@$discard
+|https://*.*/@$discard
+|http://*.*/[$discard
+|https://*.*/[$discard
+|http://*.*/]$discard
+|https://*.*/]$discard
+|http://*.*/_$discard
+|https://*.*/_$discard
+|http://*.*/`$discard
+|https://*.*/`$discard
+|http://*.*/{$discard
+|https://*.*/{$discard
+|http://*.*/}$discard
+|https://*.*/}$discard
+|http://*.*/~$discard
+|https://*.*/~$discard
+|http://*.*/%24$discard
+|https://*.*/%24$discard
+|http://*.*/%2A$discard
+|https://*.*/%2A$discard
+|http://*.*/%2F$discard
+|https://*.*/%2F$discard
+|http://*.*/%5C$discard
+|https://*.*/%5C$discard
+|http://*.*/%5E$discard
+|https://*.*/%5E$discard
+|http://*.*/%7C$discard
+|https://*.*/%7C$discard
+|http://*.*/%0*$discard
+|https://*.*/%0*$discard
+|http://*.*/%1*$discard
+|https://*.*/%1*$discard
+|http://*.*/%2*$discard
+|https://*.*/%2*$discard
+|http://*.*/%3*$discard
+|https://*.*/%3*$discard
+|http://*.*/%4*$discard
+|https://*.*/%4*$discard
+|http://*.*/%5*$discard
+|https://*.*/%5*$discard
+|http://*.*/%6*$discard
+|https://*.*/%6*$discard
+|http://*.*/%7*$discard
+|https://*.*/%7*$discard
+|http://*.*/%8*$discard
+|https://*.*/%8*$discard
+|http://*.*/%9*$discard
+|https://*.*/%9*$discard
+|http://*.*/%a*$discard
+|https://*.*/%a*$discard
+|http://*.*/%b*$discard
+|https://*.*/%b*$discard
+|http://*.*/%c*$discard
+|https://*.*/%c*$discard
+|http://*.*/%d*$discard
+|https://*.*/%d*$discard
+|http://*.*/%e*$discard
+|https://*.*/%e*$discard
+|http://*.*/%f*$discard
+|https://*.*/%f*$discard
