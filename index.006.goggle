@@ -1,11 +1,11 @@
-! name: index.005
-! description: index.005
+! name: index.006
+! description: index.006
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1)
+! Canonical rules (104)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
@@ -61,3 +61,55 @@
 |https://*.*/y$discard
 |http://*.*/z$discard
 |https://*.*/z$discard
+|http://*.*/A$discard
+|https://*.*/A$discard
+|http://*.*/B$discard
+|https://*.*/B$discard
+|http://*.*/C$discard
+|https://*.*/C$discard
+|http://*.*/D$discard
+|https://*.*/D$discard
+|http://*.*/E$discard
+|https://*.*/E$discard
+|http://*.*/F$discard
+|https://*.*/F$discard
+|http://*.*/G$discard
+|https://*.*/G$discard
+|http://*.*/H$discard
+|https://*.*/H$discard
+|http://*.*/I$discard
+|https://*.*/I$discard
+|http://*.*/J$discard
+|https://*.*/J$discard
+|http://*.*/K$discard
+|https://*.*/K$discard
+|http://*.*/L$discard
+|https://*.*/L$discard
+|http://*.*/M$discard
+|https://*.*/M$discard
+|http://*.*/N$discard
+|https://*.*/N$discard
+|http://*.*/O$discard
+|https://*.*/O$discard
+|http://*.*/P$discard
+|https://*.*/P$discard
+|http://*.*/Q$discard
+|https://*.*/Q$discard
+|http://*.*/R$discard
+|https://*.*/R$discard
+|http://*.*/S$discard
+|https://*.*/S$discard
+|http://*.*/T$discard
+|https://*.*/T$discard
+|http://*.*/U$discard
+|https://*.*/U$discard
+|http://*.*/V$discard
+|https://*.*/V$discard
+|http://*.*/W$discard
+|https://*.*/W$discard
+|http://*.*/X$discard
+|https://*.*/X$discard
+|http://*.*/Y$discard
+|https://*.*/Y$discard
+|http://*.*/Z$discard
+|https://*.*/Z$discard
