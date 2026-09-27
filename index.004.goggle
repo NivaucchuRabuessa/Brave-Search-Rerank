@@ -1,5 +1,5 @@
-! name: index.003
-! description: index.003
+! name: index.004
+! description: index.004
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
@@ -11,3 +11,5 @@
 
 /$discard,site=https://*.*
 /$discard,site=http://*.*
+
+^https?://.*\/[a-z]$discard
