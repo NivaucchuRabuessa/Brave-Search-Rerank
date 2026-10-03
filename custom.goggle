@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.2026.09.27.001
+! description: Custom.2026.10.03.001
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1281)
+! Canonical rules (1353)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
@@ -132,6 +132,7 @@ $boost=1,site=antidote.info
 $boost=1,site=antigravity.google
 $boost=5,site=aomedia.org
 $boost=5,site=ap.org
+$boost=10,site=api.bnf.fr
 $boost=10,site=apimagesblog.com
 $boost=1,site=apjjf.org
 $boost=10,site=apnews.com
@@ -140,6 +141,8 @@ $boost=10,site=apstylebook.com
 $boost=1,site=arankomatsuzaki.wordpress.com
 $boost=2,site=archive.org
 $boost=1,site=archiveofourown.org
+$boost=10,site=archives-statistiques-depp.education.gouv.fr
+$boost=10,site=archives.cotedor.fr
 $boost=10,site=archives.marne.fr
 /ark:/86869$boost=10,site=archives.marne.fr
 /ark:/86869/bhkl9x3q40sg/c2b86ad5-1e48-4ab0-b697-4c34c4bd7dde$boost=10,site=archives.marne.fr
@@ -154,6 +157,7 @@ $boost=1,site=astralcodexten.com
 $boost=1,site=asus.com
 $boost=5,site=atlassian.com
 $boost=2,site=au.rollingstone.com
+$boost=10,site=auctelia.com
 $boost=5,site=aws.amazon.com
 $boost=1,site=banq.qc.ca
 $boost=1,site=bbc.co.uk
@@ -193,6 +197,7 @@ $boost=1,site=calameo.com
 $boost=2,site=caliperbench.com
 $boost=4,site=cam-z.org
 $boost=1,site=canardpc.com
+$boost=8,site=candauliste.com
 $boost=1,site=canon.fr
 $boost=1,site=canonical.com
 $boost=1,site=catalog.hathitrust.org
@@ -201,8 +206,10 @@ $boost=1,site=cbsnews.com
 $boost=1,site=cdiscount.com
 $boost=5,site=cdprojektred.com
 $boost=1,site=cedric.cnam.fr
+$boost=2,site=centre-max-weber.fr
 $boost=1,site=cern.ch
 $boost=10,site=cgworld.jp
+$boost=2,site=chatgpt.com
 $boost=1,site=chess.com
 $boost=10,site=chobit.cc
 $boost=1,site=chrisburnell.com
@@ -225,16 +232,20 @@ $boost=5,site=comipo.app
 $boost=2,site=compactmag.com
 $boost=1,site=conforama.fr
 $boost=1,site=corp.wiki.fc2.com
+$boost=10,site=cotedor.fr
 $boost=1,site=coursera.org
 $boost=1,site=crazyshit.com
 $boost=1,site=crystal-lang.org
 $boost=5,site=crystal.cafe
+$boost=10,site=csen.education.gouv.fr
 $boost=1,site=culturezvous.com
 $boost=1,site=cut-the-knot.org
 $boost=1,site=cyberimpact.com
 $boost=1,site=dailyscript.com
 $boost=2,site=danbooru.donmai.us
 $boost=5,site=danstonchat.com
+$boost=10,site=data.bnf.fr
+$boost=10,site=data.education.gouv.fr
 $boost=10,site=data.gouv.fr
 $boost=1,site=databrokerswatch.org
 $boost=5,site=datarepository.wolframcloud.com
@@ -255,6 +266,7 @@ $boost=8,site=dlsite.com
 $boost=10,site=dnb.de
 $boost=1,site=downdetector.com
 $boost=1,site=downmagaz.net
+$boost=10,site=drf.4h-conseil.fr
 $boost=1,site=druide.com
 $boost=5,site=e-hentai.org
 $boost=1,site=ebsco.com
@@ -262,7 +274,10 @@ $boost=1,site=ecnl.org
 $boost=5,site=edf.fr
 $boost=1,site=edri.org
 $boost=1,site=edrlab.org
+$boost=10,site=education.persee.fr
 $boost=1,site=educationnext.org
+$boost=10,site=eduscol.education.gouv.fr
+$boost=10,site=edutheque.philharmoniedeparis.fr
 $boost=1,site=edwardbetts.com
 $boost=5,site=egomodelsmgmt.com
 $boost=1,site=ekahau.com
@@ -270,6 +285,9 @@ $boost=2,site=en.wikipedia.org
 /wiki/Gay_Nigger_Association_of_America$boost=2,site=en.wikipedia.org
 $boost=2,site=en.wiktionary.org
 $boost=6,site=encres-cendrees.discutbb.com
+$boost=5,site=ens-lyon.fr
+$boost=10,site=enseignants.lumni.fr
+$boost=10,site=entscheidsuche.ch
 $boost=1,site=erikbern.com
 $boost=1,site=erudit.org
 $boost=1,site=etsy.com
@@ -358,11 +376,15 @@ $boost=1,site=huffpost.com
 $boost=5,site=huggingface.co
 /blog$boost=1,site=huggingface.co
 /learn$boost=1,site=huggingface.co
+$boost=10,site=icar.cnrs.fr
 $boost=1,site=icarm.io
+$boost=10,site=ife.ens-lyon.fr
+/portail-de-ressources$boost=10,site=ife.ens-lyon.fr
 $boost=1,site=ifunny.co
 $boost=3,site=ifwiki.org
 $boost=10,site=iiif.lettres-en-lumieres.org
 $boost=1,site=independent.co.uk
+$boost=2,site=ined.fr
 $boost=2,site=infos-dijon.com
 /news/$boost=2,site=infos-dijon.com
 $boost=1,site=instagram.com
@@ -371,6 +393,7 @@ $boost=1,site=instagram.com
 /sasha_nekrashevych/$boost=4,site=instagram.com
 $boost=1,site=institutionalinvestor.com
 $boost=3,site=intel.com
+$boost=10,site=interencheres.com
 $boost=1,site=intfiction.org
 $boost=1,site=intima.fr
 $boost=3,site=iqdb.org
@@ -420,6 +443,7 @@ $boost=1,site=linusakesson.net
 $boost=3,site=linuxfr.org
 $boost=1,site=literotica.com
 $boost=6,site=liuxiaoxuanpku.github.io
+/ressources/$boost=10,site=lle.ens-lyon.fr
 $boost=5,site=lolcow.farm
 $boost=1,site=luminarium.org
 /beiwerk/liste.html$boost=1,site=lyriktheorie.uni-wuppertal.de
@@ -458,6 +482,7 @@ $boost=5,site=mobygames.com
 $boost=5,site=modal.com
 /llm-almanac$boost=10,site=modal.com
 $boost=1,site=moma.org
+$boost=10,site=monaidenumerique.education.gouv.fr
 $boost=5,site=monparcourshandicap.gouv.fr
 $boost=1,site=mr-koukoku.com
 $boost=1,site=music.apple.com
@@ -610,6 +635,7 @@ $boost=6,site=strass-syndicat.org
 $boost=5,site=sukebei.nyaa.si
 $boost=1,site=support.google.com
 $boost=1,site=support.myharmony.com
+$boost=10,site=surplex.com
 $boost=1,site=surprisecrew.com
 $boost=1,site=synopsys.com
 $boost=1,site=t.me
@@ -640,13 +666,16 @@ $boost=10,site=tranco-list.eu
 $boost=1,site=transformer-circuits.pub
 $boost=3,site=translate.google.com
 $boost=3,site=translate.kagi.com
+$boost=5,site=triangle.ens-lyon.fr
 $boost=6,site=trik.fr
 $boost=1,site=triokini.com
+$boost=10,site=troostwijkauctions.com
 $boost=1,site=tsundere.to
 $boost=4,site=tullia.fr
 $boost=1,site=tumblr.com
 $boost=1,site=tvtropes.org
 /tabloida_$boost=2,site=twitter.com
+$boost=10,site=ube.fr
 $boost=1,site=ubuntu.com
 $boost=1,site=udemy.com
 $boost=1,site=un.org
@@ -894,6 +923,7 @@ $downrank=10,site=lyonresto.com
 $downrank=10,site=mesinfos.fr
 $downrank=10,site=ohmyresto.fr
 $downrank=10,site=onataste.fr
+$downrank=10,site=questreviewcenter.com
 $downrank=2,site=rollingstone.co.uk
 $downrank=10,site=ruhr-uni-bochum.de
 $downrank=2,site=wolframphysics.org
@@ -902,6 +932,7 @@ $downrank=2,site=wolframphysics.org
 /*cheat$discard
 /*ebony*$discard
 /*scat$discard,inurl
+@quackdoc$discard
 BehiSecc$discard
 ^*choke*daddy$discard
 ^*cum*slut$discard,inurl
@@ -965,10 +996,14 @@ fuck*stranger$discard
 fucktoy$discard
 fundraising$discard
 furry$discard
+gang*bang$discard
+gang*black$discard
 gay$discard
 generative*ai$discard
 gpt$discard
+group*bang$discard
 guru$discard
+hentai*manga$discard
 how-to$discard
 huge*ass$discard
 huge*boob$discard
@@ -1053,6 +1088,7 @@ $discard,site=aesonlabs.ca
 $discard,site=aicybr.com
 $discard,site=aitmpl.com
 $discard,site=alphacoders.com
+$discard,site=alphasignal.ai
 /*$discard,site=amazon.com
 /*$discard,site=amazon.fr
 $discard,site=antidote.com
@@ -1062,6 +1098,7 @@ $discard,site=apisecurity.io
 /*$discard,site=apkpure.net
 /*/app/$discard,site=apps.apple.com
 $discard,site=aptoide.com
+$discard,site=audiomack.com
 $discard,site=baike.baidu.com
 /*$discard,site=biblio.com
 $discard,site=binance.com
@@ -1088,6 +1125,7 @@ $discard,site=coffeesoft.fr
 $discard,site=cooconsbit.com
 $discard,site=costbench.com
 /*$discard,site=coursera.org
+$discard,site=cputronic.com
 $discard,site=craiyon.com
 /*$discard,site=cults3d.com
 /*$discard,site=cybernews.com
@@ -1102,15 +1140,19 @@ $discard,site=dokumen.pub
 /*$discard,site=downdetector.com
 /*$discard,site=downforeveryoneorjustme.com
 $discard,site=download.it
+/itm/$discard,site=ebay.com
 /*$discard,site=ekahau.com
 $discard,site=eneba.com
+$discard,site=epoka.com
 /*$discard,site=erome.com
+$discard,site=es.wikipedia.org
 /*$discard,site=etsy.com
 /*$discard,site=facebook.com
 $discard,site=factually.co
 /*$discard,site=faire-face.fr
 /*$discard,site=fandom.com
 $discard,site=fanlink.to
+$discard,site=faphouse.com
 $discard,site=fearlessrevolution.com
 $discard,site=fiasports.com.ec
 $discard,site=firstpost.com
@@ -1120,17 +1162,23 @@ $discard,site=fr.semrush.com
 $discard,site=fr.trustpilot.com
 $discard,site=freepik.com
 $discard,site=gamepressure.com
+$discard,site=ganggangculture.com
 $discard,site=geeksandcom.com
+$discard,site=getdeploying.com
 $discard,site=giko-cat.com
+/Anil-matcha/$discard,site=github.com
 /*$discard,site=globenewswire.com
 $discard,site=hada.io
 $discard,site=handijoy.com
 $discard,site=handinova.fr
 $discard,site=himeros.tv
+$discard,site=histoire-de-sexe.com
 /*$discard,site=hokanews.com
 $discard,site=houseoperatingsystem.com
+/entry/$discard,site=huffpost.com
 /*$discard,site=ibtimes.sg
 /*$discard,site=ifunny.co
+/title/$discard,site=imdb.com
 /*$discard,site=incels.is
 $discard,site=indexly.ai
 $discard,site=indiatimes.com
@@ -1147,11 +1195,13 @@ $discard,site=kome.ai
 $discard,site=kucoin.com
 $discard,site=la-clinique-e-sante.com
 /*$discard,site=laist.com
+$discard,site=lalanguefrancaise.com
 $discard,site=lantidotemobile.com
 /boutique/$discard,site=laposte.fr
 $discard,site=lazyai.substack.com
 /*$discard,site=legrandcontinent.eu
 /*$discard,site=leptidigital.fr
+/film/$discard,site=letterboxd.com
 $discard,site=lexidys.com
 /*$discard,site=lexpress.fr
 $discard,site=lifehacker.com
@@ -1172,11 +1222,14 @@ $discard,site=materieldys.com
 /*$discard,site=medium.com
 $discard,site=messari.io
 $discard,site=minitool.com
+$discard,site=mixcloud.com
 $discard,site=monlogiciel.fr
+/in/$discard,site=music.apple.com
 /*$discard,site=music.youtube.com
 $discard,site=mysoft.fr
 $discard,site=nateszerotoai.substack.com
 /*$discard,site=nbcnews.com
+/title/$discard,site=netflix.com
 /*$discard,site=news-pravda.com
 /*$discard,site=news.google.com
 $discard,site=niceartgallery.com
@@ -1193,6 +1246,7 @@ $discard,site=ozarksmade.net
 $discard,site=paroles.net
 /*$discard,site=pasqualepillitteri.it
 /*$discard,site=pcgamer.com
+/news/$discard,site=pcserverandparts.com
 $discard,site=pexels.com
 /*$discard,site=pholder.com
 /*$discard,site=pinklabel.tv
@@ -1202,6 +1256,7 @@ $discard,site=placedespop.com
 $discard,site=plitch.com
 $discard,site=popaia.fr
 $discard,site=presse-citron.net
+/detail/$discard,site=primevideo.com
 $discard,site=privacyguides.net
 $discard,site=profero.io
 $discard,site=progressiverobot.com
@@ -1224,13 +1279,18 @@ $discard,site=rescana.com
 $discard,site=resultsense.com
 /*$discard,site=rollingstone.co.uk
 /*$discard,site=rootmetrics.com
+/m/$discard,site=rottentomatoes.com
 $discard,site=ruenu.com
+/articles/$discard,site=runpod.io
 /*$discard,site=salesforce.com
 $discard,site=sbenny.com
+$discard,site=scholingua.com
 /*$discard,site=scribd.com
 /*$discard,site=searchengineland.com
 $discard,site=sendowl.com
 $discard,site=seoptimer.com
+$discard,site=sevandri.com
+$discard,site=sex.fr
 $discard,site=shift-ai.co.jp
 $discard,site=shopee.co.th
 /*$discard,site=shopify.com
@@ -1239,6 +1299,7 @@ $discard,site=shopee.co.th
 $discard,site=simpcity.au
 $discard,site=simpcity.com
 $discard,site=simpcity.world
+$discard,site=simplescreenrecorder.com
 /*$discard,site=softonic.com
 $discard,site=sonix.ai
 /*$discard,site=sotwe.com
@@ -1263,9 +1324,13 @@ $discard,site=tnaflix.com
 $discard,site=toolradar.com
 $discard,site=transcribetube.com
 $discard,site=tripadvisor.fr
+/reviews/$discard,site=trustedreviews.com
 $discard,site=trustmyscience.com
+/movies/$discard,site=tubitv.com
 /*$discard,site=tumblr.com
 $discard,site=tuxxin.com
+$discard,site=tv.apple.com
+/us/$discard,site=tv.apple.com
 $discard,site=ubuntumint.com
 /*$discard,site=udemy.com
 $discard,site=undercodetesting.com
@@ -1274,18 +1339,25 @@ $discard,site=uptodown.com
 $discard,site=v9consulting.com
 $discard,site=vidiq.com
 $discard,site=voices.com
+$discard,site=voissa.com
+$discard,site=vortexgaming.io
 $discard,site=vpn.com
+$discard,site=wan27.org
 $discard,site=wemod.com
 /*$discard,site=wordpress.com
 $discard,site=wwwreddit.com
 /hashtag/$discard,site=x.com
 $discard,site=xanimu.com
+$discard,site=xbison.com
 $discard,site=xdiva.ch
+$discard,site=xgroovy-fr.com
 $discard,site=xgroovy.com
 $discard,site=xhaccess.com
 $discard,site=xhspot.com
+$discard,site=xstory-fr.com
 $discard,site=yage.ai
 $discard,site=yiaho.com
+/playlist$discard,site=youtube.com
 /watch$discard,site=youtube.com
 $discard,site=youtubetoolkit.com
 $discard,site=yttranscript.ai
