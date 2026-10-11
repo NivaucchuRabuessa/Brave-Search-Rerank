@@ -1,11 +1,11 @@
 ! name: Custom
-! description: Custom.2026.10.11.001
+! description: Custom.2026.10.11.002
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1522)
+! Canonical rules (1523)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
@@ -939,6 +939,7 @@ theories of everything$downrank=10
 |http*://support.$downrank=2
 Église positiviste$downrank=10
 /forum/$downrank=1,site=fractalsoftworks.com
+/*$downrank=10,site=infomaniak.com
 $downrank=5,site=int4.com
 $downrank=1,site=leidendeclaration.ai
 $downrank=2,site=rollingstone.co.uk
