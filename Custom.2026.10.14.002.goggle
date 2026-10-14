@@ -1,18 +1,17 @@
 ! name: Custom
-! description: Custom.2026.10.11.002
+! description: Custom.2026.10.14.001
 ! public: false
 ! author: Someone
 ! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1523)
+! Canonical rules (1616)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
 /images/$boost=2
-/model/$boost=4,inurl
-/models/$boost=4,inurl
 /wiki/$boost=1
+BeverleyPalin$boost=10
 Caroline Massin$boost=6
 Isidore Auguste Marie François Xavier Comte$boost=2
 Isidore Marie Auguste François Xavier Comte$boost=2
@@ -357,6 +356,7 @@ $boost=1,site=gitgud.io
 /antonycourtney/$boost=3,site=github.com
 /antonycourtney/tad$boost=5,site=github.com
 /finetunej$boost=1,site=github.com
+/infomaniak$boost=10,site=github.com
 /karpathy/nn-zero-to-hero$boost=6,site=github.com
 /kurumuz$boost=1,site=github.com
 /nasa/$boost=1,site=github.com
@@ -393,6 +393,7 @@ $boost=10,site=ife.ens-lyon.fr
 $boost=1,site=ifunny.co
 $boost=3,site=ifwiki.org
 $boost=10,site=iiif.lettres-en-lumieres.org
+$boost=5,site=ikea.com
 $boost=1,site=independent.co.uk
 $boost=2,site=ined.fr
 $boost=10,site=infomaniak.com
@@ -861,21 +862,29 @@ $boost=1,site=yuri-project.net
 $boost=5,site=zulip.com
 $boost=5,site=zulipchat.com
 /advice$downrank=10
+/ar/$downrank=3
 /campaign/$downrank=10
 /categories/$downrank=10
 /category/$downrank=10
+/da/$downrank=2
+/de/$downrank=3
+/es/$downrank=3
 /fr-fr/$downrank=10
 /fr/$downrank=10
+/in/$downrank=3
 /marketplace/$downrank=10
+/nl/$downrank=3
 /poster/$downrank=10
 /product/$downrank=10
 /search/$downrank=10
 /sticker/$downrank=10
 /stock/$downrank=10
 /stocks/$downrank=10
+/sv/$downrank=3
 /tag/$downrank=10
 /tags/$downrank=10
 /watch/$downrank=10
+/zh/$downrank=3
 Christian.Igel$downrank=10
 David*H*Wolpert$downrank=10
 Institut für Neuroinformatik$downrank=10
@@ -948,6 +957,7 @@ $downrank=2,site=wolframphysics.org
 &*url=$discard
 *adult*.$discard
 *coin*.$discard
+-vs-$discard
 /*cheat$discard
 /*ebony*$discard
 /*scat$discard,inurl
@@ -983,6 +993,9 @@ Ruhr University Bochum$discard
 ^what$discard
 ^xxx$discard
 africa$discard
+ai*hentai$discard
+ai*model$discard
+ai*porn$discard
 aliexpress$discard
 anil-matcha$discard
 argentina$discard
@@ -991,6 +1004,7 @@ awesome$discard,inurl
 bandar*slot$discard
 bangladesh$discard
 barcelona$discard
+bench*model$discard
 big*black*cock$discard
 bitcoin$discard
 block*chain$discard
@@ -999,12 +1013,17 @@ burma$discard
 cambodia$discard
 casino$discard
 casino*roulette$discard
+chat.$discard
 church$discard
+claude*code$discard
+claude*max$discard
+claude*pro$discard
 claude*skill$discard
 coin*coin$discard,inurl
 coin*exchange$discard
 coin*market$discard
 compare*price$discard
+context*.$discard
 creampie$discard
 crypto*chart$discard
 crypto*coin$discard
@@ -1025,12 +1044,14 @@ ddos$discard
 dicking$discard
 digital*assets$discard
 digital*currencies$discard
+erotic*.$discard
 ethereum$discard
 extrem$discard
 father*daughter$discard
 finance*quote$discard
 financial$discard
 francis*eustache$discard
+fuck*celeb$discard
 fuck*stranger$discard
 fucktoy$discard
 fundraising$discard
@@ -1039,6 +1060,7 @@ gacor*online$discard
 gang*bang$discard
 gang*black$discard
 gay$discard
+gemma*.$discard
 generated$discard
 generation$discard
 generative*ai$discard
@@ -1067,12 +1089,19 @@ iran$discard
 judi*online$discard
 laos$discard
 leader$discard
+llama*.$discard
+llm*model$discard
+local*benchmark$discard
+local*llm$discard
+local*machine$discard
+manager*.$discard
 margot*brunet$discard
 market*cap$discard
 market*crypto$discard
 mascu$discard
 maxwin*slot$discard
 meme*coin$discard
+model*benchmark$discard
 mom*son$discard
 money$discard,inurl
 mother*friend$discard
@@ -1097,10 +1126,15 @@ price*product$discard
 product*price$discard
 prompt$discard
 roblox$discard
+run*ai$discard
+run*local$discard
+run*model$discard
 russia$discard
 scam$discard,inurl
+score*model$discard
 sex.$discard
 shemale$discard
+silicon*model$discard
 singapore$discard
 situs*slot$discard
 slot*gacor$discard
@@ -1122,6 +1156,8 @@ trading$discard
 tube*.$discard
 tube*porn$discard
 tube.$discard
+turbo*.$discard
+usage*limit$discard
 vietnam$discard
 wallpaper$discard,inurl
 wet*piss$discard
@@ -1151,9 +1187,12 @@ xvideos$discard
 |https://*.cat^$discard
 |https://*.club^$discard
 |https://*.co^$discard
+|https://*.dev^$discard
 |https://*.fun^$discard
 |https://*.in^$discard
 |https://*.io^$discard
+|https://*.life^$discard
+|https://*.living^$discard
 |https://*.media^$discard
 |https://*.online^$discard
 |https://*.pro^$discard
@@ -1165,7 +1204,6 @@ xvideos$discard
 $discard,site=36kr.com
 /*$discard,site=3dmdb.com
 $discard,site=4sapi.com
-/*$discard,site=accenture.com
 /*$discard,site=accounts.google.com
 $discard,site=actusoins.com
 /*$discard,site=adobe.com
@@ -1175,6 +1213,7 @@ $discard,site=ahmedabadmirror.com
 $discard,site=aicybr.com
 $discard,site=aimiracle.ai
 $discard,site=aitmpl.com
+$discard,site=alibaba.com
 $discard,site=alphacoders.com
 $discard,site=alphasignal.ai
 /*$discard,site=amazon.com
@@ -1207,10 +1246,13 @@ $discard,site=cflou.com
 $discard,site=chaincatcher.com
 $discard,site=charles.co
 $discard,site=chartmetric.com
+$discard,site=chaturbate.com
 /*$discard,site=civitai.com
 /*$discard,site=cloud.google.com
 $discard,site=cloudbooklet.com
+$discard,site=cloudinsight.cc
 /*$discard,site=clubic.com
+$discard,site=codeagentswarm.com
 $discard,site=coffeesoft.fr
 /*$discard,site=commerce.adobe.com
 /*$discard,site=commonsensemedia.org
@@ -1219,10 +1261,15 @@ $discard,site=costbench.com
 /*$discard,site=coursera.org
 $discard,site=cputronic.com
 $discard,site=craiyon.com
+$discard,site=crazyrouter.com
 /*$discard,site=cults3d.com
 /*$discard,site=cybernews.com
+$discard,site=dagospia.com
 $discard,site=databasemart.com
+$discard,site=deavita.fr
+$discard,site=deco.fr
 /*$discard,site=decrypt.co
+$discard,site=deltaofvenus.com
 $discard,site=departmentofproduct.substack.com
 $discard,site=desertdatarecovery.com
 /*$discard,site=deviantart.com
@@ -1234,6 +1281,7 @@ $discard,site=dokumen.pub
 /*$discard,site=downforeveryoneorjustme.com
 $discard,site=download.it
 $discard,site=dropreference.com
+$discard,site=eaucharbon.com
 /*$discard,site=ebay.com
 /*$discard,site=ekahau.com
 $discard,site=elprocus.com
@@ -1243,7 +1291,9 @@ $discard,site=epoka.com
 /*$discard,site=erome.com
 $discard,site=es.wikipedia.org
 $discard,site=espace-concours.fr
+$discard,site=ethanolle.com
 /*$discard,site=etsy.com
+$discard,site=explodingtopics.com
 $discard,site=eyrolles.com
 /*$discard,site=facebook.com
 $discard,site=factually.co
@@ -1255,6 +1305,7 @@ $discard,site=fapality.com
 $discard,site=fearlessrevolution.com
 $discard,site=fiasports.com.ec
 $discard,site=firstpost.com
+$discard,site=fitmyllm.com
 $discard,site=flexclip.com
 /*$discard,site=fnac.com
 $discard,site=fr.semrush.com
@@ -1264,28 +1315,35 @@ $discard,site=frontaalnaakt.nl
 $discard,site=fuqqt.com
 $discard,site=gamegpu.com
 $discard,site=gamepressure.com
+$discard,site=gamertop.fr
 $discard,site=gamingnexus.com
 $discard,site=ganggangculture.com
 $discard,site=gaultmillau.com
 $discard,site=gdr-isis.fr
 $discard,site=geeksandcom.com
 $discard,site=getdeploying.com
+$discard,site=getlatka.com
 $discard,site=giko-cat.com
 $discard,site=girlfriendly.ai
 /*$discard,site=globenewswire.com
 $discard,site=gpu-monkey.com
+$discard,site=growthcab.com
 $discard,site=hada.io
 $discard,site=handijoy.com
 $discard,site=handinova.fr
+$discard,site=hd21.com
 $discard,site=himeros.tv
 $discard,site=histoire-de-sexe.com
+$discard,site=hmc-tech.com
 /*$discard,site=hokanews.com
+$discard,site=homelisty.com
 $discard,site=hostkey.com
 $discard,site=hothardware.com
 $discard,site=houseoperatingsystem.com
 /*$discard,site=huffpost.com
 $discard,site=hutter1.net
 /*$discard,site=ibtimes.sg
+$discard,site=idealo.fr
 /*$discard,site=ifunny.co
 /*$discard,site=imdb.com
 /*$discard,site=incels.is
@@ -1306,16 +1364,22 @@ $discard,site=kmcat.uk
 $discard,site=kome.ai
 $discard,site=kucoin.com
 $discard,site=kulturegeek.fr
+$discard,site=la-belle-epoque.org
 $discard,site=la-clinique-e-sante.com
+$discard,site=labonneconfig.fr
 $discard,site=lacarte.menu
 /*$discard,site=laist.com
 $discard,site=lalanguefrancaise.com
 $discard,site=lamalinks.com
 $discard,site=lantidotemobile.com
+$discard,site=laozhang.ai
 /*$discard,site=laposte.fr
 $discard,site=lazyai.substack.com
+$discard,site=ledenicheur.fr
 /*$discard,site=legrandcontinent.eu
+$discard,site=lejournaldelamaison.fr
 /*$discard,site=leptidigital.fr
+$discard,site=lesastucesia.com
 /*$discard,site=letterboxd.com
 $discard,site=lexidys.com
 /*$discard,site=lexpress.fr
@@ -1325,6 +1389,8 @@ $discard,site=lifehacker.com
 /*$discard,site=linkedin.com
 $discard,site=lister.ai
 /*$discard,site=literotica.com
+$discard,site=livejournal.com
+$discard,site=llmcheck.net
 $discard,site=loeildelaphotographie.com
 $discard,site=loisirsencheres.fr
 /*$discard,site=looksmax.org
@@ -1332,6 +1398,7 @@ $discard,site=looper.com
 $discard,site=luxuretv.com
 $discard,site=lyonresto.com
 $discard,site=magazineantidote.com
+$discard,site=magnitude.dev
 /*$discard,site=makeagif.com
 $discard,site=makertronic-yt.com
 /*$discard,site=makeuseof.com
@@ -1348,10 +1415,14 @@ $discard,site=minitool.com
 $discard,site=mixcloud.com
 $discard,site=mixed-news.com
 /blog/$discard,site=modal.com
+$discard,site=modelpiper.com
 $discard,site=monlogiciel.fr
+$discard,site=morphllm.com
 $discard,site=motherlesspics.com
+$discard,site=mtplx.com
 /*$discard,site=music.apple.com
 /*$discard,site=music.youtube.com
+$discard,site=myshopify.com
 $discard,site=mysoft.fr
 $discard,site=nanoreview.net
 $discard,site=nateszerotoai.substack.com
@@ -1364,6 +1435,7 @@ $discard,site=niceartgallery.com
 /*$discard,site=nippon-names.com
 $discard,site=noodlemagazine.com
 /*$discard,site=note.com
+$discard,site=notokenlimit.com
 $discard,site=notta.ai
 $discard,site=nsfocusglobal.com
 /*$discard,site=octoparse.com
@@ -1376,7 +1448,9 @@ $discard,site=oreateai.com
 $discard,site=orthographe-recommandee.info
 $discard,site=otrak.ai
 $discard,site=outilstice.com
+$discard,site=overclock3d.net
 $discard,site=ozarksmade.net
+$discard,site=pages.ebay.fr
 $discard,site=paroles.net
 /*$discard,site=pasqualepillitteri.it
 /*$discard,site=pcgamer.com
@@ -1399,6 +1473,7 @@ $discard,site=pornlib.com
 $discard,site=presse-citron.net
 /detail/$discard,site=primevideo.com
 $discard,site=privacyguides.net
+$discard,site=prix.net
 $discard,site=profero.io
 $discard,site=progressiverobot.com
 $discard,site=proses.org
@@ -1407,6 +1482,7 @@ $discard,site=pugetsystems.com
 $discard,site=punishbang.com
 /*$discard,site=qobuz.com
 $discard,site=quartier-rouge.be
+$discard,site=quelmatelas.fr
 $discard,site=questreviewcenter.com
 $discard,site=quickseo.ai
 /*$discard,site=quora.com
@@ -1432,6 +1508,7 @@ $discard,site=roboflow.com
 /*$discard,site=rottentomatoes.com
 $discard,site=ruenu.com
 /*$discard,site=runpod.io
+$discard,site=sacra.com
 /*$discard,site=salesforce.com
 $discard,site=sbenny.com
 $discard,site=scholingua.com
@@ -1447,11 +1524,13 @@ $discard,site=shift-ai.co.jp
 $discard,site=shopee.co.th
 /*$discard,site=shopify.com
 /*$discard,site=shutterstock.com
+$discard,site=siliconscore.com
 /*$discard,site=similarweb.com
 $discard,site=simpcity.au
 $discard,site=simpcity.com
 $discard,site=simpcity.world
 $discard,site=simplescreenrecorder.com
+$discard,site=soft112.com
 /*$discard,site=softonic.com
 $discard,site=sonix.ai
 /*$discard,site=sotwe.com
@@ -1465,6 +1544,7 @@ $discard,site=storagereview.com
 /*$discard,site=stratnewsglobal.com
 $discard,site=studentbeans.com
 /*$discard,site=stuff.tv
+$discard,site=sudoall.com
 /*$discard,site=t.me
 $discard,site=tactiq.io
 $discard,site=technical.city
@@ -1473,17 +1553,22 @@ $discard,site=telegra.ph
 $discard,site=tensor.art
 $discard,site=thebestvpn.com
 $discard,site=thecoelab.com
+$discard,site=thenude.com
 $discard,site=theyarehuge.com
 $discard,site=thezvi.substack.com
 $discard,site=thinkrobotics.com
 /*$discard,site=threads.com
 /*$discard,site=tiktok.com
 $discard,site=tnaflix.com
+$discard,site=toknow.ai
 /*$discard,site=tomsguide.com
 /*$discard,site=tomshardware.com
+$discard,site=tomshardware.fr
 $discard,site=toolradar.com
+$discard,site=traictory.com
 /*$discard,site=translate.google.com
 $discard,site=tripadvisor.fr
+$discard,site=tripod.com
 /*$discard,site=trustedreviews.com
 $discard,site=trustmyscience.com
 $discard,site=ttelka.com
@@ -1492,23 +1577,30 @@ $discard,site=ttelka.com
 $discard,site=tuxxin.com
 $discard,site=tv.apple.com
 /*$discard,site=tv.apple.com
+$discard,site=tweaktown.com
 $discard,site=ubuntumint.com
 /*$discard,site=udemy.com
 $discard,site=undercodetesting.com
 $discard,site=unherd.com
 $discard,site=unicornsbeauty.com
 $discard,site=uniformat.ca
+$discard,site=updatestar.com
 $discard,site=uptodown.com
 $discard,site=v9consulting.com
 $discard,site=versus.com
+$discard,site=victorianeralovers.com
+$discard,site=victoriannudes.com
+$discard,site=victorianstories.com
 $discard,site=vidiq.com
 $discard,site=viewgals.com
+$discard,site=vintagecuties.com
 $discard,site=voices.com
 $discard,site=voissa.com
 $discard,site=vortexgaming.io
 $discard,site=vpn.com
 $discard,site=wan27.org
 $discard,site=wemod.com
+$discard,site=willitrunai.com
 $discard,site=wooclap.com
 /*$discard,site=wordpress.com
 $discard,site=wwwreddit.com
@@ -1531,4 +1623,5 @@ $discard,site=yiaho.com
 $discard,site=youtubetoolkit.com
 $discard,site=yttranscript.ai
 /*$discard,site=zapier.com
+$discard,site=zeronoise.ai
 $discard,site=zhihu.com
