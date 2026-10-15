@@ -1,11 +1,10 @@
 ! name: Custom
-! description: Custom.2026.10.14.001
+! description: Custom.2026.10.15.002
 ! public: false
 ! author: Someone
-! avatar: #6e3aaf
 
 ! =========================================================================
-! Canonical rules (1616)
+! Canonical rules (1632)
 ! Exported from Firefox by Search Engine Personalization.
 ! =========================================================================
 
@@ -13,43 +12,41 @@
 /wiki/$boost=1
 BeverleyPalin$boost=10
 Caroline Massin$boost=6
-Isidore Auguste Marie François Xavier Comte$boost=2
-Isidore Marie Auguste François Xavier Comte$boost=2
 Pierre Louÿs$boost=6
-^1990^$boost=6
-^1991^$boost=6
-^1992^$boost=6
-^1993^$boost=6
-^1994^$boost=6
-^1995^$boost=6
-^1996^$boost=6
-^1997^$boost=6
-^1998^$boost=6
-^1999^$boost=6
-^2000^$boost=6
-^2001^$boost=6
-^2002^$boost=6
-^2003^$boost=6
-^2004^$boost=6
-^2005^$boost=6
-^2006^$boost=6
-^2007^$boost=6
-^2008^$boost=6
-^2009^$boost=6
-^2010^$boost=6
-^2011^$boost=6
-^2012^$boost=6
-^2013^$boost=6
-^2014^$boost=6
-^2015^$boost=6
-^2016^$boost=6
-^2017^$boost=6
-^2018^$boost=6
-^2019^$boost=6
+^1990^$boost=1
+^1991^$boost=1
+^1992^$boost=1
+^1993^$boost=1
+^1994^$boost=1
+^1995^$boost=1
+^1996^$boost=1
+^1997^$boost=1
+^1998^$boost=1
+^1999^$boost=1
+^2000^$boost=1
+^2001^$boost=1
+^2002^$boost=1
+^2003^$boost=1
+^2004^$boost=1
+^2005^$boost=1
+^2006^$boost=1
+^2007^$boost=1
+^2008^$boost=1
+^2009^$boost=1
+^2010^$boost=1
+^2011^$boost=1
+^2012^$boost=1
+^2013^$boost=1
+^2014^$boost=1
+^2015^$boost=1
+^2016^$boost=1
+^2017^$boost=1
+^2018^$boost=1
+^2019^$boost=1
 ^Birch-san$boost=6,inurl
 ^ad8e$boost=6,inurl
 ^appendix$boost=1
-^archive$boost=5
+^archive$boost=1
 ^docs^$boost=3
 ^edwardjhu$boost=6,inurl
 ^elleestcybele$boost=4,inurl
@@ -59,7 +56,7 @@ Pierre Louÿs$boost=6
 ^readme$boost=1
 ^research^$boost=10
 ^topic$boost=1
-^webarchive$boost=10
+^webarchive$boost=1
 cybelelesperance$boost=3,inurl
 history$boost=3
 info-en-continue$boost=10
@@ -69,20 +66,20 @@ kkhymych$boost=10
 maria*rundell$boost=10
 modele*vivant$boost=5
 polytech$boost=1
-research-catalog$boost=10
+research-catalog$boost=1
 scullery*maid$boost=10
 xyntechx$boost=6,inurl
 |http*://*.anthropic.com^$boost=1
-|http*://*.bnf.fr^$boost=10
+|http*://*.bnf.fr^$boost=1
 |http*://*.mozilla.org^$boost=1
 |http*://*.nasa.gov^$boost=1
 |http*://*.ngs.org^$boost=1
 |http*://*.pcmag.com^$boost=1
 |http*://*.pearlabyss.com^$boost=1
 |http*://*.playblackdesert.com^$boost=1
-|http*://archive.$boost=10
-|http*://archives.$boost=10
-|http*://digitalcollections.$boost=10
+|http*://archive.$boost=1
+|http*://archives.$boost=1
+|http*://digitalcollections.$boost=1
 |http*://docs.$boost=2
 |http*://forum.$boost=2
 |http*://forums.$boost=2
@@ -133,24 +130,24 @@ $boost=1,site=antidote.info
 $boost=1,site=antigravity.google
 $boost=5,site=aomedia.org
 $boost=5,site=ap.org
-$boost=10,site=api.bnf.fr
+$boost=1,site=api.bnf.fr
 $boost=10,site=apimagesblog.com
 $boost=1,site=apjjf.org
 $boost=10,site=apnews.com
 /itunes/$boost=2,site=apple.com
 $boost=10,site=apstylebook.com
 $boost=1,site=arankomatsuzaki.wordpress.com
-$boost=2,site=archive.org
+$boost=1,site=archive.org
 $boost=1,site=archiveofourown.org
-$boost=10,site=archives-statistiques-depp.education.gouv.fr
-$boost=10,site=archives.cotedor.fr
-$boost=10,site=archives.marne.fr
-/ark:/86869$boost=10,site=archives.marne.fr
-/ark:/86869/bhkl9x3q40sg/c2b86ad5-1e48-4ab0-b697-4c34c4bd7dde$boost=10,site=archives.marne.fr
-/ark:/86869/dgs0t91vpxf3/06ba5f89-4c03-4a6b-9667-202b9edbd04a$boost=10,site=archives.marne.fr
-/ark:/86869/jwqz7m61k3p2/cd763747-3e9a-4d8d-9915-7b1711cf4c8e$boost=10,site=archives.marne.fr
+$boost=1,site=archives-statistiques-depp.education.gouv.fr
+$boost=1,site=archives.cotedor.fr
+$boost=1,site=archives.marne.fr
+/ark:/86869$boost=1,site=archives.marne.fr
+/ark:/86869/bhkl9x3q40sg/c2b86ad5-1e48-4ab0-b697-4c34c4bd7dde$boost=1,site=archives.marne.fr
+/ark:/86869/dgs0t91vpxf3/06ba5f89-4c03-4a6b-9667-202b9edbd04a$boost=1,site=archives.marne.fr
+/ark:/86869/jwqz7m61k3p2/cd763747-3e9a-4d8d-9915-7b1711cf4c8e$boost=1,site=archives.marne.fr
 $boost=1,site=archlinux.org
-$boost=6,site=ardennes-archive.com
+$boost=1,site=ardennes-archive.com
 $boost=1,site=artexhibition.jp
 $boost=1,site=article19.org
 $boost=1,site=arxiv.org
@@ -162,7 +159,7 @@ $boost=10,site=auctelia.com
 $boost=5,site=aws.amazon.com
 $boost=1,site=banq.qc.ca
 $boost=1,site=bbc.co.uk
-/webarchive/about$boost=10,site=bbc.co.uk
+/webarchive/about$boost=1,site=bbc.co.uk
 $boost=1,site=beamori.booth.pm
 $boost=4,site=beamori.fanbox.cc
 $boost=1,site=bellingcat.com
@@ -182,8 +179,8 @@ $boost=4,site=blogs.mediapart.fr
 /les-invites-de-mediapart/$boost=6,site=blogs.mediapart.fr
 $boost=10,site=bmj.com
 /content/363/bmj.k5094$boost=10,site=bmj.com
-$boost=10,site=bnf.fr
-$boost=10,site=bnfa.fr
+$boost=1,site=bnf.fr
+$boost=1,site=bnfa.fr
 $boost=5,site=boards.4chan.org
 $boost=1,site=books.openedition.org
 $boost=6,site=bottou.org
@@ -248,7 +245,7 @@ $boost=1,site=cyberimpact.com
 $boost=1,site=dailyscript.com
 $boost=2,site=danbooru.donmai.us
 $boost=5,site=danstonchat.com
-$boost=10,site=data.bnf.fr
+$boost=1,site=data.bnf.fr
 $boost=10,site=data.education.gouv.fr
 $boost=10,site=data.gouv.fr
 $boost=1,site=databrokerswatch.org
@@ -267,7 +264,7 @@ $boost=5,site=dic.pixiv.net
 $boost=1,site=direct.mit.edu
 $boost=1,site=dis.tinychan.net
 $boost=8,site=dlsite.com
-$boost=10,site=dnb.de
+$boost=1,site=dnb.de
 $boost=1,site=downdetector.com
 $boost=1,site=downmagaz.net
 $boost=10,site=drf.4h-conseil.fr
@@ -279,7 +276,7 @@ $boost=5,site=edf.fr
 $boost=1,site=editionsdelasorbonne.fr
 $boost=1,site=edri.org
 $boost=1,site=edrlab.org
-$boost=10,site=education.persee.fr
+$boost=1,site=education.persee.fr
 $boost=1,site=educationnext.org
 $boost=10,site=eduscol.education.gouv.fr
 $boost=10,site=edutheque.philharmoniedeparis.fr
@@ -296,8 +293,8 @@ $boost=10,site=enseignants.lumni.fr
 $boost=10,site=entscheidsuche.ch
 $boost=1,site=erikbern.com
 $boost=1,site=erudit.org
-/fr/article/cee910d9-74b2-422d-981f-22bc912ae5eb-pierre-louys-ecrivain-libertin-et-mystificateur$boost=2,site=essentiels.bnf.fr
-/fr/personnalite/a00f7b81-9994-4791-9fba-47849acee89e-pierre-louys$boost=2,site=essentiels.bnf.fr
+/fr/article/cee910d9-74b2-422d-981f-22bc912ae5eb-pierre-louys-ecrivain-libertin-et-mystificateur$boost=1,site=essentiels.bnf.fr
+/fr/personnalite/a00f7b81-9994-4791-9fba-47849acee89e-pierre-louys$boost=1,site=essentiels.bnf.fr
 $boost=1,site=etsy.com
 $boost=1,site=everythingmoe.com
 $boost=5,site=exhentai.org
@@ -321,12 +318,12 @@ $boost=2,site=forums.fuwanovel.moe
 $boost=2,site=forumsdulibre.quebec
 $boost=5,site=fovotec.com
 $boost=1,site=fpgadeveloper.com
-/wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=10,site=fr.wikisource.org
+/wiki/Le_Corset_%C3%A0_travers_les_%C3%A2ges/Histoire_du_corset_en_France$boost=1,site=fr.wikisource.org
 $boost=10,site=fractalsoftworks.com
 $boost=1,site=france3-regions.franceinfo.fr
 /auvergne-rhone-alpes/$boost=6,site=france3-regions.franceinfo.fr
-$boost=10,site=francearchives.gouv.fr
-/fr/article/1118237662$boost=10,site=francearchives.gouv.fr
+$boost=1,site=francearchives.gouv.fr
+/fr/article/1118237662$boost=1,site=francearchives.gouv.fr
 $boost=4,site=franceinfo.fr
 $boost=1,site=free.fr
 $boost=1,site=frockflicks.com
@@ -361,7 +358,7 @@ $boost=1,site=gitgud.io
 /kurumuz$boost=1,site=github.com
 /nasa/$boost=1,site=github.com
 /orgs/frenzymath$boost=1,site=github.com
-/webrecorder/replayweb.page$boost=4,site=github.com
+/webrecorder/replayweb.page$boost=1,site=github.com
 /zai-org/$boost=1,site=github.com
 $boost=1,site=gitlab.com
 $boost=1,site=gizmodo.com
@@ -392,7 +389,7 @@ $boost=10,site=ife.ens-lyon.fr
 /portail-de-ressources$boost=10,site=ife.ens-lyon.fr
 $boost=1,site=ifunny.co
 $boost=3,site=ifwiki.org
-$boost=10,site=iiif.lettres-en-lumieres.org
+$boost=1,site=iiif.lettres-en-lumieres.org
 $boost=5,site=ikea.com
 $boost=1,site=independent.co.uk
 $boost=2,site=ined.fr
@@ -420,12 +417,12 @@ $boost=1,site=jpeg.org
 $boost=1,site=jsonlintpro.com
 $boost=1,site=jsonviewer.stack.hu
 $boost=1,site=judgehype.com
-$boost=10,site=katalog.dnb.de
+$boost=1,site=katalog.dnb.de
 $boost=10,site=khm.at
 $boost=5,site=kiabi.com
 $boost=5,site=kids.nationalgeographic.com
 $boost=5,site=kiwifarms.st
-$boost=5,site=kiwix.org
+$boost=1,site=kiwix.org
 $boost=3,site=kleymir.fanbox.cc
 $boost=3,site=kleymir.gumroad.com
 $boost=10,site=kniemeyer.net
@@ -448,8 +445,8 @@ $boost=1,site=lejsl.com
 $boost=1,site=leroymerlin.fr
 $boost=1,site=lesswrong.com
 $boost=1,site=libguides.lehman.edu
-$boost=10,site=library.kiwix.org
-/rylands/research/projects/current/mary-hamilton-papers/$boost=10,site=library.manchester.ac.uk
+$boost=1,site=library.kiwix.org
+/rylands/research/projects/current/mary-hamilton-papers/$boost=1,site=library.manchester.ac.uk
 $boost=1,site=link.springer.com
 $boost=1,site=linkedin.com
 $boost=6,site=linktr.ee
@@ -461,7 +458,7 @@ $boost=6,site=liuxiaoxuanpku.github.io
 $boost=5,site=lolcow.farm
 $boost=1,site=luminarium.org
 /beiwerk/liste.html$boost=1,site=lyriktheorie.uni-wuppertal.de
-$boost=10,site=mabiblio.hypotheses.org
+$boost=1,site=mabiblio.hypotheses.org
 $boost=1,site=macif.fr
 $boost=2,site=malwarebytes.com
 $boost=10,site=maplibre.org
@@ -483,8 +480,8 @@ $boost=1,site=mens-qzin.jp
 $boost=1,site=mensheaven.jp
 $boost=1,site=merriam-webster.com
 $boost=1,site=mesdroitssociaux.gouv.fr
-$boost=10,site=metmuseum.org
-/met-publications$boost=10,site=metmuseum.org
+$boost=1,site=metmuseum.org
+/met-publications$boost=1,site=metmuseum.org
 $boost=1,site=mi.com
 $boost=1,site=microsoft.com
 $boost=8,site=milkfactory.jp
@@ -492,7 +489,7 @@ $boost=1,site=millsfriends.org
 $boost=1,site=miraheze.org
 $boost=1,site=mirror.ibcp.fr
 $boost=1,site=mitpress.mit.edu
-$boost=5,site=mnhs.org
+$boost=1,site=mnhs.org
 $boost=5,site=mobygames.com
 $boost=5,site=modal.com
 /llm-almanac$boost=10,site=modal.com
@@ -515,7 +512,7 @@ $boost=1,site=news.google.com
 $boost=1,site=news.samsung.com
 $boost=1,site=news.ycombinator.com
 $boost=1,site=newsnationnow.com
-$boost=2,site=newspaperarchive.com
+$boost=1,site=newspaperarchive.com
 $boost=1,site=newyorker.com
 $boost=1,site=next.ink
 $boost=1,site=nextinpact.com
@@ -533,7 +530,7 @@ $boost=1,site=nor-blog.pages.dev
 $boost=1,site=note.com
 $boost=1,site=notepad-plus-plus.org
 $boost=1,site=numerique.banq.qc.ca
-$boost=10,site=nypl.org
+$boost=1,site=nypl.org
 $boost=1,site=nytimes.com
 $boost=1,site=oasis-open.org
 $boost=1,site=open.spotify.com
@@ -593,7 +590,7 @@ $boost=1,site=redtube.com
 $boost=1,site=render-state.to
 $boost=1,site=researchgate.net
 $boost=2,site=respectmodels.com
-$boost=5,site=retronews.fr
+$boost=1,site=retronews.fr
 $boost=4,site=reuters.com
 $boost=5,site=reutersagency.com
 $boost=8,site=reutersbest.com
@@ -609,10 +606,10 @@ $boost=1,site=s10collage.blogspot.com
 /umbrella-static/$boost=10,site=s3-us-west-1.amazonaws.com
 $boost=4,site=safe.asso.fr
 $boost=1,site=salesforce.com
-$boost=10,site=sammlung.belvedere.at
+$boost=1,site=sammlung.belvedere.at
 $boost=1,site=samsung.com
 $boost=1,site=saucenao.com
-$boost=10,site=scalarchives.com
+$boost=1,site=scalarchives.com
 $boost=1,site=searchengineland.com
 $boost=1,site=service-public.gouv.fr
 $boost=1,site=sewhistorically.com
@@ -630,8 +627,8 @@ $boost=1,site=sketchup.trimble.com
 /story/68641/morsay-video-prison$boost=10,site=slate.fr
 $boost=1,site=slatestarcodex.com
 $boost=4,site=snapfest.org
-$boost=10,site=socface.site.ined.fr
-$boost=10,site=socface.teklia.com
+$boost=1,site=socface.site.ined.fr
+$boost=1,site=socface.teklia.com
 $boost=1,site=softpedia.com
 $boost=1,site=soranews24.com
 $boost=1,site=sosh.fr
@@ -704,7 +701,7 @@ $boost=1,site=uni-wuppertal.de
 $boost=1,site=uniqlo.com
 $boost=1,site=universalis.fr
 $boost=1,site=urbandictionary.com
-$boost=10,site=usenet.trashworldnews.com
+$boost=1,site=usenet.trashworldnews.com
 $boost=4,site=utsopi.be
 /toolboxes$boost=10,site=utsopi.be
 $boost=1,site=valvesoftware.com
@@ -714,12 +711,12 @@ $boost=5,site=vinaj.kr
 $boost=5,site=vinajofficial.cafe24.com
 $boost=1,site=virtualshareholdermeeting.com
 $boost=2,site=vndb.org
-$boost=5,site=warosu.org
+$boost=1,site=warosu.org
 $boost=1,site=wearinghistoryblog.com
-/web/20110820083425oe_/http://v5.cache1.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass&fexp=904432%2C910705&itag=43&ip=207.0.0.0&signature=A2A17BE1C0BFC40C7CA54D61C9F3B726811758C3.ABEC02D340EE2318F16F0673ADEC900EC7230610&sver=3&ratebypass=yes&expire=1313852400&key=yt1&ipbits=8&id=10d4a1b49f6dc296&redirect_counter=1$boost=10,site=web.archive.org
+/web/20110820083425oe_/http://v5.cache1.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass&fexp=904432%2C910705&itag=43&ip=207.0.0.0&signature=A2A17BE1C0BFC40C7CA54D61C9F3B726811758C3.ABEC02D340EE2318F16F0673ADEC900EC7230610&sver=3&ratebypass=yes&expire=1313852400&key=yt1&ipbits=8&id=10d4a1b49f6dc296&redirect_counter=1$boost=1,site=web.archive.org
 $boost=1,site=webrecorder.net
 $boost=1,site=wiby.me
-$boost=2,site=wiki.archiveteam.org
+$boost=1,site=wiki.archiveteam.org
 $boost=1,site=wiki.bibanon.org
 $boost=1,site=wiki.gg
 $boost=1,site=wiki.yuri-project.net
@@ -727,7 +724,7 @@ $boost=1,site=wikidata.org
 $boost=1,site=wikimedia.org
 /dse/$boost=2,site=wikiservice.at
 /dse/wiki.cgi$boost=2,site=wikiservice.at
-$boost=10,site=wikisource.org
+$boost=1,site=wikisource.org
 $boost=1,site=wiktionary.org
 $boost=1,site=wired.com
 /story/$boost=2,site=wired.com
@@ -735,7 +732,7 @@ $boost=1,site=wolfram.com
 $boost=1,site=wolframalpha.com
 $boost=1,site=wolframcloud.com
 $boost=1,site=womenarehuman.com
-$boost=10,site=womensprinthistoryproject.com
+$boost=1,site=womensprinthistoryproject.com
 $boost=1,site=wordhippo.com
 $boost=1,site=wordpress.com
 $boost=1,site=wotaku.wiki
@@ -1185,6 +1182,7 @@ xvideos$discard
 |https://*.art^$discard
 |https://*.bar^$discard
 |https://*.cat^$discard
+|https://*.cc^$discard
 |https://*.club^$discard
 |https://*.co^$discard
 |https://*.dev^$discard
@@ -1231,6 +1229,7 @@ $discard,site=baike.baidu.com
 $discard,site=betterwaifu.com
 /*$discard,site=biblio.com
 $discard,site=binance.com
+$discard,site=boticinal.com
 $discard,site=boutlet.io
 $discard,site=box.co.uk
 /*$discard,site=brave.com
@@ -1239,6 +1238,7 @@ $discard,site=bruneau.fr
 /*$discard,site=buzzfeednews.com
 $discard,site=byteiota.com
 $discard,site=cardboardcutouts.com
+$discard,site=carehospitals.com
 /*$discard,site=cdiscount.com
 $discard,site=cerhes.org
 $discard,site=cestmeilleurquandcestbon.com
@@ -1254,6 +1254,7 @@ $discard,site=cloudinsight.cc
 /*$discard,site=clubic.com
 $discard,site=codeagentswarm.com
 $discard,site=coffeesoft.fr
+$discard,site=comfyui.fr
 /*$discard,site=commerce.adobe.com
 /*$discard,site=commonsensemedia.org
 $discard,site=cooconsbit.com
@@ -1402,6 +1403,8 @@ $discard,site=magnitude.dev
 /*$discard,site=makeagif.com
 $discard,site=makertronic-yt.com
 /*$discard,site=makeuseof.com
+$discard,site=manix.net
+$discard,site=manixshop.fr
 $discard,site=mappy.com
 /*$discard,site=marianne.net
 /*$discard,site=marketresearchfuture.com
@@ -1417,6 +1420,7 @@ $discard,site=mixed-news.com
 /blog/$discard,site=modal.com
 $discard,site=modelpiper.com
 $discard,site=monlogiciel.fr
+$discard,site=monouso.fr
 $discard,site=morphllm.com
 $discard,site=motherlesspics.com
 $discard,site=mtplx.com
@@ -1437,6 +1441,7 @@ $discard,site=noodlemagazine.com
 /*$discard,site=note.com
 $discard,site=notokenlimit.com
 $discard,site=notta.ai
+$discard,site=nsconseil-dietetique.com
 $discard,site=nsfocusglobal.com
 /*$discard,site=octoparse.com
 $discard,site=ohmyresto.fr
@@ -1453,10 +1458,15 @@ $discard,site=ozarksmade.net
 $discard,site=pages.ebay.fr
 $discard,site=paroles.net
 /*$discard,site=pasqualepillitteri.it
+$discard,site=passagedudesir.com
+$discard,site=passeportsante.net
 /*$discard,site=pcgamer.com
 $discard,site=pcgamesn.com
 /*$discard,site=pcserverandparts.com
 $discard,site=pexels.com
+$discard,site=pharma-gdd.com
+$discard,site=pharmaciedesdrakkars.com
+$discard,site=pharmacodel.com
 /*$discard,site=pholder.com
 $discard,site=pictoa.com
 /*$discard,site=pinklabel.tv
@@ -1480,6 +1490,7 @@ $discard,site=proses.org
 /support/$discard,site=proton.me
 $discard,site=pugetsystems.com
 $discard,site=punishbang.com
+$discard,site=purepara.com
 /*$discard,site=qobuz.com
 $discard,site=quartier-rouge.be
 $discard,site=quelmatelas.fr
@@ -1489,6 +1500,7 @@ $discard,site=quickseo.ai
 $discard,site=rankedgpu.com
 $discard,site=rask.ai
 /*$discard,site=ratings.fide.com
+$discard,site=redcare-pharmacie.fr
 /r/AskReddit/$discard,site=reddit.com
 /r/LocalAIServers/$discard,site=reddit.com
 /r/comfyui/$discard,site=reddit.com
@@ -1619,6 +1631,7 @@ $discard,site=xstory-fr.com
 $discard,site=xxxbule.com
 $discard,site=yage.ai
 $discard,site=yiaho.com
+$discard,site=yogurtinnutrition.com
 /*$discard,site=youtube.com
 $discard,site=youtubetoolkit.com
 $discard,site=yttranscript.ai
