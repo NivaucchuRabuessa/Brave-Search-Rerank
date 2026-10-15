@@ -1,5 +1,5 @@
-! name: Archives
-! description: Archives.2026.10.15.001
+! name: Academia
+! description: Academia.2026.10.15.001
 ! public: false
 ! author: Someone
 
@@ -109,3 +109,6 @@ $boost=10,site=sammlung.belvedere.at
 ^2017^$boost=6
 ^2018^$boost=6
 ^2019^$boost=6
+
+! Données publiques, 2026-10-15
+$boost=5,site=data.education.gouv.fr
