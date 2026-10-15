@@ -1,5 +1,5 @@
 ! name: Custom
-! description: Custom.2026.10.15.002
+! description: Custom.2026.10.15.003
 ! public: false
 ! author: Someone
 
@@ -238,7 +238,7 @@ $boost=1,site=coursera.org
 $boost=1,site=crazyshit.com
 $boost=1,site=crystal-lang.org
 $boost=5,site=crystal.cafe
-$boost=10,site=csen.education.gouv.fr
+$boost=1,site=csen.education.gouv.fr
 $boost=1,site=culturezvous.com
 $boost=1,site=cut-the-knot.org
 $boost=1,site=cyberimpact.com
@@ -246,8 +246,8 @@ $boost=1,site=dailyscript.com
 $boost=2,site=danbooru.donmai.us
 $boost=5,site=danstonchat.com
 $boost=1,site=data.bnf.fr
-$boost=10,site=data.education.gouv.fr
-$boost=10,site=data.gouv.fr
+$boost=1,site=data.education.gouv.fr
+$boost=1,site=data.gouv.fr
 $boost=1,site=databrokerswatch.org
 $boost=5,site=datarepository.wolframcloud.com
 $boost=1,site=deepl.com
@@ -278,7 +278,7 @@ $boost=1,site=edri.org
 $boost=1,site=edrlab.org
 $boost=1,site=education.persee.fr
 $boost=1,site=educationnext.org
-$boost=10,site=eduscol.education.gouv.fr
+$boost=1,site=eduscol.education.gouv.fr
 $boost=10,site=edutheque.philharmoniedeparis.fr
 $boost=1,site=edwardbetts.com
 $boost=5,site=egomodelsmgmt.com
@@ -494,8 +494,8 @@ $boost=5,site=mobygames.com
 $boost=5,site=modal.com
 /llm-almanac$boost=10,site=modal.com
 $boost=1,site=moma.org
-$boost=10,site=monaidenumerique.education.gouv.fr
-$boost=5,site=monparcourshandicap.gouv.fr
+$boost=1,site=monaidenumerique.education.gouv.fr
+$boost=1,site=monparcourshandicap.gouv.fr
 $boost=1,site=mr-koukoku.com
 $boost=1,site=music.apple.com
 /show/$boost=1,site=my.matterport.com
